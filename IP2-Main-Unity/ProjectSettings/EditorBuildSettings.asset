@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Pause Menu.unity
+    guid: c337be7184e44c24eb7d062e01fe8458
+  - enabled: 1
+    path: Assets/Scenes/Level Select.unity
+    guid: d29edf56a16f8c648894210d9bd3263e
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 6b36141875a4e5446919941456618520
+  - enabled: 1
+    path: Assets/Scenes/Level_1.unity
+    guid: a311d347075d2414b9bb2cb0aa2127df
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
