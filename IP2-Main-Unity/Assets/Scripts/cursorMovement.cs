@@ -34,7 +34,7 @@ public class cursorMovement : MonoBehaviour
             maxZ = minZ + (gridManager.gridHeight - 1) * gridSize;
 
             //Should hopefully snap the starting position of the cursor right to the grid origin
-            transform.position = new Vector3(minX, transform.position.y + 1173.6f, minZ);
+            transform.position = new Vector3(minX, transform.position.y + 1173.6f, minZ); //Y is +1173.6 because the grid squares spawn very high up
         }
     }
     //This method is called by the "Player Input" component from the new Unity inpit system thing
