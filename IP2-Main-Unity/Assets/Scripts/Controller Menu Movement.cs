@@ -60,11 +60,6 @@ public class ControllerMenuMovement : MonoBehaviour
 
             UpdateButtonPos();
         }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-
-        }
     }
 
     void UpdateButtonPos()
