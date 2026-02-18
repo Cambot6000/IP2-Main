@@ -12,6 +12,7 @@ public class TowerCostManager : MonoBehaviour
 
             if(!success)
             {
+                Destroy(gameObject);
                 Debug.LogWarning("not enough gold, tower cant be placed");
             }
         }
