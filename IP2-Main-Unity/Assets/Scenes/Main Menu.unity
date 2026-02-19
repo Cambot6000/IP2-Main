@@ -1029,6 +1029,7 @@ MonoBehaviour:
   - {fileID: 1567567985}
   - {fileID: 1999500434}
   currentIndex: 0
+  fadeNumber: 0.6
   moveDelay: 0.2
 --- !u!4 &1496211677
 Transform:
