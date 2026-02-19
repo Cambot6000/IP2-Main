@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8772493759207430035}
   - component: {fileID: 6386954393045321238}
   - component: {fileID: 5972745214368708023}
+  - component: {fileID: 782328264409317170}
   m_Layer: 0
   m_Name: FlyingSauser
   m_TagString: Untagged
@@ -126,3 +127,16 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   pathWaypoint: []
   waypointNumber: 0
+--- !u!114 &782328264409317170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317891218014450148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76782ebdc4e37b14dacbfcb90b6c0b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
