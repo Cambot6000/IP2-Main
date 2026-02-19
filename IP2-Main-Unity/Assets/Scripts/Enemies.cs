@@ -12,7 +12,7 @@ public class Enemies : MonoBehaviour
 
     private void Start()
     {
-        BuildGrid grid = FindAnyObjectByType<BuildGrid>();
+        EnemiesSpawner grid = FindAnyObjectByType<EnemiesSpawner>();
         if (grid == null)
         {
             Debug.LogError("GridLayout not assigned!");
@@ -52,6 +52,15 @@ public class Enemies : MonoBehaviour
             waypointNumber++;
             ChangeWaypoint();
         }
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        if (waypointNumber == pathWaypoint.Count - 1)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -64,6 +73,6 @@ public class Enemies : MonoBehaviour
 
     }
 
-
 }
+
 
