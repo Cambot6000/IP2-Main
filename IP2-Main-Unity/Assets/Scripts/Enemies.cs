@@ -68,7 +68,7 @@ public class Enemies : MonoBehaviour
     {
 
         target = pathWaypoint[waypointNumber];
-        print($"{waypointNumber}");
+        //print($"{pathWaypoint[waypointNumber]}");
 
 
     }
