@@ -10,6 +10,7 @@ public class PlaceObject : MonoBehaviour
     public bool Placed { get; private set; } //has the tower been placed
     public Vector3Int size{get; private set;} //the size of the tower so we can check if its in a grid square
     private Vector3[] Vertices;
+    public int towerCost= 250;
     
     
     
@@ -54,8 +55,18 @@ public class PlaceObject : MonoBehaviour
     {
         
         Placed = true;
+        if (MoneyManager.instance != null)
+        {
+            bool success = MoneyManager.instance.SpendGold(towerCost);
+
+            if(!success)
+            {
+                Destroy(gameObject);
+                Debug.LogWarning("not enough gold, tower cant be placed");
+            }
+        }
         
-        //any extra events, effects timer etc...
+   
         
         
     }
