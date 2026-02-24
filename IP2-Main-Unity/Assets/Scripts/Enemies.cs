@@ -9,7 +9,6 @@ public class Enemies : MonoBehaviour
     public List<Vector3> pathWaypoint = new List<Vector3>();
     public int waypointNumber;
 
-
     private void Start()
     {
         EnemiesSpawner grid = FindAnyObjectByType<EnemiesSpawner>();
