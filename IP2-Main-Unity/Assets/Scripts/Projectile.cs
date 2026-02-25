@@ -6,8 +6,12 @@ public class Projectile : MonoBehaviour
     public int damage;
     public Enemies target;
     public float lifeTime = 5f;
-    public bool slowingShot = false; 
+    public bool slowingShot = false;
     private float timer;
+
+    [Header("Poison Stuff")]
+    public GameObject poisonPool; //The poison thing that spawns on the floor after the projectile hits
+    public bool poison;
 
     private void Update()
     {
@@ -38,6 +42,15 @@ public class Projectile : MonoBehaviour
                 if (slowingShot)
                 {
                     target.ApplySlow(0.5f, 5f); // Applies a slow (50% speed for 5 seconds)
+                }
+
+                if (poison && !slowingShot)
+                {
+                    Instantiate(poisonPool, new Vector3
+                        (target.pathWaypoint[target.waypointNumber].x, 
+                        -1.64f, 
+                        target.pathWaypoint[target.waypointNumber].z), 
+                        Quaternion.identity);
                 }
 
                 target.health -= damage;

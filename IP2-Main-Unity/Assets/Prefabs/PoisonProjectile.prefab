@@ -128,6 +128,8 @@ MonoBehaviour:
   target: {fileID: 0}
   lifeTime: 5
   slowingShot: 0
+  poisonPool: {fileID: 7194001452118552357, guid: 3e5a4234c0a8c8042bed0b054f06a03d, type: 3}
+  poison: 1
 --- !u!114 &440192725313198833
 MonoBehaviour:
   m_ObjectHideFlags: 0
