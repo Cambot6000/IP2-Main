@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6603822954635470261}
   - component: {fileID: 7517801363609142589}
   - component: {fileID: 299690715933937863}
+  - component: {fileID: -8162088074497153293}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -116,9 +117,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331161078107804044}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a5c0b899d5e0c045b3ea06987b343f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerCost: 250
+--- !u!114 &-8162088074497153293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331161078107804044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08a530c840b2c340a9b196a487ebb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   towerCost: 250

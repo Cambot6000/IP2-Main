@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3264232747032317025}
   - component: {fileID: 5095222131350512111}
   - component: {fileID: 659538805919146943}
+  - component: {fileID: -1922041092425223875}
   m_Layer: 0
   m_Name: Segway
   m_TagString: Untagged
@@ -126,3 +127,16 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   pathWaypoint: []
   waypointNumber: 0
+--- !u!114 &-1922041092425223875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760400414483964277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76782ebdc4e37b14dacbfcb90b6c0b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100

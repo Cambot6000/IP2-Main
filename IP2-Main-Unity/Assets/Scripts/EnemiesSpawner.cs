@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemiesSpawner : MonoBehaviour
 {
-    public enum Difficulty { Easy, Meduim, Hard }
+    public enum Difficulty { Easy, Medium, Hard }
     [Header("Type of Enemies")]
     public Difficulty chosenDifficulty = Difficulty.Easy;
     public int numberOfEnemies;
@@ -23,19 +23,33 @@ public class EnemiesSpawner : MonoBehaviour
     public int waveNumber;
     public float waveTimmerMax;
     public float enemySpawnTimerMax;
+    public float waitTimerMax;
 
+    public float waitTimer;
     public float waveTimmer;
     public float enemySpawnTimer;
 
+    public bool InWave;
+
+
+    
 
     public List<Vector3> pathWaypoint = new List<Vector3>();
     public GameObject[] enemies;
 
     private void Start()
     {
+        InWave = true;
         waveNumber = 1;
         EnemiesAmount();
-
+        for (int i = 0; i < pathWaypoint.Count; i++)
+        {
+            pathWaypoint[i] = new Vector3(
+                 pathWaypoint[i].x,
+                 transform.position.y,
+                 pathWaypoint[i].z
+                );
+        }
     }
 
     private void Update()
@@ -44,8 +58,59 @@ public class EnemiesSpawner : MonoBehaviour
 
         waveTimmer = waveTimmer + Time.deltaTime;
 
+        if(!InWave)
+        waitTimer = waitTimer + Time.deltaTime;
+       
 
-        if (enemySpawnTimer > enemySpawnTimerMax)
+        
+        SpawnEnemies();
+        EndOfWave();
+    }
+
+    public void EndOfWave()
+    {
+        if (waveTimmer > waveTimmerMax && InWave)
+        {
+            InWave = false;
+
+            if (enemySpawnTimerMax == 5f)
+            {
+                moreEnemies = false;
+
+                upgradedEnemies = true;
+            }
+            hopperCounter = 0;
+            segwayCounter = 0;
+            flyingSauserCounter = 0;
+            if (moreEnemies)
+            {
+                enemySpawnTimerMax--;
+                EnemiesAmount();
+            }
+            else if (upgradedEnemies)
+            {
+                UpgradedEnemies();
+            }
+            
+        }
+        if (waitTimer > waitTimerMax)
+            {
+
+
+                waveNumber++;
+                InWave = true;
+                waveTimmer = 0;
+                waitTimer = 0;
+
+
+            }
+    }
+
+
+
+    public void SpawnEnemies()
+    {
+        if (enemySpawnTimer > enemySpawnTimerMax && InWave )
         {
             if (hopperCounter < hopperAmount)
             {
@@ -65,32 +130,6 @@ public class EnemiesSpawner : MonoBehaviour
             enemySpawnTimer = 0;
         }
 
-        if (waveTimmer > waveTimmerMax)
-        {
-            waveNumber++;
-            if (enemySpawnTimerMax == 1f)
-            {
-                moreEnemies = false;
-
-                upgradedEnemies = true;
-            }
-            hopperCounter = 0;
-            segwayCounter = 0;
-            flyingSauserCounter = 0;
-            if (moreEnemies)
-            {
-                enemySpawnTimerMax--;
-                EnemiesAmount();
-            }
-            else if (upgradedEnemies)
-            {
-                UpgradedEnemies();
-            }
-
-            waveTimmer = 0;
-        }
-
-
     }
     public void EnemiesAmount()
     {
@@ -106,7 +145,7 @@ public class EnemiesSpawner : MonoBehaviour
             flyingSauserAmount = Mathf.RoundToInt(numberOfEnemies * 0.2f);
 
         }
-        else if (chosenDifficulty == Difficulty.Meduim)
+        else if (chosenDifficulty == Difficulty.Medium)
         {
             hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.35f);
 
@@ -124,18 +163,30 @@ public class EnemiesSpawner : MonoBehaviour
             flyingSauserAmount = Mathf.RoundToInt(numberOfEnemies * 0.5f);
 
         }
+        if (hopperAmount < 0)
+        {
+            hopperAmount = 0;
+        }
+        if(segwayAmount < 0)
+        {
+            segwayAmount = 0;
+        }
+        if (flyingSauserAmount < 0) 
+        {
+            flyingSauserAmount = 0;
+        }
     }
     public void UpgradedEnemies()
     {
 
-        if (hopperAmount >= Mathf.RoundToInt(numberOfEnemies * 0.2f))
+        if (hopperAmount >= Mathf.RoundToInt(numberOfEnemies * 0.2f) && hopperAmount - 2 >=0)
         {
-            hopperAmount = hopperAmount - 2;
+            hopperAmount -=2;
             segwayAmount += 2;
         }
-        else if (segwayAmount >= Mathf.RoundToInt(numberOfEnemies * 0.2f))
+        else if (segwayAmount >= Mathf.RoundToInt(numberOfEnemies * 0.2f) && segwayAmount-2>=0)
         {
-            segwayAmount = hopperAmount - 2;
+            segwayAmount -= 2;
             flyingSauserAmount += 2;
         }
 

@@ -7,6 +7,7 @@ public class ControllerMenuMovement : MonoBehaviour
     private Vector2 inputDirection;
     public Button[] buttons;
     public int currentIndex = 0;
+    public float fadeNumber;
 
     //Cooldown variables
     private float moveTimer;
@@ -70,14 +71,17 @@ public class ControllerMenuMovement : MonoBehaviour
             Color tempColor = btn.image.color;
 
             //If this button is the current selection, set the opacity to a hunner percent (1.0f)
-            //If its not selected though, set it to 70% (0.7f) was 80 but 70 looks pretty good
             if (btn == buttons[currentIndex])
             {
                 tempColor.a = 1.0f;
             }
             else
             {
-                tempColor.a = 0.7f;
+                if(fadeNumber > 0.9f || fadeNumber < 0.5f)
+                {
+                    fadeNumber = 0.65f;
+                }
+                tempColor.a = fadeNumber;
             }
 
             //This then the colour back
