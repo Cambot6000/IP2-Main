@@ -2300,6 +2300,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerCost: 250
+--- !u!114 &1823924517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823924507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6138e5c25c7dc3d43bc800ada299805d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  fireRate: 1
+  damage: 25
+  ringSegments: 64
+  ringWidth: 0.05
+  ringColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0.6}
+  showRingWhilePlacing: 1
 --- !u!1 &1841377725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,6 +2665,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1331161078107804044, guid: 4992060fda6a73343b8e1e9081b582a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1823924516}
+    - targetCorrespondingSourceObject: {fileID: 1331161078107804044, guid: 4992060fda6a73343b8e1e9081b582a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1823924517}
   m_SourcePrefab: {fileID: 100100000, guid: 4992060fda6a73343b8e1e9081b582a0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
