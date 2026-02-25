@@ -2,10 +2,6 @@ using UnityEngine;
 using System;
 
 
-
-
-[RequireComponent(typeof(PlaceObject))]
-[RequireComponent(typeof(LineRenderer))]
 public class TowerFire : MonoBehaviour
 {
     [Header("combat")]
@@ -29,9 +25,8 @@ public class TowerFire : MonoBehaviour
         placeObject = GetComponent<PlaceObject>();
         lineRenderer = GetComponent<LineRenderer>();
 
-        // just in case it's missing
-        if (lineRenderer == null)
-            lineRenderer = gameObject.AddComponent<LineRenderer>();
+       
+        
 
         // basic circle setup
         lineRenderer.loop = true;
@@ -110,7 +105,9 @@ public class TowerFire : MonoBehaviour
             return;
 
         // simple direct damage for now
-        // swap this out later if you add projectiles
+
+
+        // swap this out later to add projectiles
         target.health -= damage;
     }
 
@@ -127,12 +124,12 @@ public class TowerFire : MonoBehaviour
             float x = Mathf.Cos(angle) * range;
             float z = Mathf.Sin(angle) * range;
 
-            // tiny Y offset so it doesn’t fight the ground
+            // tiny Y offset so it doesn’t tweak out
             lineRenderer.SetPosition(i, new Vector3(x, 0.05f, z));
         }
     }
 
-    // update circle in editor when tweaking values
+    // update circle in editor when changing values
     private void OnValidate()
     {
         if (lineRenderer == null)
