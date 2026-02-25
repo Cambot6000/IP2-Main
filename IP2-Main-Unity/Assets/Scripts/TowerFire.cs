@@ -15,6 +15,12 @@ public class TowerFire : MonoBehaviour
     public Color ringColor = new Color(1f, 0.9f, 0.2f, 0.6f);
     public bool showRingWhilePlacing = true;
 
+    [Header("projectile")]
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 10f;
+    public float projectileLifeTime = 5f;
+    public Transform firePoint; // Just fires from the turret but if we need to change it (from dino mouth for instance) this can be done with this
+
     private PlaceObject placeObject;
     private LineRenderer lineRenderer;
     private float fireTimer;
@@ -39,6 +45,10 @@ public class TowerFire : MonoBehaviour
         lineRenderer.positionCount = ringSegments + 1;
 
         DrawRing();
+
+        // if no explicit fire point, use this transform
+        if (firePoint == null)
+            firePoint = transform;
     }
 
     private void Update()
@@ -105,11 +115,30 @@ public class TowerFire : MonoBehaviour
         if (target == null)
             return;
 
-        // simple direct damage for now
-        // planning on changing here for the projectiles
+        if (projectilePrefab != null) // If there is a prefab assigned, spawn it and do the projectile script
+        {
+            GameObject go = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            Projectile proj = go.GetComponent<Projectile>();
+            
+            if (proj != null)
+            {
+                proj.target = target;
+                proj.speed = projectileSpeed;
+                proj.damage = damage;
+                proj.lifeTime = projectileLifeTime;
+            }
+            else
+            {
+                // Just in case, if its broken just deal the damage directly 
+                Debug.LogWarning("projectile not working as intended.");
+                Destroy(go);
+                target.health -= damage;
+            }
 
-        
-        target.health -= damage;
+            return;
+        }
+
+        target.health -= damage; // Same again, just incase something is broken, deal direct damage
     }
 
     private void DrawRing()
