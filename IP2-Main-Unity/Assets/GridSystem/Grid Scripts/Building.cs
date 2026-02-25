@@ -19,6 +19,7 @@ public class Building : MonoBehaviour
     // towers (later: array)
     
     public GameObject Tower1;               // tower prefab
+    public GameObject SlowingTower;
 
     // currently active object being placed
     private PlaceObject objectToPlace;
@@ -50,6 +51,12 @@ public class Building : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B) && objectToPlace == null)
         {
             InitalizeWithObject(Tower1);
+        }
+
+        // set to "N" but for testing
+        if (Input.GetKeyDown(KeyCode.N) && objectToPlace == null)
+        {
+            InitalizeWithObject(SlowingTower);
         }
 
         // If not in build mode, skip the rest

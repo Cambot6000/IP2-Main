@@ -1042,6 +1042,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1823924508}
+  - {fileID: 1097092122054034108}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724126345
@@ -1998,6 +1999,7 @@ MonoBehaviour:
   MainTilemap: {fileID: 1461604367}
   greenTile: {fileID: 11400000, guid: e15e80345d637114e8bea77ea1072b63, type: 2}
   Tower1: {fileID: 1823924507}
+  SlowingTower: {fileID: 891594839903357889, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
 --- !u!156049354 &1429140000
 Grid:
   m_ObjectHideFlags: 0
@@ -2776,12 +2778,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  fireRate: 1
-  damage: 25
+  fireRate: 2
+  damage: 5
   ringSegments: 64
   ringWidth: 0.05
   ringColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0.6}
   showRingWhilePlacing: 1
+  projectilePrefab: {fileID: 452867103747816190, guid: 76df729bfbeebea478e9b52299e8e848, type: 3}
+  projectileSpeed: 10
+  projectileLifeTime: 5
+  firePoint: {fileID: 0}
 --- !u!1 &1841377725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3121,7 +3127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1331161078107804044, guid: 4992060fda6a73343b8e1e9081b582a0, type: 3}
       propertyPath: m_Name
-      value: Cube
+      value: BasicTower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3134,6 +3140,68 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1823924517}
   m_SourcePrefab: {fileID: 100100000, guid: 4992060fda6a73343b8e1e9081b582a0, type: 3}
+--- !u!4 &1097092122054034108 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4465738482377626033, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+  m_PrefabInstance: {fileID: 6080908664074943240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6080908664074943240
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 677731049}
+    m_Modifications:
+    - target: {fileID: 891594839903357889, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_Name
+      value: SlowingTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465738482377626033, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465738482377626033, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465738482377626033, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465738482377626033, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465738482377626033, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465738482377626033, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465738482377626033, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465738482377626033, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465738482377626033, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465738482377626033, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
