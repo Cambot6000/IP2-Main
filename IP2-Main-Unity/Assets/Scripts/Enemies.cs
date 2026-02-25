@@ -82,6 +82,10 @@ public class Enemies : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            if (MoneyManager.instance != null)
+            {
+             MoneyManager.instance.AddGold(50);
+            }
         }
 
         if (waypointNumber == pathWaypoint.Count - 1)
