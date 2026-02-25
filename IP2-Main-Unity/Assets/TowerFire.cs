@@ -25,7 +25,9 @@ public class TowerFire : MonoBehaviour
         placeObject = GetComponent<PlaceObject>();
         lineRenderer = GetComponent<LineRenderer>();
 
-       
+
+        if (lineRenderer == null)
+            lineRenderer = gameObject.AddComponent<LineRenderer>();
 
         // basic circle setup
         lineRenderer.loop = true;
