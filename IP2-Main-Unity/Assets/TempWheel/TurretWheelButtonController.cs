@@ -11,6 +11,9 @@ public class TurretWheelButtonController : MonoBehaviour
     public Image selectedItem;
     private bool selected = false;
     public Sprite icon;
+    
+    
+    
 
     private void Start()
     {
@@ -21,6 +24,7 @@ public class TurretWheelButtonController : MonoBehaviour
     {
         if (selected)
         {
+            // keep selected button’s icon and name in the UI
             selectedItem.sprite = icon;
             itemText.text = itemName;
         }
@@ -28,14 +32,29 @@ public class TurretWheelButtonController : MonoBehaviour
 
     public void Selected()
     {
-        selected = true;
-        TurretWheelController.turretID = ID;
+        //this will actually select the button, not deselect it, silly me
+        selected = true;                              
+        TurretWheelController.turretID = ID;   
+        
+        if (Building.current != null)
+        {
+            Building.current.StartBuildModeFromWheel(ID);
+        }
+
+        
+        TurretWheelController wheel = FindFirstObjectByType<TurretWheelController>(); //idk unity was shouting at me for using FindObjectByType
+        if (wheel != null)                                                                  
+            wheel.SetOpen(false);
     }
+
 
     public void Deselected()
     {
         selected = false;
-        TurretWheelController.turretID = 0;
+
+        
+        if (TurretWheelController.turretID == ID)   
+            TurretWheelController.turretID = 0;     
     }
 
     public void HoverEnter()
