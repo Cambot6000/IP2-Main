@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
@@ -17,6 +18,13 @@ public class Enemies : MonoBehaviour
     private float slowTimer;
     private float slowDuration;
     private float slowMultiplier = 1f; // 1 = no slow
+
+    [Header("Poison Stuff")]
+    public bool isPoisoned = false;
+    public int poisonTimes; //How many times the enemy will take poison damage before the effect wears off
+    public int poisonDamage;
+    private int counter;
+    public int poisonWait; //How long it takes for the enemy to take damage from poison
 
     private void Start()
     {
@@ -41,9 +49,10 @@ public class Enemies : MonoBehaviour
         }
 
         target = pathWaypoint[waypointNumber];
-        
 
-        
+        counter = 0;
+
+
         for (int i = 0; i < pathWaypoint.Count; i++)
         {
             pathWaypoint[i] = new Vector3(
@@ -113,6 +122,11 @@ public class Enemies : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damageAmount)
+    { 
+        health -= damageAmount;
+    }
+
 
     public void ChangeWaypoint()
     {
@@ -131,6 +145,57 @@ public class Enemies : MonoBehaviour
         slowDuration = duration;
         slowTimer = 0f;
         speed = originalSpeed * slowMultiplier;         // Apply slow
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Poison")
+        {
+            if (!isPoisoned)
+            {
+                poisonTimes = other.gameObject.GetComponent<PoisonousScript>().poisonTimes;
+                poisonDamage = other.gameObject.GetComponent<PoisonousScript>().poisonDamage;
+                poisonWait = other.gameObject.GetComponent<PoisonousScript>().poisonWait;
+                StartCoroutine(PoisonTick());
+                isPoisoned = true;
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Poison")
+        {
+            if (!isPoisoned)
+            {
+                poisonTimes = collision.gameObject.GetComponent<PoisonousScript>().poisonTimes;
+                poisonDamage = collision.gameObject.GetComponent<PoisonousScript>().poisonDamage;
+                poisonWait = collision.gameObject.GetComponent<PoisonousScript>().poisonWait;
+                StartCoroutine(PoisonTick());
+                isPoisoned = true;
+            }
+        }
+    }
+
+    private IEnumerator PoisonTick()
+    {
+        yield return new WaitForSeconds(poisonWait);
+        TakeDamage(poisonDamage);
+        counter += 1;
+        PoisonValidate();
+    }
+
+    void PoisonValidate()
+    {
+        if (counter >= poisonTimes)
+        {
+            isPoisoned = false;
+        }
+        else if (counter < poisonTimes)
+        {
+            isPoisoned = true;
+            StartCoroutine(PoisonTick());
+        }
     }
 }
 

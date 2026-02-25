@@ -20,6 +20,7 @@ public class Building : MonoBehaviour
     
     public GameObject Tower1;               // tower prefab
     public GameObject SlowingTower;
+    public GameObject poisonTower;
 
     // currently active object being placed
     private PlaceObject objectToPlace;
@@ -57,6 +58,11 @@ public class Building : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N) && objectToPlace == null)
         {
             InitalizeWithObject(SlowingTower);
+        }
+
+        if (Input.GetKeyDown(KeyCode.M) && objectToPlace == null)
+        {
+            InitalizeWithObject(poisonTower);
         }
 
         // If not in build mode, skip the rest
