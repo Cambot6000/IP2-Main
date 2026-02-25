@@ -4,15 +4,15 @@ using System.Collections;
 public class Health : MonoBehaviour
 {
     public int maxHealth = 100;
-    private int currentHealth;
+    [SerializeField] private int currentHealth;
     private bool isDead = false;
 
     [Header("Poison Stuff")]
     public bool isPoisoned = false;
-    public int poisonTimes;
+    public int poisonTimes; //How many times the enemy will take poison damage before the effect wears off
     public int poisonDamage;
     private int counter;
-    public int poisonWait;
+    public int poisonWait; //How long it takes for the enemy to take damage from poison
 
     void Start()
     {
@@ -39,19 +39,22 @@ public class Health : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Poison")
+        if (other.gameObject.tag == "Poison")
         {
             if (!isPoisoned)
             {
+                poisonTimes = other.gameObject.GetComponent<PoisonousScript>().poisonTimes;
+                poisonDamage = other.gameObject.GetComponent<PoisonousScript>().poisonDamage;
+                poisonWait = other.gameObject.GetComponent<PoisonousScript>().poisonWait;
                 StartCoroutine(PoisonTick());
                 isPoisoned = true;
             }
         }
     }
 
-    private IEnumerator PoisonTick() //25 mins so far
+    private IEnumerator PoisonTick() //45 mins so far
     {
         yield return new WaitForSeconds(poisonWait);
         TakeDamage(poisonDamage);
