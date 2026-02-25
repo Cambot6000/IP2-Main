@@ -374,21 +374,45 @@ MonoBehaviour:
   waveTimmer: 0
   enemySpawnTimer: 0
   InWave: 0
-  pathWaypoint: [{x: -9.52, y: 0, z: 9.39}, {x: -8.55, y: 0, z: 9.39}, {x: -7.544, y: 0, z: 9.39},
-    {x: -7.544, y: 0, z: 8.606}, {x: -7.544, y: 0, z: 7.31}, {x: -6.476, y: 0, z: 7.31},
-    {x: -6.476, y: 0, z: 6.292}, {x: -6.476, y: 0, z: 5.4}, {x: -6.476, y: 0, z: 4.34},
-    {x: -5.58, y: 0, z: 4.34}, {x: -4.52, y: 0, z: 4.34}, {x: -3.51, y: 0, z: 4.34},
-    {x: -2.45, y: 0, z: 4.34}, {x: -1.41, y: 0, z: 4.34}, {x: -0.45, y: 0, z: 4.34},
-    {x: 0.56, y: 0, z: 4.34}, {x: 0.56, y: 0, z: 5.32}, {x: 1.35, y: 0, z: 5.32},
-    {x: 2.55, y: 0, z: 5.32}, {x: 3.47, y: 0, z: 5.32}, {x: 3.47, y: 0, z: 6.329},
-    {x: 4.509, y: 0, z: 6.329}, {x: 4.509, y: 0, z: 7.3}, {x: 4.509, y: 0, z: 8.32},
-    {x: 4.509, y: 0, z: 9.31}, {x: 5.5, y: 0, z: 9.31}, {x: 5.5, y: 0, z: 10.23},
-    {x: 5.5, y: 0, z: 11.34}, {x: 6.46, y: 0, z: 11.34}, {x: 6.46, y: 0, z: 12.33},
-    {x: 7.57, y: 0, z: 12.33}, {x: 8.49, y: 0, z: 13.31}, {x: 9.54, y: 0, z: 13.31},
-    {x: 10.59, y: 0, z: 13.31}]
-  enemies: [{fileID: 7172191893672849942, guid: 6a7a79f4213f7ce488b829c4c5604e2b, type: 3},
-    {fileID: 7760400414483964277, guid: d5d2302cef3d41040adcb2601f8ee16b, type: 3},
-    {fileID: 4317891218014450148, guid: fba13689844361b4eb1e3f3fab6530a2, type: 3}]
+  pathWaypoint:
+  - {x: -9.52, y: 0, z: 9.39}
+  - {x: -8.55, y: 0, z: 9.39}
+  - {x: -7.544, y: 0, z: 9.39}
+  - {x: -7.544, y: 0, z: 8.606}
+  - {x: -7.544, y: 0, z: 7.31}
+  - {x: -6.476, y: 0, z: 7.31}
+  - {x: -6.476, y: 0, z: 6.292}
+  - {x: -6.476, y: 0, z: 5.4}
+  - {x: -6.476, y: 0, z: 4.34}
+  - {x: -5.58, y: 0, z: 4.34}
+  - {x: -4.52, y: 0, z: 4.34}
+  - {x: -3.51, y: 0, z: 4.34}
+  - {x: -2.45, y: 0, z: 4.34}
+  - {x: -1.41, y: 0, z: 4.34}
+  - {x: -0.45, y: 0, z: 4.34}
+  - {x: 0.56, y: 0, z: 4.34}
+  - {x: 0.56, y: 0, z: 5.32}
+  - {x: 1.35, y: 0, z: 5.32}
+  - {x: 2.55, y: 0, z: 5.32}
+  - {x: 3.47, y: 0, z: 5.32}
+  - {x: 3.47, y: 0, z: 6.329}
+  - {x: 4.509, y: 0, z: 6.329}
+  - {x: 4.509, y: 0, z: 7.3}
+  - {x: 4.509, y: 0, z: 8.32}
+  - {x: 4.509, y: 0, z: 9.31}
+  - {x: 5.5, y: 0, z: 9.31}
+  - {x: 5.5, y: 0, z: 10.23}
+  - {x: 5.5, y: 0, z: 11.34}
+  - {x: 6.46, y: 0, z: 11.34}
+  - {x: 6.46, y: 0, z: 12.33}
+  - {x: 7.57, y: 0, z: 12.33}
+  - {x: 8.49, y: 0, z: 13.31}
+  - {x: 9.54, y: 0, z: 13.31}
+  - {x: 10.59, y: 0, z: 13.31}
+  enemies:
+  - {fileID: 7172191893672849942, guid: 6a7a79f4213f7ce488b829c4c5604e2b, type: 3}
+  - {fileID: 7760400414483964277, guid: d5d2302cef3d41040adcb2601f8ee16b, type: 3}
+  - {fileID: 4317891218014450148, guid: fba13689844361b4eb1e3f3fab6530a2, type: 3}
 --- !u!65 &196500139
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1162,6 +1186,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 81784526}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &799681215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 891594839903357889, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+  m_PrefabInstance: {fileID: 6080908664074943240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &799839212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1408,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830164557}
   m_CullTransparentMesh: 1
+--- !u!114 &863418406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 652538982818590533, guid: a3d3902df0a4dad40a07f3c029d4e5fa, type: 3}
+  m_PrefabInstance: {fileID: 1188840433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfe3c26a8186314598cf85957a6dacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &931207736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,17 +1555,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931207736}
   m_CullTransparentMesh: 1
---- !u!114 &863418406 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 652538982818590533, guid: a3d3902df0a4dad40a07f3c029d4e5fa, type: 3}
-  m_PrefabInstance: {fileID: 1188840433}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cfe3c26a8186314598cf85957a6dacc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1100646028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,10 +1807,18 @@ PrefabInstance:
       propertyPath: icon
       value: 
       objectReference: {fileID: 21300000, guid: b18ed51f6e8f4e746b2e3eaacea66436, type: 3}
+    - target: {fileID: 1692677205604849645, guid: a3d3902df0a4dad40a07f3c029d4e5fa, type: 3}
+      propertyPath: itemName
+      value: Basic Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 2446870045834687131, guid: a3d3902df0a4dad40a07f3c029d4e5fa, type: 3}
       propertyPath: icon
       value: 
       objectReference: {fileID: 21300000, guid: cce70732a10a63e40aa8c7c8abddc5d3, type: 3}
+    - target: {fileID: 2446870045834687131, guid: a3d3902df0a4dad40a07f3c029d4e5fa, type: 3}
+      propertyPath: itemName
+      value: Slowing Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 3046727890258599284, guid: a3d3902df0a4dad40a07f3c029d4e5fa, type: 3}
       propertyPath: m_Name
       value: TurretRoot
@@ -1819,15 +1856,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6367375824494804155, guid: a3d3902df0a4dad40a07f3c029d4e5fa, type: 3}
-      propertyPath: buttons.Array.data[0]
+      propertyPath: 'buttons.Array.data[0]'
       value: 
       objectReference: {fileID: 1522450659}
     - target: {fileID: 6367375824494804155, guid: a3d3902df0a4dad40a07f3c029d4e5fa, type: 3}
-      propertyPath: buttons.Array.data[1]
+      propertyPath: 'buttons.Array.data[1]'
       value: 
       objectReference: {fileID: 1561955245}
     - target: {fileID: 6367375824494804155, guid: a3d3902df0a4dad40a07f3c029d4e5fa, type: 3}
-      propertyPath: buttons.Array.data[2]
+      propertyPath: 'buttons.Array.data[2]'
       value: 
       objectReference: {fileID: 490601008}
     - target: {fileID: 6472905427226910815, guid: a3d3902df0a4dad40a07f3c029d4e5fa, type: 3}
@@ -2229,8 +2266,7 @@ MonoBehaviour:
   MainTilemap: {fileID: 1461604367}
   greenTile: {fileID: 11400000, guid: e15e80345d637114e8bea77ea1072b63, type: 2}
   Tower1: {fileID: 1823924507}
-  SlowingTower: {fileID: 891594839903357889, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
-  Tower2: {fileID: 1823924507}
+  Tower2: {fileID: 799681215}
   Tower3: {fileID: 1823924507}
 --- !u!156049354 &1429140000
 Grid:
