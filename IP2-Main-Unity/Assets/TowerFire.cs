@@ -26,7 +26,6 @@ public class TowerFire : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
 
        
-        
 
         // basic circle setup
         lineRenderer.loop = true;
@@ -105,9 +104,9 @@ public class TowerFire : MonoBehaviour
             return;
 
         // simple direct damage for now
+        // planning on changing here for the projectiles
 
-
-        // swap this out later to add projectiles
+        
         target.health -= damage;
     }
 
