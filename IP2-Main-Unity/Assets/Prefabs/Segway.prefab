@@ -124,9 +124,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   speed: 0.6
+  damage: 5
   target: {x: 0, y: 0, z: 0}
   pathWaypoint: []
   waypointNumber: 0
+  isPoisoned: 0
+  poisonTimes: 0
+  poisonDamage: 0
+  poisonWait: 0
 --- !u!114 &-1922041092425223875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,3 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  currentHealth: 0
