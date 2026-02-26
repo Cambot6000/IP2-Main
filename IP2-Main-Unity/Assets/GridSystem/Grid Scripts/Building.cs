@@ -1,5 +1,9 @@
+//last edited 25/02/2026
+//documentation and comments needed
+
 using UnityEngine;
-using UnityEngine.Tilemaps;
+using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps; //tile map package
 
 public class Building : MonoBehaviour
 {
@@ -7,22 +11,32 @@ public class Building : MonoBehaviour
     public static Building current;
 
     public Transform player;
-    public PlayerControls controls;
+    private PlayerControls controls;
     public float placeDistance = 1f;         // how far in front of player to place preview
     public GridLayout gridSize;             // reference to the grid layout
     private Grid grid;                      // cached grid component
+    public bool wheelOpen;
 
     // main tile map
     public Tilemap MainTilemap;             // tracks which cells are occupied
     public TileBase greenTile;              // tile used to mark taken cells
 
-    // towers (later: array)
+    // Tower Prefabs
+    [Header("Tower Prefabs")]
+    public GameObject Tower1; 
+    public GameObject Tower2;
+    public GameObject Tower3;
+    //etc...
     
-    public GameObject Tower1;               // tower prefab
+                  // tower prefab
     public GameObject SlowingTower;
+    public GameObject poisonTower;
 
     // currently active object being placed
     private PlaceObject objectToPlace;
+
+    //////// Grid Building System ////////
+    #region GridBuilding System;
 
     private void Awake()
     {
@@ -32,7 +46,7 @@ public class Building : MonoBehaviour
     }
     
     
-    //controls 
+    //controler setup
         private void OnEnable()
         {
             controls.Enable();
@@ -42,21 +56,27 @@ public class Building : MonoBehaviour
         {
             controls.Disable();
         }
-
+        
     private void Update()
     {
-        
-        //set to "B" but for testing
-        // Enter build mode with Tower1
-        if (Input.GetKeyDown(KeyCode.B) && objectToPlace == null)
-        {
-            InitalizeWithObject(Tower1);
-        }
 
-        // set to "N" but for testing
-        if (Input.GetKeyDown(KeyCode.N) && objectToPlace == null)
+        if (wheelOpen)
+            return;
+        
+       // // //turret wheel ui intergration// // //
+        // Enter build mode 
+        //whatever the wheel has set as the new turretID will decide that prefab is placed, basicly the same as the old system but now allows UI wheel
+        bool enterBuild = Keyboard.current != null && Keyboard.current.bKey.wasPressedThisFrame; // //if "B" key was pressed this frame "B" is still for debug
+
+        if (enterBuild)
         {
-            InitalizeWithObject(SlowingTower);
+            StartBuildModeFromWheel(TurretWheelController.turretID);
+        }
+        
+
+        if (Input.GetKeyDown(KeyCode.M) && objectToPlace == null)
+        {
+            InitalizeWithObject(poisonTower);
         }
 
         // If not in build mode, skip the rest
@@ -68,7 +88,7 @@ public class Building : MonoBehaviour
         
         
         //controler support
-    // controler & keyboard support
+        // controler & keyboard support
         bool place  = controls.Player.Place.triggered; 
         bool cancel = controls.Player.Cancel.triggered;
 
@@ -144,13 +164,23 @@ public class Building : MonoBehaviour
         TileBase[] baseArray = GetTilesBlock(area, MainTilemap);
 
         // If any tile in area is already greenTile, cannot place
+        
+         //debug
+        
+        
+        
         foreach (var b in baseArray)
         {
             if (b == greenTile)
             {
                 return false;
             }
+            
+            int i = 0;
+            i++; //debug
+            Debug.Log($"CanBePlaced cell {i}: tile={(b != null ? b.name : "null")}, isGreen={(b == greenTile)}"); //debug
         }
+        
 
         return true;
     }
@@ -158,7 +188,7 @@ public class Building : MonoBehaviour
     public void TakeArea(Vector3Int start, Vector3Int size)
     {
         int maxX = start.x + size.x - 1;
-        int maxY = start.y + size.y - 1;
+        int maxY = start.y + size.y - 1; //this is the only way i could make the "cube" fit extactly in the cell if anyone wants to try messing with the scaling feel free!
 
         MainTilemap.BoxFill(
             start,
@@ -169,4 +199,64 @@ public class Building : MonoBehaviour
             maxY
         );
     }
+    #endregion
+    
+    //////// Ui Wheel Intergration ////////
+    #region Ui Wheel Intergration
+
+
+    public void StartBuildModeFromWheel(int id) //instead of using B for build mode 
+    {
+        if (objectToPlace != null)
+        {
+            return;
+        }
+        GameObject prefab = GetTurretPrefabFromId(id);
+
+        if (prefab != null)
+        {
+            InitalizeWithObject(prefab);
+        }
+        else
+        {
+            Debug.Log("! Debug ! --> No Turret Selected");
+        }
+    }
+    
+    public enum TurretType //this allows the ui wheel to ask what turret type is selected
+    {
+        None = 0,
+        Turret1 = 1,
+        Turret2 = 2,
+        Turret3 = 3,
+       //etc....
+       
+    }
+    
+    public GameObject GetTurretPrefabFromId(int id) //return the prefab for the turret type
+    {
+        TurretType type = (TurretType)id;
+
+        switch (type)
+        {
+            case TurretType.Turret1:
+                return Tower1;
+            case TurretType.Turret2:
+                return Tower2;
+            case TurretType.Turret3:
+                return Tower3;
+            //etc..
+            default:
+                return null;
+        }
+    }
+
+    public void SetWheelOpen(bool open)
+    {
+        wheelOpen = open;
+    }
+    
+    
+    #endregion
+    
 }
