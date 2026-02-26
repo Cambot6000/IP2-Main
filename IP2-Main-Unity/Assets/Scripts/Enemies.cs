@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    public float health = 0;
+    public float health = 100;
     public float speed = 100;
     public int damage = 5;
     public Vector3 target;
