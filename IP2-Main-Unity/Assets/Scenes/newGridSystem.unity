@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536be6e681ea26d4b8b826eab842f094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chosenDifficulty: 0
+  chosenDifficulty: 2
   numberOfEnemies: 0
   hopperAmount: 0
   hopperCounter: 0

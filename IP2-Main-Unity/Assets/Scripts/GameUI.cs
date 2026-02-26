@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
@@ -29,7 +30,7 @@ public class GameUI : MonoBehaviour
 
         if(health <= 0)
         {
-            print("GAMEOVER!!");
+            SceneManager.LoadScene("GameOver");
         }
     }
 

@@ -156,7 +156,7 @@ public class EnemiesSpawner : MonoBehaviour
         }
         else if (chosenDifficulty == Difficulty.Hard)
         {
-            hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.15f);
+            //hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.15f);
 
             segwayAmount = Mathf.RoundToInt(numberOfEnemies * 0.35f);
 

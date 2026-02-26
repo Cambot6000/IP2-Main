@@ -277,7 +277,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.347994, y: 6.347994, z: 6.347994}
+  m_LocalScale: {x: 6.439335, y: 6.439335, z: 6.439335}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4730452861851023306}
@@ -298,9 +298,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   speed: 0.45
+  damage: 5
   target: {x: 0, y: 0, z: 0}
   pathWaypoint: []
   waypointNumber: 0
+  isPoisoned: 0
+  poisonTimes: 0
+  poisonDamage: 0
+  poisonWait: 0
 --- !u!114 &8865598008393576152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +320,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
-  isPoisoned: 0
-  poisonTimes: 0
-  poisonDamage: 0
-  poisonWait: 0
