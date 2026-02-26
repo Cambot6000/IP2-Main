@@ -115,6 +115,7 @@ public class EnemiesSpawner : MonoBehaviour
             if (hopperCounter < hopperAmount)
             {
                 Instantiate(enemies[0], transform.position, transform.rotation);
+                print("weweqw");
                 hopperCounter++;
             }
             else if (segwayCounter < segwayAmount)
