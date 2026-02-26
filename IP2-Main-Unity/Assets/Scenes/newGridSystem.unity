@@ -2266,13 +2266,10 @@ MonoBehaviour:
   MainTilemap: {fileID: 1461604367}
   greenTile: {fileID: 11400000, guid: e15e80345d637114e8bea77ea1072b63, type: 2}
   Tower1: {fileID: 1823924507}
-<<<<<<< HEAD
   SlowingTower: {fileID: 891594839903357889, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
   poisonTower: {fileID: 891594839903357889, guid: 77c847a9780cbc245a5201cfa2395ea8, type: 3}
-=======
   Tower2: {fileID: 799681215}
   Tower3: {fileID: 1823924507}
->>>>>>> 8460b53278c54014323b8f8341e2c82427da18c5
 --- !u!156049354 &1429140000
 Grid:
   m_ObjectHideFlags: 0

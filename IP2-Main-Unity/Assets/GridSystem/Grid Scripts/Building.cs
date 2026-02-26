@@ -28,18 +28,15 @@ public class Building : MonoBehaviour
     public GameObject Tower3;
     //etc...
     
-<<<<<<< HEAD
-    public GameObject Tower1;               // tower prefab
+                  // tower prefab
     public GameObject SlowingTower;
     public GameObject poisonTower;
 
-=======
->>>>>>> 8460b53278c54014323b8f8341e2c82427da18c5
     // currently active object being placed
     private PlaceObject objectToPlace;
 
     //////// Grid Building System ////////
-    #region GridBuilding System
+    #region GridBuilding System;
 
     private void Awake()
     {
