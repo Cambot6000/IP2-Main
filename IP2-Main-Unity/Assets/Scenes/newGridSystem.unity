@@ -411,6 +411,10 @@ MonoBehaviour:
   - {x: 10.59, y: 0, z: 13.31}
   enemies:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  - {fileID: 6337033399367963079, guid: 13d21c8238b3e8342a1335d2c521fb3a, type: 3}
+>>>>>>> Stashed changes
 =======
   - {fileID: 6337033399367963079, guid: 13d21c8238b3e8342a1335d2c521fb3a, type: 3}
 >>>>>>> Stashed changes
