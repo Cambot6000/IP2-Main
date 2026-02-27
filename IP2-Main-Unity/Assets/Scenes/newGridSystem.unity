@@ -410,7 +410,6 @@ MonoBehaviour:
   - {x: 9.54, y: 0, z: 13.31}
   - {x: 10.59, y: 0, z: 13.31}
   enemies:
-  - {fileID: 299995934846384673, guid: 6a7a79f4213f7ce488b829c4c5604e2b, type: 3}
   - {fileID: 7760400414483964277, guid: d5d2302cef3d41040adcb2601f8ee16b, type: 3}
   - {fileID: 4317891218014450148, guid: fba13689844361b4eb1e3f3fab6530a2, type: 3}
 --- !u!65 &196500139

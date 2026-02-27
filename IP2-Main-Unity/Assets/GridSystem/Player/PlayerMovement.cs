@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private PlayerControls controls;
     private Vector2 moveInput;
     //private vector2 directionInput;
+
+    public static event Action<int> OnDoSomething;
     
     private bool canMove = true; //lock the player when ui is open, or any situation you want to stop the player from moving
 
@@ -27,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
         };
         controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
     }
-
 
     private void OnEnable()
     {

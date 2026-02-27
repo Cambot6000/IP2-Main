@@ -25,6 +25,7 @@ public class EnemiesSpawner : MonoBehaviour
     public float enemySpawnTimerMax;
     public float waitTimerMax;
 
+    [Tooltip("Delay between rounds")]
     public float waitTimer;
     public float waveTimmer;
     public float enemySpawnTimer;
@@ -94,7 +95,7 @@ public class EnemiesSpawner : MonoBehaviour
             
         }
         if (waitTimer > waitTimerMax)
-            {
+        {
 
 
                 waveNumber++;
@@ -103,7 +104,7 @@ public class EnemiesSpawner : MonoBehaviour
                 waitTimer = 0;
 
 
-            }
+        }
     }
 
 
