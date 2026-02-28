@@ -110,13 +110,13 @@ public class EnemiesSpawner : MonoBehaviour
 
 
     public void SpawnEnemies()
-    {
+    {print("weweqw");
         if (enemySpawnTimer > enemySpawnTimerMax && InWave )
         {
             if (hopperCounter < hopperAmount)
             {
                 Instantiate(enemies[0], transform.position, transform.rotation);
-                print("weweqw");
+                
                 hopperCounter++;
             }
             else if (segwayCounter < segwayAmount)
