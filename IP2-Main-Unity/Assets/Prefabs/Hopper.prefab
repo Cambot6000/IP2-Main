@@ -370,7 +370,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   speed: 0.45
+=======
+  speed: 0.4
+>>>>>>> Stashed changes
 =======
   speed: 0.4
 >>>>>>> Stashed changes
