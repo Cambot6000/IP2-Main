@@ -138,7 +138,7 @@ public class EnemiesSpawner : MonoBehaviour
 
         if (chosenDifficulty == Difficulty.Easy)
         {
-            //hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.5f);
+            hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.5f);
 
             segwayAmount = Mathf.RoundToInt(numberOfEnemies * 0.3f);
 
@@ -147,7 +147,7 @@ public class EnemiesSpawner : MonoBehaviour
         }
         else if (chosenDifficulty == Difficulty.Medium)
         {
-           //hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.35f);
+           hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.35f);
 
             segwayAmount = Mathf.RoundToInt(numberOfEnemies * 0.4f);
 
@@ -156,7 +156,7 @@ public class EnemiesSpawner : MonoBehaviour
         }
         else if (chosenDifficulty == Difficulty.Hard)
         {
-            //hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.15f);
+            hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.15f);
 
             segwayAmount = Mathf.RoundToInt(numberOfEnemies * 0.35f);
 
