@@ -29,8 +29,8 @@ public class Building : MonoBehaviour
     //etc...
     
                   // tower prefab
-    public GameObject SlowingTower;
-    public GameObject poisonTower;
+    //public GameObject SlowingTower;
+    //public GameObject poisonTower;
 
     // currently active object being placed
     private PlaceObject objectToPlace;
@@ -73,11 +73,12 @@ public class Building : MonoBehaviour
             StartBuildModeFromWheel(TurretWheelController.turretID);
         }
         
-
+        /*
         if (Input.GetKeyDown(KeyCode.M) && objectToPlace == null)
         {
             InitalizeWithObject(poisonTower);
         }
+        */
 
         // If not in build mode, skip the rest
         if (objectToPlace == null)

@@ -320,8 +320,11 @@ MonoBehaviour:
   waveNumber: 0
   waveTimmerMax: 0
   enemySpawnTimerMax: 0
+  waitTimerMax: 0
+  waitTimer: 0
   waveTimmer: 0
   enemySpawnTimer: 0
+  InWave: 0
   pathWaypoint: []
   enemies: []
 --- !u!65 &196500139
@@ -1752,8 +1755,8 @@ MonoBehaviour:
   MainTilemap: {fileID: 1461604367}
   greenTile: {fileID: 11400000, guid: e15e80345d637114e8bea77ea1072b63, type: 2}
   Tower1: {fileID: 1823924507}
-  Tower2: {fileID: 1823924507}
-  Tower3: {fileID: 1823924507}
+  Tower2: {fileID: 891594839903357889, guid: 77c847a9780cbc245a5201cfa2395ea8, type: 3}
+  Tower3: {fileID: 891594839903357889, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
 --- !u!156049354 &1429140000
 Grid:
   m_ObjectHideFlags: 0
@@ -2639,6 +2642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08a530c840b2c340a9b196a487ebb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerCost: 250
 --- !u!1 &1841377725
 GameObject:
   m_ObjectHideFlags: 0
