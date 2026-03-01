@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6980403074199633380}
   - component: {fileID: 3339022696109053862}
   - component: {fileID: 8653788395767263232}
+  - component: {fileID: 7925754918231271107}
   m_Layer: 0
   m_Name: PoisonTower
   m_TagString: Untagged
@@ -145,4 +146,108 @@ MonoBehaviour:
   projectilePrefab: {fileID: 452867103747816190, guid: 5a8f92e9ef8ecd943be3bafd641582cf, type: 3}
   projectileSpeed: 10
   projectileLifeTime: 5
+<<<<<<< Updated upstream
   firePoint: {fileID: 0}
+=======
+  firePoint: {fileID: 2285945643354810597}
+--- !u!65 &7925754918231271107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891594839903357889}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2635223, y: 0.5781549, z: 0.5779568}
+  m_Center: {x: -0.33888704, y: -0.033851802, z: 0.007880256}
+--- !u!1001 &610416448044054188
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4465738482377626033}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 9.335
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.335
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9.335
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+      propertyPath: m_Name
+      value: Poison Turret
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+--- !u!4 &1149011619784020295 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+  m_PrefabInstance: {fileID: 610416448044054188}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2285945643354810597 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7511461062680814007, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+  m_PrefabInstance: {fileID: 610416448044054188}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes
