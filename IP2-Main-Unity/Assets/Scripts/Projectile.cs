@@ -47,8 +47,8 @@ public class Projectile : MonoBehaviour
                 if (poison && !slowingShot)
                 {
                     Instantiate(poisonPool, new Vector3
-                        (target.pathWaypoint[target.waypointNumber].x, 
-                        -1.64f, 
+                        (target.pathWaypoint[target.waypointNumber].x,
+                        target.pathWaypoint[target.waypointNumber].y, 
                         target.pathWaypoint[target.waypointNumber].z), 
                         Quaternion.identity);
                 }
