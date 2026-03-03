@@ -326,24 +326,35 @@ MonoBehaviour:
   enemySpawnTimer: 0
   InWave: 0
   pathWaypoint:
+  - {x: -9.37, y: 0, z: 9.58}
+  - {x: -8.37, y: 0, z: 9.58}
   - {x: -7.37, y: 0, z: 9.58}
-  - {x: -7.37, y: 0, z: 5.52}
-  - {x: -1.36, y: 0, z: 5.52}
-  - {x: -1.36, y: 0, z: 6.49}
-  - {x: 0.59, y: 0, z: 6.49}
-  - {x: 0.59, y: 0, z: 7.57}
-  - {x: 1.54, y: 0, z: 7.57}
-  - {x: 1.54, y: 0, z: 8.46}
-  - {x: 2.57, y: 0, z: 8.46}
-  - {x: 2.57, y: 0, z: 9.53}
-  - {x: 3.57, y: 0, z: 9.53}
-  - {x: 3.57, y: 0, z: 10.47}
-  - {x: 5.56, y: 0, z: 10.47}
-  - {x: 5.56, y: 0, z: 12.47}
-  - {x: 6.61, y: 0, z: 12.47}
-  - {x: 6.61, y: 0, z: 13.51}
-  - {x: 7.6, y: 0, z: 13.51}
-  - {x: 8.72, y: 0, z: 13.51}
+  - {x: -7.37, y: 0, z: 8.58}
+  - {x: -7.37, y: 0, z: 7.58}
+  - {x: -7.37, y: 0, z: 6.58}
+  - {x: -6.37, y: 0, z: 5.58}
+  - {x: -5.37, y: 0, z: 5.58}
+  - {x: -4.37, y: 0, z: 5.58}
+  - {x: -3.37, y: 0, z: 5.58}
+  - {x: -2.37, y: 0, z: 5.58}
+  - {x: -1.37, y: 0, z: 5.58}
+  - {x: -1.37, y: 0, z: 6.58}
+  - {x: 0.37, y: 0, z: 6.58}
+  - {x: 0.37, y: 0, z: 7.58}
+  - {x: 1.37, y: 0, z: 7.58}
+  - {x: 1.37, y: 0, z: 8.58}
+  - {x: 2.37, y: 0, z: 8.58}
+  - {x: 2.37, y: 0, z: 9.58}
+  - {x: 3.37, y: 0, z: 9.58}
+  - {x: 3.37, y: 0, z: 10.58}
+  - {x: 4.37, y: 0, z: 10.58}
+  - {x: 5.37, y: 0, z: 10.58}
+  - {x: 5.37, y: 0, z: 11.58}
+  - {x: 5.37, y: 0, z: 12.58}
+  - {x: 6.37, y: 0, z: 12.58}
+  - {x: 6.37, y: 0, z: 13.58}
+  - {x: 7.37, y: 0, z: 13.58}
+  - {x: 8.37, y: 0, z: 13.58}
   enemies:
   - {fileID: 6337033399367963079, guid: 13d21c8238b3e8342a1335d2c521fb3a, type: 3}
   - {fileID: 7760400414483964277, guid: d5d2302cef3d41040adcb2601f8ee16b, type: 3}
@@ -431,7 +442,7 @@ Transform:
   m_GameObject: {fileID: 196500137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.48, y: 0.65, z: 9.56}
+  m_LocalPosition: {x: -10.37, y: 0.65, z: 9.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3084,7 +3095,7 @@ Transform:
   m_GameObject: {fileID: 1783031695}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.38, y: -1.73, z: 13.32}
+  m_LocalPosition: {x: -9.37, y: 0, z: 9.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3390,7 +3401,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
