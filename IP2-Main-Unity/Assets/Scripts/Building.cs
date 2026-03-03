@@ -26,6 +26,7 @@ public class Building : MonoBehaviour
     public GameObject Tower1; 
     public GameObject Tower2;
     public GameObject Tower3;
+    public GameObject Tower4;
     //etc...
     
                   // tower prefab
