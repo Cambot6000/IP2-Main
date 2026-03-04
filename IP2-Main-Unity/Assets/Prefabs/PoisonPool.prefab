@@ -109,9 +109,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5000001
-  m_Height: 47.307316
+  m_Height: 37.21927
   m_Direction: 1
-  m_Center: {x: 0.00000004396509, y: 10.913108, z: -0.00000008793018}
+  m_Center: {x: 0.00000004396509, y: 5.869063, z: -0.00000008793018}
 --- !u!54 &6867068594460067004
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,4 +155,4 @@ MonoBehaviour:
   poisonDamage: 10
   poisonWait: 2
   pool: 1
-  lifeSpan: 2
+  lifeSpan: 10
