@@ -2106,6 +2106,7 @@ MonoBehaviour:
   Tower1: {fileID: 1823924507}
   Tower2: {fileID: 891594839903357889, guid: 77c847a9780cbc245a5201cfa2395ea8, type: 3}
   Tower3: {fileID: 891594839903357889, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+  Tower4: {fileID: 0}
 --- !u!156049354 &1429140000
 Grid:
   m_ObjectHideFlags: 0
@@ -2916,7 +2917,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1747584550}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1747584552}
+        m_TargetAssemblyTypeName: ButtonHelper, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1747584550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2967,7 +2980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c5042e3f0d934468cc51263ca1cacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Main Menu
+  sceneToLoad: MainMenu
 --- !u!1 &1767503658
 GameObject:
   m_ObjectHideFlags: 0
