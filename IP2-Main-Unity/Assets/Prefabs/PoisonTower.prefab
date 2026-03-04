@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 2.5
-  fireRate: 5
+  fireRate: 0.2
   damage: 5
   ringSegments: 64
   ringWidth: 0.05
