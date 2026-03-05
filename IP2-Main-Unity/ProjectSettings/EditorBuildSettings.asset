@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Pause Menu.unity
     guid: c337be7184e44c24eb7d062e01fe8458
   - enabled: 1
-    path: Assets/Backup.unity
+    path: Assets/Scenes/Game.unity
     guid: 27979af5ca426264888a17d9639196a5
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/DifficultyPicker.unity
+    guid: 06229e344ad02da499e497b2e1eb4e73
   - enabled: 0
     path: Assets/Scenes/Level_1.unity
     guid: a311d347075d2414b9bb2cb0aa2127df
