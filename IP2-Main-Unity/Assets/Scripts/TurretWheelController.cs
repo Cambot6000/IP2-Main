@@ -79,15 +79,6 @@ public class TurretWheelController : MonoBehaviour
                 case 5:
                     Debug.Log("Turret 5 selected");
                     break;
-                case 6:
-                    Debug.Log("Turret 6 selected");
-                    break;
-                case 7:
-                    Debug.Log("Turret 7 selected");
-                    break;
-                case 8:
-                    Debug.Log("Turret 8 selected");
-                    break;
             }
 
             return;
