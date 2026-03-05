@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 7162275341852037388}
   - component: {fileID: -1090497606818253054}
   - component: {fileID: -4375506862528278542}
+  - component: {fileID: 2516546340283754393}
   m_Layer: 0
   m_Name: Hopper
   m_TagString: Untagged
@@ -256,6 +257,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+--- !u!136 &2516546340283754393
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337033399367963079}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05352006
+  m_Height: 0.19277033
+  m_Direction: 1
+  m_Center: {x: 0.08235499, y: -0.038121957, z: -0.084801316}
 --- !u!1 &7705172111061970863
 GameObject:
   m_ObjectHideFlags: 0
