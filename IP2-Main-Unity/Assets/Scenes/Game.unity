@@ -412,16 +412,7 @@ MonoBehaviour:
   - {fileID: 6337033399367963079, guid: 13d21c8238b3e8342a1335d2c521fb3a, type: 3}
   - {fileID: 7760400414483964277, guid: d5d2302cef3d41040adcb2601f8ee16b, type: 3}
   - {fileID: 4317891218014450148, guid: fba13689844361b4eb1e3f3fab6530a2, type: 3}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 --- !u!65 &196500139
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2839,7 +2830,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes:IP2-Main-Unity/Assets/Scenes/Game.unity
+
 --- !u!1 &1823924507 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1331161078107804044, guid: 4992060fda6a73343b8e1e9081b582a0, type: 3}
@@ -3230,17 +3221,4 @@ SceneRoots:
   - {fileID: 81784526}
   - {fileID: 196500142}
   - {fileID: 1468694128}
-<<<<<<< Updated upstream
-=======
-  - {fileID: 1783031698}
-  - {fileID: 82338428}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
