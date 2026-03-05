@@ -57,7 +57,7 @@ public class TowerFire : MonoBehaviour
         if (placeObject != null)
             lineRenderer.enabled = showRingWhilePlacing || placeObject.Placed;
 
-        // don’t do anything until the tower is actually placed
+        // donï¿½t do anything until the tower is actually placed
         if (placeObject != null && !placeObject.Placed)
             return;
 
@@ -154,8 +154,8 @@ public class TowerFire : MonoBehaviour
             float x = Mathf.Cos(angle) * range;
             float z = Mathf.Sin(angle) * range;
 
-            // tiny Y offset so it doesn’t tweak out
-            lineRenderer.SetPosition(i, new Vector3(x, 0.05f, z));
+            // tiny Y offset so it doesnï¿½t tweak out
+            lineRenderer.SetPosition(i, new Vector3(x, 1f, z)); //2 offset so it doesnt go below grid (not sure why they grid is overlapping it when its less than 2)
         }
     }
 
