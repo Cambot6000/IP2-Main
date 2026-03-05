@@ -7,7 +7,9 @@ public class TurretWheelButtonController : MonoBehaviour
     public int ID;
     private Animator anim;
     public string itemName;
+    public string itemDesciption;
     public TextMeshProUGUI itemText;
+    public TextMeshProUGUI itemDesciptionText;
     public Image selectedItem;
     private bool selected = false;
     public Sprite icon;
@@ -27,6 +29,7 @@ public class TurretWheelButtonController : MonoBehaviour
             // keep selected button’s icon and name in the UI
             selectedItem.sprite = icon;
             itemText.text = itemName;
+            itemDesciptionText.text = itemDesciption;
         }
     }
 
@@ -61,11 +64,13 @@ public class TurretWheelButtonController : MonoBehaviour
     {
         anim.SetBool("Hovered", true);
         itemText.text = itemName;
+        itemDesciptionText.text = itemDesciption;
     }
 
     public void HoverExit()
     {
         anim.SetBool("Hovered", false);
         itemText.text = "";
+        itemDesciptionText.text = "";
     }
 }
