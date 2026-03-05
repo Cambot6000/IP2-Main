@@ -67,10 +67,7 @@ MonoBehaviour:
   ringWidth: 0.05
   ringColor: {r: 1, g: 0.9, b: 0.2, a: 0.6}
   showRingWhilePlacing: 1
-  aoeParticleEffect: {fileID: 0}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  aoeParticleEffect: {fileID: 7637825733791034040, guid: afbc7b16823ab1440bde028acd049ab7, type: 3}
   projectilePrefab: {fileID: 0}
   projectileSpeed: 10
   projectileLifeTime: 5
