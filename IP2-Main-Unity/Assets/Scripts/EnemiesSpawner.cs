@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class EnemiesSpawner : MonoBehaviour
 {
-    public enum Difficulty { Easy, Medium, Hard }
+    
     [Header("Type of Enemies")]
-    public Difficulty chosenDifficulty = Difficulty.Easy;
+    public GameSettings.Difficulty chosenDifficulty = GameSettings.chosenDifficulty;
     public int numberOfEnemies;
     public int hopperAmount;
     public int hopperCounter;
@@ -51,6 +51,8 @@ public class EnemiesSpawner : MonoBehaviour
                  pathWaypoint[i].z
                 );
         }
+
+        chosenDifficulty = GameSettings.chosenDifficulty;
     }
 
     private void Update()
@@ -138,7 +140,7 @@ public class EnemiesSpawner : MonoBehaviour
 
         numberOfEnemies = Mathf.RoundToInt(waveTimmerMax / enemySpawnTimerMax);
 
-        if (chosenDifficulty == Difficulty.Easy)
+        if (chosenDifficulty == GameSettings.Difficulty.Easy)
         {
             hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.5f);
 
@@ -147,7 +149,7 @@ public class EnemiesSpawner : MonoBehaviour
             flyingSauserAmount = Mathf.RoundToInt(numberOfEnemies * 0.2f);
 
         }
-        else if (chosenDifficulty == Difficulty.Medium)
+        else if (chosenDifficulty == GameSettings.Difficulty.Medium)
         {
            hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.35f);
 
@@ -156,7 +158,7 @@ public class EnemiesSpawner : MonoBehaviour
             flyingSauserAmount = Mathf.RoundToInt(numberOfEnemies * 0.25f);
 
         }
-        else if (chosenDifficulty == Difficulty.Hard)
+        else if (chosenDifficulty == GameSettings.Difficulty.Hard)
         {
             hopperAmount = Mathf.RoundToInt(numberOfEnemies * 0.15f);
 

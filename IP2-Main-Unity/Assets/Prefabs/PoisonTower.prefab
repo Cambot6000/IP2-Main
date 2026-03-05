@@ -9,8 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4465738482377626033}
+  - component: {fileID: 5611550078559763886}
+  - component: {fileID: 6429503907561200050}
+  - component: {fileID: 6980403074199633380}
   - component: {fileID: 3339022696109053862}
   - component: {fileID: 8653788395767263232}
+  - component: {fileID: 7925754918231271107}
   m_Layer: 0
   m_Name: PoisonTower
   m_TagString: Untagged
@@ -27,13 +31,86 @@ Transform:
   m_GameObject: {fileID: 891594839903357889}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1149011619784020295}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5611550078559763886
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891594839903357889}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6429503907561200050
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891594839903357889}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 6bcbee3f51267814f92eaca20e563c73, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6980403074199633380
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891594839903357889}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3339022696109053862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,17 +136,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6138e5c25c7dc3d43bc800ada299805d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 2.5
-  fireRate: 0.2
-  damage: 5
+  range: 3.5
+  fireRate: 0.5
+  damage: 2
   ringSegments: 64
   ringWidth: 0.05
   ringColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0.6}
   showRingWhilePlacing: 1
   projectilePrefab: {fileID: 452867103747816190, guid: 5a8f92e9ef8ecd943be3bafd641582cf, type: 3}
-  projectileSpeed: 8
+  projectileSpeed: 10
   projectileLifeTime: 5
+<<<<<<< Updated upstream
   firePoint: {fileID: 0}
+=======
+  firePoint: {fileID: 2285945643354810597}
+--- !u!65 &7925754918231271107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891594839903357889}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2635223, y: 0.5781549, z: 0.5779568}
+  m_Center: {x: -0.33888704, y: -0.033851802, z: 0.007880256}
 --- !u!1001 &610416448044054188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,27 +181,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20.281221
+      value: 9.335
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20.281221
+      value: 9.335
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20.281221
+      value: 9.335
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3908
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.013546
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
       propertyPath: m_LocalRotation.w
@@ -144,3 +245,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
   m_PrefabInstance: {fileID: 610416448044054188}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2285945643354810597 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7511461062680814007, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+  m_PrefabInstance: {fileID: 610416448044054188}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes

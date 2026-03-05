@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Pause Menu.unity
     guid: c337be7184e44c24eb7d062e01fe8458
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Backup.unity
     guid: 27979af5ca426264888a17d9639196a5
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
