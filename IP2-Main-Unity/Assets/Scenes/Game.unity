@@ -2338,6 +2338,7 @@ MonoBehaviour:
   Tower1: {fileID: 1823924507}
   Tower2: {fileID: 1327775405}
   Tower3: {fileID: 891594839903357889, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+  Tower4: {fileID: 4015814561450557096, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
   Tower4: {fileID: 0}
 --- !u!156049354 &1429140000
 Grid:

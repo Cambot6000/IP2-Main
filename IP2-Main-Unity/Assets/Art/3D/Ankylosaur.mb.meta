@@ -3,7 +3,32 @@ guid: 4e738bfd5f04def4e84bd1c552c0c629
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Parasaurolophus1_collar
+    second: {fileID: 9042272958893013123, guid: 644dc3b3c7c1ddf449acde83ac306208, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Parasaurolophus_collar
+    second: {fileID: 9042272958893013123, guid: 644dc3b3c7c1ddf449acde83ac306208, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Parasaurolophus_helmett
+    second: {fileID: -7810318260049877264, guid: 644dc3b3c7c1ddf449acde83ac306208, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body1
+    second: {fileID: -9098550684491343547, guid: 644dc3b3c7c1ddf449acde83ac306208, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_2
+    second: {fileID: -1844892188287377774, guid: 644dc3b3c7c1ddf449acde83ac306208, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -33,7 +58,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 10
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -88,7 +113,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 10
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
