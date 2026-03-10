@@ -210,6 +210,7 @@ public class Building : MonoBehaviour
         Turret1 = 1,
         Turret2 = 2,
         Turret3 = 3,
+        Turret4 = 4,
        //etc....
        
     }

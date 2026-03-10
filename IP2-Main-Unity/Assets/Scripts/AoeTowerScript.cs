@@ -16,7 +16,6 @@ public class AoeTowerScript : MonoBehaviour
 
     [Header("Aoe Settings")]
     public ParticleSystem aoeParticleEffect;
-    public LayerMask enemyLayer;
 
     [Header("projectile")]
     public GameObject projectilePrefab;
@@ -64,7 +63,6 @@ public class AoeTowerScript : MonoBehaviour
 
         if (fireTimer >= interval)
         {
-            // Combined detection and firing for efficiency
             if (TryFireAoe())
             {
                 fireTimer = 0f;
@@ -74,7 +72,7 @@ public class AoeTowerScript : MonoBehaviour
 
     private bool TryFireAoe()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, range, enemyLayer);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
         bool hitAny = false;
 
         foreach (var hitCollider in hitColliders)
@@ -111,7 +109,7 @@ public class AoeTowerScript : MonoBehaviour
             float x = Mathf.Cos(angle) * range;
             float z = Mathf.Sin(angle) * range;
 
-            lineRenderer.SetPosition(i, new Vector3(x, 0.05f, z));
+            lineRenderer.SetPosition(i, new Vector3(x, 2f, z));
         }
     }
 

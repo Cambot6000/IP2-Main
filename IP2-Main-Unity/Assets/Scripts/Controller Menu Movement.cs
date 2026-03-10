@@ -13,6 +13,8 @@ public class ControllerMenuMovement : MonoBehaviour
     private float moveTimer;
     public float moveDelay = 0.2f; //Time between moves in seconds
 
+    public bool yAxis;
+
     public void OnMove(InputValue value)
     {
         inputDirection = value.Get<Vector2>();
@@ -44,23 +46,47 @@ public class ControllerMenuMovement : MonoBehaviour
             moveTimer -= Time.deltaTime;
         }
 
-        //Only move if the stick is pushed AND the timer is 0
-        if (moveTimer <= 0 && Mathf.Abs(inputDirection.y) > 0.5f)
-        {
-            //Reset the cooldown timer
-            moveTimer = moveDelay;
+        if (yAxis)
+        { 
+            //Only move if the stick is pushed AND the timer is 0
+            if (moveTimer <= 0 && Mathf.Abs(inputDirection.y) > 0.5f)
+            {
+                //Reset the cooldown timer
+                moveTimer = moveDelay;
 
-            //Move index of the array
-            //Up is positive Y axis but arrays so you need to subtract, and the opposite for down because it is negative so you need to add in the array
-            if (inputDirection.y > 0.5f) currentIndex--;
-            else if (inputDirection.y < -0.5f) currentIndex++;
+                //Move index of the array
+                //Up is positive Y axis but arrays so you need to subtract, and the opposite for down because it is negative so you need to add in the array
+                if (inputDirection.y > 0.5f) currentIndex--;
+                else if (inputDirection.y < -0.5f) currentIndex++;
 
-            //Loop the index
-            if (currentIndex >= buttons.Length) currentIndex = 0;
-            if (currentIndex < 0) currentIndex = buttons.Length - 1;
+                //Loop the index
+                if (currentIndex >= buttons.Length) currentIndex = 0;
+                if (currentIndex < 0) currentIndex = buttons.Length - 1;
 
-            UpdateButtonPos();
+                UpdateButtonPos();
+            }
         }
+        //This now makes it so that if buttons are placed horizontally, we can navigate through menus
+        else if (!yAxis)
+        {
+            //Only move if the stick is pushed AND the timer is 0
+            if (moveTimer <= 0 && Mathf.Abs(inputDirection.x) > 0.5f)
+            {
+                //Reset the cooldown timer
+                moveTimer = moveDelay;
+
+                //Move index of the array
+                if (inputDirection.x > 0.5f) currentIndex--;
+                else if (inputDirection.x < -0.5f) currentIndex++;
+
+                //Loop the index
+                if (currentIndex >= buttons.Length) currentIndex = 0;
+                if (currentIndex < 0) currentIndex = buttons.Length - 1;
+
+                UpdateButtonPos();
+            }
+        }
+        
     }
 
     void UpdateButtonPos()
