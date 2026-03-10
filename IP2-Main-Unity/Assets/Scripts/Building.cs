@@ -29,9 +29,6 @@ public class Building : MonoBehaviour
     public GameObject Tower4;
     //etc...
     
-                  // tower prefab
-    //public GameObject SlowingTower;
-    //public GameObject poisonTower;
 
     // currently active object being placed
     private PlaceObject objectToPlace;
@@ -70,22 +67,15 @@ public class Building : MonoBehaviour
         bool enterBuild = Keyboard.current != null && Keyboard.current.bKey.wasPressedThisFrame; // //if "B" key was pressed this frame "B" is still for debug
 
         if (enterBuild)
-        {
+        {   
             StartBuildModeFromWheel(TurretWheelController.turretID);
         }
-        
-        /*
-        if (Input.GetKeyDown(KeyCode.M) && objectToPlace == null)
-        {
-            InitalizeWithObject(poisonTower);
-        }
-        */
 
         // If not in build mode, skip the rest
         if (objectToPlace == null)
             return;
 
-        // Keep preview object in front of the player, snapped to grid, change to maybe flash or be transparent
+        // Keep preview object in front of the player, snapped to grid, change to maybe flash or be transparent?
         objectToPlace.transform.position = PlacementWorldPos();
         
         
@@ -166,26 +156,15 @@ public class Building : MonoBehaviour
         TileBase[] baseArray = GetTilesBlock(area, MainTilemap);
 
         // If any tile in area is already greenTile, cannot place
-        
-         //debug
-        
-        
-        
-        foreach (var b in baseArray)
+        foreach (var tile in baseArray)
         {
-            if (b == greenTile)
-            {
+            if (tile == greenTile)
                 return false;
-            }
-            
-            int i = 0;
-            i++; //debug
-            Debug.Log($"CanBePlaced cell {i}: tile={(b != null ? b.name : "null")}, isGreen={(b == greenTile)}"); //debug
         }
-        
 
         return true;
     }
+
 
     public void TakeArea(Vector3Int start, Vector3Int size)
     {
