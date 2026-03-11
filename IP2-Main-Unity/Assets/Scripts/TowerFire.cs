@@ -155,7 +155,7 @@ public class TowerFire : MonoBehaviour
             float z = Mathf.Sin(angle) * range;
 
             // tiny Y offset so it doesn�t tweak out
-            lineRenderer.SetPosition(i, new Vector3(x, 1f, z)); //2 offset so it doesnt go below grid (not sure why they grid is overlapping it when its less than 2)
+            lineRenderer.SetPosition(i, new Vector3(x, 0.5f, z));
         }
     }
 

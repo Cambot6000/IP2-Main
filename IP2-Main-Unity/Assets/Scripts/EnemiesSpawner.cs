@@ -111,8 +111,8 @@ public class EnemiesSpawner : MonoBehaviour
 
 
 
-    public void SpawnEnemies()
-    {print("weweqw");
+    public void SpawnEnemies() 
+    {
         if (enemySpawnTimer > enemySpawnTimerMax && InWave )
         {
             if (hopperCounter < hopperAmount)
