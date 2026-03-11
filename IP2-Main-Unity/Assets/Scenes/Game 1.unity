@@ -2671,6 +2671,10 @@ MonoBehaviour:
   wheelOpen: 0
   MainTilemap: {fileID: 1461604367}
   greenTile: {fileID: 11400000, guid: e15e80345d637114e8bea77ea1072b63, type: 2}
+  playerIcon: {fileID: 1559970784}
+  pulseSpeed: 2
+  minAlpha: 0.2
+  maxAlpha: 1
   Tower1: {fileID: 1823924507}
   Tower2: {fileID: 1590894730}
   Tower3: {fileID: 117249048}
@@ -4294,7 +4298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &1783031696
 MeshFilter:
   m_ObjectHideFlags: 0
