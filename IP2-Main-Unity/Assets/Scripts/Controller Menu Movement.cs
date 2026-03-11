@@ -76,7 +76,7 @@ public class ControllerMenuMovement : MonoBehaviour
                 moveTimer = moveDelay;
 
                 //Move index of the array
-                if (inputDirection.x > 0.5f) currentIndex--;
+                if (inputDirection.x > 0.5f) currentIndex++;
                 else if (inputDirection.x < -0.5f) currentIndex++;
 
                 //Loop the index
