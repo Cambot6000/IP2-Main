@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public static event Action<int> OnDoSomething;
     
     private bool canMove = true; //lock the player when ui is open, or any situation you want to stop the player from moving
+    [SerializeField] private float verticalLock;
 
     private void Awake()
     {
@@ -56,6 +57,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 displacement = inputDir * speed * Time.deltaTime;
         transform.position += displacement;
         
+        if (gameObject.transform.position.z != verticalLock)
+        {
+            transform.position = new Vector3(transform.position.x, verticalLock,transform.position.z);
+        }
         //Rotation
         
         
