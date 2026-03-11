@@ -379,7 +379,6 @@ MonoBehaviour:
   enemySpawnTimerMax: 0
   waveTimmer: 0
   enemySpawnTimer: 0
-<<<<<<< Updated upstream
   pathWaypoint: []
   enemies: []
 =======
@@ -2706,7 +2705,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Main Menu
-<<<<<<< Updated upstream:IP2-Main-Unity/Assets/Backup.unity
 =======
 --- !u!1 &1767503658
 GameObject:
