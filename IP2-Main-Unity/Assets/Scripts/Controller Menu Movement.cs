@@ -13,8 +13,6 @@ public class ControllerMenuMovement : MonoBehaviour
     private float moveTimer;
     public float moveDelay = 0.2f; //Time between moves in seconds
 
-    public bool yAxis;
-
     public void OnMove(InputValue value)
     {
         inputDirection = value.Get<Vector2>();
@@ -38,55 +36,40 @@ public class ControllerMenuMovement : MonoBehaviour
         UpdateButtonPos();
     }
 
+    //Reduce the timer over time
     void Update()
     {
-        //Reduce the timer over time
         if (moveTimer > 0)
         {
             moveTimer -= Time.deltaTime;
         }
 
-        if (yAxis)
-        { 
-            //Only move if the stick is pushed AND the timer is 0
-            if (moveTimer <= 0 && Mathf.Abs(inputDirection.y) > 0.5f)
-            {
-                //Reset the cooldown timer
-                moveTimer = moveDelay;
-
-                //Move index of the array
-                //Up is positive Y axis but arrays so you need to subtract, and the opposite for down because it is negative so you need to add in the array
-                if (inputDirection.y > 0.5f) currentIndex--;
-                else if (inputDirection.y < -0.5f) currentIndex++;
-
-                //Loop the index
-                if (currentIndex >= buttons.Length) currentIndex = 0;
-                if (currentIndex < 0) currentIndex = buttons.Length - 1;
-
-                UpdateButtonPos();
-            }
-        }
-        //This now makes it so that if buttons are placed horizontally, we can navigate through menus
-        else if (!yAxis)
+        //It's a timer
+        if (moveTimer <= 0)
         {
-            //Only move if the stick is pushed AND the timer is 0
-            if (moveTimer <= 0 && Mathf.Abs(inputDirection.x) > 0.5f)
+            //Checks to see if X is pushed Right OR Y is pushed Up
+            //Both of these will progress through what buttons are there
+            if (inputDirection.x > 0.5f || inputDirection.y < -0.5f)
             {
-                //Reset the cooldown timer
                 moveTimer = moveDelay;
+                currentIndex++;
 
-                //Move index of the array
-                if (inputDirection.x > 0.5f) currentIndex++;
-                else if (inputDirection.x < -0.5f) currentIndex++;
-
-                //Loop the index
                 if (currentIndex >= buttons.Length) currentIndex = 0;
-                if (currentIndex < 0) currentIndex = buttons.Length - 1;
+                UpdateButtonPos();
+            }
+            //Checks to see if X is pushed Left OR Y is pushed Down
+            //This does the opposite of the last section of commentary explains (it goes backwards or down)
+            //Since buttons are currently laid out in a kind of diagonal line it makes more sense to make
+            //the down one progress button by button rather than go backwards if you understand what I'm trying to say
+            else if (inputDirection.x < -0.5f || inputDirection.y > 0.5f)
+            {
+                moveTimer = moveDelay;
+                currentIndex--;
 
+                if (currentIndex < 0) currentIndex = buttons.Length - 1;
                 UpdateButtonPos();
             }
         }
-        
     }
 
     void UpdateButtonPos()
