@@ -488,36 +488,37 @@ MonoBehaviour:
   enemySpawnTimer: 0
   InWave: 0
   pathWaypoint:
-  - {x: -9.37, y: 0, z: 9.58}
-  - {x: -8.37, y: 0, z: 9.58}
-  - {x: -7.37, y: 0, z: 9.58}
-  - {x: -7.37, y: 0, z: 8.58}
-  - {x: -7.37, y: 0, z: 7.58}
-  - {x: -7.37, y: 0, z: 6.58}
-  - {x: -7.37, y: 0, z: 5.58}
-  - {x: -6.37, y: 0, z: 5.58}
-  - {x: -5.37, y: 0, z: 5.58}
-  - {x: -4.37, y: 0, z: 5.58}
-  - {x: -3.37, y: 0, z: 5.58}
-  - {x: -2.37, y: 0, z: 5.58}
-  - {x: -1.37, y: 0, z: 5.58}
-  - {x: -1.37, y: 0, z: 6.58}
-  - {x: 0.37, y: 0, z: 6.58}
-  - {x: 0.37, y: 0, z: 7.58}
-  - {x: 1.37, y: 0, z: 7.58}
-  - {x: 1.37, y: 0, z: 8.58}
-  - {x: 2.37, y: 0, z: 8.58}
-  - {x: 2.37, y: 0, z: 9.58}
-  - {x: 3.37, y: 0, z: 9.58}
-  - {x: 3.37, y: 0, z: 10.58}
-  - {x: 4.37, y: 0, z: 10.58}
-  - {x: 5.37, y: 0, z: 10.58}
-  - {x: 5.37, y: 0, z: 11.58}
-  - {x: 5.37, y: 0, z: 12.58}
-  - {x: 6.37, y: 0, z: 12.58}
-  - {x: 6.37, y: 0, z: 13.58}
-  - {x: 7.37, y: 0, z: 13.58}
-  - {x: 8.37, y: 0, z: 13.58}
+  - {x: -9.37, y: 0, z: 9.47}
+  - {x: -8.37, y: 0, z: 9.47}
+  - {x: -7.37, y: 0, z: 9.47}
+  - {x: -7.37, y: 0, z: 8.47}
+  - {x: -7.37, y: 0, z: 7.47}
+  - {x: -7.37, y: 0, z: 6.47}
+  - {x: -7.37, y: 0, z: 5.47}
+  - {x: -6.37, y: 0, z: 5.47}
+  - {x: -5.37, y: 0, z: 5.47}
+  - {x: -4.37, y: 0, z: 5.47}
+  - {x: -3.37, y: 0, z: 5.47}
+  - {x: -2.37, y: 0, z: 5.47}
+  - {x: -1.37, y: 0, z: 5.47}
+  - {x: -1.37, y: 0, z: 6.47}
+  - {x: -0.37, y: 0, z: 6.47}
+  - {x: 0.37, y: 0, z: 6.47}
+  - {x: 0.37, y: 0, z: 7.47}
+  - {x: 1.37, y: 0, z: 7.47}
+  - {x: 1.37, y: 0, z: 8.47}
+  - {x: 2.37, y: 0, z: 8.47}
+  - {x: 2.37, y: 0, z: 9.47}
+  - {x: 3.37, y: 0, z: 9.47}
+  - {x: 3.37, y: 0, z: 10.47}
+  - {x: 4.37, y: 0, z: 10.47}
+  - {x: 5.37, y: 0, z: 10.47}
+  - {x: 5.37, y: 0, z: 11.47}
+  - {x: 5.37, y: 0, z: 12.47}
+  - {x: 6.37, y: 0, z: 12.47}
+  - {x: 6.37, y: 0, z: 13.47}
+  - {x: 7.37, y: 0, z: 13.47}
+  - {x: 8.37, y: 0, z: 13.47}
   enemies:
   - {fileID: 6337033399367963079, guid: 13d21c8238b3e8342a1335d2c521fb3a, type: 3}
   - {fileID: 7760400414483964277, guid: d5d2302cef3d41040adcb2601f8ee16b, type: 3}
@@ -605,7 +606,7 @@ Transform:
   m_GameObject: {fileID: 196500137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.37, y: 0.65, z: 9.52}
+  m_LocalPosition: {x: -10.37, y: 0.65, z: 9.478}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4293,7 +4294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &1783031696
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4356,7 +4357,7 @@ Transform:
   m_GameObject: {fileID: 1783031695}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.26, y: 0, z: 5.23}
+  m_LocalPosition: {x: -0.52, y: 0.65, z: 6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
