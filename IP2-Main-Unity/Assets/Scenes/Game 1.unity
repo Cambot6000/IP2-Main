@@ -366,6 +366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlowingTower
       objectReference: {fileID: 0}
+    - target: {fileID: 891594839903357889, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3339022696109053862, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
       propertyPath: towerCost
       value: 200
@@ -662,6 +666,14 @@ PrefabInstance:
     - target: {fileID: 1331161078107804044, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
       propertyPath: m_Name
       value: PoisonTowerDos
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331161078107804044, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981254851206252605, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.961
       objectReference: {fileID: 0}
     - target: {fileID: 2981254851206252605, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3830,7 +3842,7 @@ Transform:
   m_GameObject: {fileID: 1559970782}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -1.02, z: 1.27}
+  m_LocalPosition: {x: 0, y: -1.02, z: 1.14}
   m_LocalScale: {x: 0.2, y: 0.20000002, z: 0.20000002}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4537,6 +4549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AoeTower
       objectReference: {fileID: 0}
+    - target: {fileID: 4015814561450557096, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5531361154527303824, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -4604,6 +4620,10 @@ PrefabInstance:
     - target: {fileID: 6952854670655672566, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: m_LocalScale.z
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952854670655672566, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 6952854670655672566, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4721,10 +4741,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.74569345
+  m_Height: 1.9677182
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.39969534, z: 1.1554053}
 --- !u!23 &1951906543
 MeshRenderer:
   m_ObjectHideFlags: 0
