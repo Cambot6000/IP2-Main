@@ -154,5 +154,5 @@ MonoBehaviour:
   poisonTimes: 15
   poisonDamage: 7
   poisonWait: 1
-  pool: 0
+  pool: 1
   lifeSpan: 5
