@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c5042e3f0d934468cc51263ca1cacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: newGridSystem
+  sceneToLoad: DifficultyPicker
 --- !u!114 &784545528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,7 +683,6 @@ MonoBehaviour:
   currentIndex: 0
   fadeNumber: 0.6
   moveDelay: 0.2
-  yAxis: 0
 --- !u!4 &788169479
 Transform:
   m_ObjectHideFlags: 0
@@ -873,8 +872,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 449578269}
-  - {fileID: 2017636084}
   - {fileID: 784545526}
+  - {fileID: 2017636084}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
