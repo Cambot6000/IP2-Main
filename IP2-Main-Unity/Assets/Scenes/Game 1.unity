@@ -3532,7 +3532,7 @@ PrefabInstance:
       objectReference: {fileID: 753223877}
     - target: {fileID: 7954400536190865427, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: buttons.Array.size
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7954400536190865427, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: 'buttons.Array.data[0]'
