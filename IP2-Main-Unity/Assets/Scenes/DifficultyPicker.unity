@@ -186,7 +186,6 @@ MonoBehaviour:
   currentIndex: 0
   fadeNumber: 0.6
   moveDelay: 0.2
-  yAxis: 0
 --- !u!4 &396036344
 Transform:
   m_ObjectHideFlags: 0
@@ -359,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c5042e3f0d934468cc51263ca1cacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Game 1
+  sceneToLoad: newPath
 --- !u!1 &792772460
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,7 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c5042e3f0d934468cc51263ca1cacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Game 1
+  sceneToLoad: newPath
 --- !u!1 &1146413623
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c5042e3f0d934468cc51263ca1cacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Game 1
+  sceneToLoad: newPath
 --- !u!1 &1876833207
 GameObject:
   m_ObjectHideFlags: 0

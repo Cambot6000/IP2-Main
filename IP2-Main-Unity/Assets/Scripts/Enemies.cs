@@ -12,6 +12,7 @@ public class Enemies : MonoBehaviour
     public List<Vector3> pathWaypoint = new List<Vector3>();
     public int waypointNumber;
 
+   
     private GameUI gameUI;
     // All this is to handles slows
     private float originalSpeed;
@@ -87,7 +88,8 @@ public class Enemies : MonoBehaviour
             // Leave normal speed
             speed = originalSpeed;
         }
-
+        
+        
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, step);
         Vector3 direction = (target - transform.position).normalized;
