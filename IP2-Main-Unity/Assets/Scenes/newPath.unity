@@ -870,8 +870,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d4f9ca3e3f8fa5647a0fab5ebec14503, type: 2}
+  m_sharedMaterial: {fileID: 3715080139784886008, guid: d4f9ca3e3f8fa5647a0fab5ebec14503, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1151,8 +1151,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d4f9ca3e3f8fa5647a0fab5ebec14503, type: 2}
+  m_sharedMaterial: {fileID: 3715080139784886008, guid: d4f9ca3e3f8fa5647a0fab5ebec14503, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3606,6 +3606,18 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2013379414984435745, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d4f9ca3e3f8fa5647a0fab5ebec14503, type: 2}
+    - target: {fileID: 2013379414984435745, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3715080139784886008, guid: d4f9ca3e3f8fa5647a0fab5ebec14503, type: 2}
+    - target: {fileID: 2013379414984435745, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2028182286388020762, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3892,7 +3904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4217757900370030642, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -51
       objectReference: {fileID: 0}
     - target: {fileID: 4217757900370030642, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

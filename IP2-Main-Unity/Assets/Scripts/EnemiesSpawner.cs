@@ -76,7 +76,7 @@ public class EnemiesSpawner : MonoBehaviour
         {
             InWave = false;
 
-            if (enemySpawnTimerMax == 5f)
+            if (enemySpawnTimerMax == 1f)
             {
                 moreEnemies = false;
 
