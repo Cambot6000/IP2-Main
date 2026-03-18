@@ -677,11 +677,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e54578bfe73704197c961dd9c261a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons:
+  UIElements:
   - {fileID: 784545528}
   - {fileID: 2017636081}
   currentIndex: 0
   fadeNumber: 0.6
+  sliderSelected: 0
+  dropdownSelected: 0
   moveDelay: 0.2
 --- !u!4 &788169479
 Transform:
