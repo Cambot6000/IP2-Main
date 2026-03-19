@@ -16,8 +16,7 @@ public class GameUI : MonoBehaviour
 
     public Image waveImage;
     public CanvasGroup waveCanvasGroup;
-    public Sprite[] egg; 
-
+    
     public int waveNumber;
     public Sprite[] images;
     public int currentWaveNumber= 0;
