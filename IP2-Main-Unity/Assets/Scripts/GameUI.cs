@@ -13,7 +13,17 @@ public class GameUI : MonoBehaviour
     public EnemiesSpawner enemiesSpawner;
 
     public Sprite[] egg; 
+
+    public Image waveImage;
+    public CanvasGroup waveCanvasGroup;
+    public Sprite[] egg; 
+
     public int waveNumber;
+    public Sprite[] images;
+    public int currentWaveNumber= 0;
+    public float fadeSpeed;
+    public float targetAlpha;
+   
 
     void Start()
     {
@@ -22,14 +32,34 @@ public class GameUI : MonoBehaviour
         
     }
 
-    
+
     void Update()
     {
-        waveNumber= enemiesSpawner.waveNumber;
+        waveNumber = enemiesSpawner.waveNumber;
+        if (waveNumber >= 6)
+        {
+            waveImage.sprite = images[2];
+        }
+        if (waveNumber>= 3)
+        {
+            waveImage.sprite = images[1];
+        }
+        if (currentWaveNumber != waveNumber) // only show when new wave begins
+        {
+            FadeIn();
+
+        }
+        if (Mathf.Abs(waveCanvasGroup.alpha - targetAlpha)< 0.01f)// if the diffrence is between the values is less than 0.01d then fades out
+        {
+            FadeOut();
+        } 
 
 
-        waveText.text ="Wave "+ waveNumber.ToString();
-        healthBar.value = health;
+        waveCanvasGroup.alpha = Mathf.Lerp(waveCanvasGroup.alpha, targetAlpha, fadeSpeed * Time.deltaTime);// smooths the fade in and out
+        waveText.text ="Wave "+ waveNumber.ToString();// sets text to wave and the number
+        healthBar.value = health;// sets health bar value for ui
+        // check value against max value * value 
+        // sets sprite to egg array image based on value
         if (health <= healthBar.maxValue * 0.25f)
         {
             eggImage.sprite = egg[0];
@@ -48,15 +78,29 @@ public class GameUI : MonoBehaviour
 
 
         }
-        if(health <= 0)
+        if(health <= 0)// ends game
+
         {
             SceneManager.LoadScene("GameOver");
         }
+       
     }
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage)// take damage minus it from Health
     {
         health -= damage;
+    }
+
+    public void FadeIn()// fade in 
+    {
+        targetAlpha = 1;
+        
+    }
+
+   public void FadeOut()// fade out
+    {
+        targetAlpha = 0;
+        currentWaveNumber = waveNumber;
     }
 }
