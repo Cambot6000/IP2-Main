@@ -114,7 +114,7 @@ public class AoeTowerScript : MonoBehaviour
             float x = Mathf.Cos(angle) * range;
             float z = Mathf.Sin(angle) * range;
 
-            lineRenderer.SetPosition(i, new Vector3(x, 0.5f, z));
+            lineRenderer.SetPosition(i, new Vector3(x, 0.1f, z));
         }
     }
 

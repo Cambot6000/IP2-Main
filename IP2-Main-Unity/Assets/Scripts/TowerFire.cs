@@ -155,7 +155,7 @@ public class TowerFire : MonoBehaviour
             float z = Mathf.Sin(angle) * range;
 
             // tiny Y offset so it doesn�t tweak out
-            lineRenderer.SetPosition(i, new Vector3(x, 0.5f, z));
+            lineRenderer.SetPosition(i, new Vector3(x, 0.1f, z));
         }
     }
 

@@ -480,13 +480,15 @@ MonoBehaviour:
   moreEnemies: 1
   upgradedEnemies: 0
   waveNumber: 0
-  waveTimmerMax: 15
-  enemySpawnTimerMax: 3
+  maxWaves: 3
+  waveTimmerMax: 21
+  enemySpawnTimerMax: 2.9
   waitTimerMax: 20
   waitTimer: 0
   waveTimmer: 0
   enemySpawnTimer: 0
   InWave: 0
+  initialPause: 10
   pathWaypoint:
   - {x: -9.37, y: 0, z: 9.47}
   - {x: -8.37, y: 0, z: 9.47}
@@ -4892,7 +4894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3914405826604820254, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: fireRate
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3914405826604820254, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: ringWidth
@@ -5216,7 +5218,7 @@ RectTransform:
   m_GameObject: {fileID: 2045402611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9988, y: 1.9988, z: 1.9988}
+  m_LocalScale: {x: 1.5, y: 2.2, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 709704757}
@@ -5228,7 +5230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -10.282295, y: -59.8}
+  m_AnchoredPosition: {x: 0, y: -71.2}
   m_SizeDelta: {x: 167.4868, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2045402613

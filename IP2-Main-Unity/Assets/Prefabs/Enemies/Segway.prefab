@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 659538805919146943}
   - component: {fileID: -1922041092425223875}
   - component: {fileID: 2753900960850543887}
+  - component: {fileID: 7260730863194074984}
   m_Layer: 0
   m_Name: Segway
   m_TagString: Untagged
@@ -47,9 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2680abdaf1d14804cbce58f9045884d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 140
-  speed: 1
-  damage: 10
+  health: 110
+  speed: 1.2
+  damage: 15
   target: {x: 0, y: 0, z: 0}
   pathWaypoint: []
   waypointNumber: 0
@@ -87,6 +88,29 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!136 &7260730863194074984
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760400414483964277}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1723789397428984443
 PrefabInstance:
   m_ObjectHideFlags: 0
