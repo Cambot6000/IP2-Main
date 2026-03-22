@@ -18,6 +18,12 @@ public class PlayerMovement : MonoBehaviour
     private bool canMove = true; //lock the player when ui is open, or any situation you want to stop the player from moving
     [SerializeField] private float verticalLock;
 
+    [Header("Boundary Settings")]
+    public float minX = -10f;
+    public float maxX = 10f;
+    public float minZ = -10f;
+    public float maxZ = 10f;
+
     private void Awake()
     {
         controls = new PlayerControls();
@@ -48,22 +54,36 @@ public class PlayerMovement : MonoBehaviour
         {
             return; //if cant move return 
         }
-        
-        
+
+
         // Convert input to a movement vector on the XZ plane
-        Vector3 inputDir = new Vector3(moveInput.x, 0f, moveInput.y);
+        //Vector3 inputDir = new Vector3(moveInput.x, 0f, moveInput.y);
 
         // Move relative to world axes 
-        Vector3 displacement = inputDir * speed * Time.deltaTime;
-        transform.position += displacement;
-        
-        if (gameObject.transform.position.z != verticalLock)
+        //Vector3 displacement = inputDir * speed * Time.deltaTime;
+        //transform.position += displacement;
+
+        if (moveInput.sqrMagnitude > 0.01f)
         {
-            transform.position = new Vector3(transform.position.x, verticalLock,transform.position.z);
+            Vector3 inputDir = new Vector3(moveInput.x, 0f, moveInput.y);
+            Vector3 displacement = inputDir * speed * Time.deltaTime;
+            transform.position += displacement;
         }
+
+        float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
+        float clampedZ = Mathf.Clamp(transform.position.z, minZ, maxZ);
+        transform.position = new Vector3(clampedX, verticalLock, clampedZ);
+        /*
+        if (Mathf.Abs(transform.position.y - verticalLock) > 0.001f)
+        {
+            Vector3 fixedPos = transform.position;
+            fixedPos.y = verticalLock;
+            transform.position = fixedPos;
+        }
+        */
         //Rotation
-        
-        
+
+
     }
     
     //Check if the turret wheel is open, if it is lock movement
