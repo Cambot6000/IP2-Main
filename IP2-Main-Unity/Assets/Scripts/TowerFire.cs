@@ -141,6 +141,12 @@ public class TowerFire : MonoBehaviour
         target.health -= damage; // Same again, just incase something is broken, deal direct damage
     }
 
+    public void UpdateRangeRing() //added by callum
+    {
+        //so i can change the range ring atributes from diffrent scripts
+        DrawRing();
+    }
+    
     private void DrawRing()
     {
         if (lineRenderer == null)

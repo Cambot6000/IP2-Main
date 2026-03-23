@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -129,9 +130,11 @@ public class EnemiesSpawner : MonoBehaviour
         }
     }
 
-    public void SpawnEnemies() 
-    {
-        if (enemySpawnTimer > enemySpawnTimerMax && InWave)
+
+
+    public void SpawnEnemies()
+    {   
+        if (enemySpawnTimer > enemySpawnTimerMax && InWave )
         {
             if (hopperCounter < hopperAmount)
             {
