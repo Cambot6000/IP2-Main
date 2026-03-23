@@ -71,14 +71,14 @@ public class SpeedController : MonoBehaviour
 
         while (time < fadeDuration)
         {
-            time += Time.unscaledDeltaTime; //Use unscaledDeltaTime because Time.timeScale changes becasue of button hits
-            float newAlpha = Mathf.Lerp(startTransparency, targetTransparency, time / fadeDuration);
+            time += Time.unscaledDeltaTime; //Use unscaledDeltaTime because Time.timeScale changes becasue of button hits like the speed up buttons and the evil speed one
+            float newAlpha = Mathf.Lerp(startTransparency, targetTransparency, time / fadeDuration); //Moves between the transparencies by using lerp
             SetImageTransparency(speedyDos, newAlpha);
             yield return null;
         }
         SetImageTransparency(speedyDos, targetTransparency);
     }
-    void SetImageTransparency(Image speedy, float transparency)
+    void SetImageTransparency(Image speedy, float transparency) //Sets the transparency
     {
         Color colour = speedy.color;
         colour.a = transparency;
