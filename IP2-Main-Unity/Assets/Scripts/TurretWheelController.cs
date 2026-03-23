@@ -88,7 +88,7 @@ public class TurretWheelController : MonoBehaviour
         // controller RIGHT stick to select buttons while wheel is open, 12 oclock = stick up, thats how i think about it
         if (Gamepad.current != null && buttons != null && buttons.Length > 0)
         {
-            Vector2 stick = Gamepad.current.rightStick.ReadValue();
+            Vector2 stick = Gamepad.current.leftStick.ReadValue();
             Debug.Log("Stick: " + stick); // debug so we can see raw values
 
             // When stick is near the centre, clear hover and do nothing else.
@@ -103,11 +103,11 @@ public class TurretWheelController : MonoBehaviour
             else
             {
                 // base angle in degrees, 0 at +X (right), CCW positive
-                float rawAngle = Mathf.Atan2(stick.y, stick.x) * Mathf.Rad2Deg;
+                float rawAngle = Mathf.Atan2(stick.y, -stick.x) * Mathf.Rad2Deg;
 
                 // rotate so 0 is UP and clockwise is positive (like a clock)
                 // up (0,1) -> rawAngle = 90 -> angleClock = 0
-                float angleClock = 90f - rawAngle;
+                float angleClock = 90f - rawAngle;  
                 if (angleClock < 0f) angleClock += 360f;
                 if (angleClock >= 360f) angleClock -= 360f;
 
