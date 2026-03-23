@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem; //new input system
 
@@ -25,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
     public float minZ = -10f;
     public float maxZ = 10f;
 
+    [Header("Timer Related Stuff")]
+    public SpriteRenderer playerIcon;
+    public float timerDuration;
+    public float currentTime;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Move performed: " + moveInput);
         };
         controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
+
     }
 
     private void OnEnable()
@@ -48,7 +55,12 @@ public class PlayerMovement : MonoBehaviour
     {
         controls.Disable();
     }
-    
+
+    private void Start()
+    {
+        currentTime = timerDuration;
+        UnTransparent(); //So that the wee guy doesn't disappear immediately
+    }
     private void FixedUpdate()
     {
         //lock movement
@@ -65,21 +77,38 @@ public class PlayerMovement : MonoBehaviour
         // Move relative to world axes 
         //Vector3 displacement = inputDir * speed * Time.deltaTime;
         //transform.position += displacement;
+        //^ Old movement code incase my new stuff decides to break
 
         if (!canMove || moveInput.sqrMagnitude <= 0.01f)
         {
-            return;
+            if (currentTime > 0) //Timer to check if the player hasnt moved in a while and if they haveny they will fade out
+            {
+                currentTime -= Time.unscaledDeltaTime;
+            }
+            else
+            {
+                Color tempColour = playerIcon.color;
+                tempColour.a = Mathf.MoveTowards(tempColour.a, 0f, Time.unscaledDeltaTime * 2f); //Slowly fades the player icon guy out
+                playerIcon.color = tempColour;
+            }
+           
+        }
+        else
+        {
+            Vector3 inputDir = new Vector3(moveInput.x, 0f, moveInput.y);
+            currentTime = timerDuration;
+            UnTransparent();
+            Vector3 displacement = inputDir * speed * Time.fixedDeltaTime;
+            Vector3 newPos = rb.position + displacement;
+
+            newPos.x = Mathf.Clamp(newPos.x, minX, maxX);
+            newPos.z = Mathf.Clamp(newPos.z, minZ, maxZ); //Sticks the player within the bounds of the map instead of using colliders all around the place
+            newPos.y = verticalLock;
+
+            rb.MovePosition(newPos); //Move with the rigidbody so that the player doesn't get flung aboot anymore like they did for a while. Hopefully permanent fix to that issue
         }
 
-        Vector3 inputDir = new Vector3(moveInput.x, 0f, moveInput.y);
-        Vector3 displacement = inputDir * speed * Time.fixedDeltaTime;
-        Vector3 newPos = rb.position + displacement;
-
-        newPos.x = Mathf.Clamp(newPos.x, minX, maxX);
-        newPos.z = Mathf.Clamp(newPos.z, minZ, maxZ);
-        newPos.y = verticalLock;
-
-        rb.MovePosition(newPos);
+        
         /*
         if (Mathf.Abs(transform.position.y - verticalLock) > 0.001f)
         {
@@ -99,4 +128,10 @@ public class PlayerMovement : MonoBehaviour
         canMove = value;
     }
     
+    private void UnTransparent() //Makes the player appear again (sets transparency to 1)
+    {
+        Color tempColour = playerIcon.color;
+        tempColour.a = 1f;
+        playerIcon.color = tempColour;
+    } 
 }
