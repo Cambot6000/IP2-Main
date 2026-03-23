@@ -153,7 +153,7 @@ public class Building : MonoBehaviour
         area.position = gridSize.WorldToCell(objectToPlace.getStartPos());
         area.size = placeObject.size;
 
-        TileBase[] baseArray = GetTilesBlock(area, MainTilemap);
+        TileBase[] baseArray = GetTilesBlock(area, MainTilemap); //check
 
         // If any tile in area is already greenTile, cannot place
         foreach (var tile in baseArray)
@@ -186,7 +186,7 @@ public class Building : MonoBehaviour
     #region Ui Wheel Intergration
 
 
-    public void StartBuildModeFromWheel(int id) //instead of using B for build mode 
+    public void StartBuildModeFromWheel(int id) //start build mode
     {
         if (objectToPlace != null)
         {
