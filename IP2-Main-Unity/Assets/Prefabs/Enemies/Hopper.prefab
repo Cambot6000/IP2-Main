@@ -233,9 +233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2680abdaf1d14804cbce58f9045884d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  speed: 0.4
-  damage: 5
+  health: 60
+  speed: 1.5
+  damage: 10
   target: {x: 0, y: 0, z: 0}
   pathWaypoint: []
   waypointNumber: 0
@@ -276,10 +276,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.05352006
-  m_Height: 0.19277033
+  m_Radius: 0.03722318
+  m_Height: 0.11303331
   m_Direction: 1
-  m_Center: {x: 0.08235499, y: -0.038121957, z: -0.084801316}
+  m_Center: {x: 0.0014897188, y: -0.0034817937, z: 0.0028069657}
 --- !u!1 &7705172111061970863
 GameObject:
   m_ObjectHideFlags: 0

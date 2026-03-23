@@ -61,17 +61,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 1.5
-  fireRate: 0.75
-  damage: 15
+  fireRate: 100
+  damage: 50
   ringSegments: 64
   ringWidth: 0.05
   ringColor: {r: 1, g: 0.9, b: 0.2, a: 0.6}
   showRingWhilePlacing: 1
-  aoeParticleEffect: {fileID: 7637825733791034040, guid: afbc7b16823ab1440bde028acd049ab7, type: 3}
-  projectilePrefab: {fileID: 0}
-  projectileSpeed: 10
-  projectileLifeTime: 5
-  firePoint: {fileID: 0}
+  aoeParticlePrefab: {fileID: 8774748001020458744, guid: afbc7b16823ab1440bde028acd049ab7, type: 3}
 --- !u!114 &8806084562721274853
 MonoBehaviour:
   m_ObjectHideFlags: 0

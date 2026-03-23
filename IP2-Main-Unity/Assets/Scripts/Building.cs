@@ -21,6 +21,12 @@ public class Building : MonoBehaviour
     public Tilemap MainTilemap;             // tracks which cells are occupied
     public TileBase greenTile;              // tile used to mark taken cells
 
+    [Header("Player Icon Stuff")]
+    public SpriteRenderer playerIcon;
+    public float pulseSpeed = 2.0f;
+    public float minAlpha; //How transparent the icon gets
+    public float maxAlpha; //How solid the player icon gets both of these are when the player is about to place a dino
+
     // Tower Prefabs
     [Header("Tower Prefabs")]
     public GameObject Tower1; 
@@ -75,7 +81,27 @@ public class Building : MonoBehaviour
         if (objectToPlace == null)
             return;
 
-        // Keep preview object in front of the player, snapped to grid, change to maybe flash or be transparent?
+        if(objectToPlace != null && playerIcon != null)
+        {
+            float pingPong = Mathf.PingPong(Time.time * pulseSpeed, 1.0f);
+            float newAlpha = Mathf.Lerp(minAlpha, maxAlpha, pingPong);
+            //Ping pong moves back and forth, in this case making the player icon have a pulse like animation when building
+
+            Color tempColour = playerIcon.color;
+            tempColour.a = newAlpha;
+            playerIcon.color = tempColour;
+        }
+
+        else if (playerIcon != null)
+        {
+            //Reset the alpha to full when the player isnt trying to place a tower
+            //Alpha is transparency
+            Color tempColour = playerIcon.color;
+            tempColour.a = 1.0f;
+            playerIcon.color = tempColour;
+        }
+
+        // Keep preview object in front of the player, snapped to grid, change to maybe flash or be transparent
         objectToPlace.transform.position = PlacementWorldPos();
         
         

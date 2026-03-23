@@ -151,8 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b3b5b42bb931a4687ae943a2fdf430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poisonTimes: 2
-  poisonDamage: 10
-  poisonWait: 2
+  poisonTimes: 15
+  poisonDamage: 7
+  poisonWait: 1
   pool: 1
-  lifeSpan: 10
+  lifeSpan: 5

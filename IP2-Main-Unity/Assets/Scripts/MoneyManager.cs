@@ -3,7 +3,7 @@ using TMPro;
 
 public class MoneyManager : MonoBehaviour
 {
-    public int currentGold = 1000;
+    public int currentGold = 500;
     public static MoneyManager instance;
     public TextMeshProUGUI goldText;
 

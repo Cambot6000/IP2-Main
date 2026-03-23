@@ -15,13 +15,7 @@ public class AoeTowerScript : MonoBehaviour
     public bool showRingWhilePlacing = true;
 
     [Header("Aoe Settings")]
-    public ParticleSystem aoeParticleEffect;
-
-    [Header("projectile")]
-    public GameObject projectilePrefab;
-    public float projectileSpeed = 10f;
-    public float projectileLifeTime = 5f;
-    public Transform firePoint;
+    public GameObject aoeParticlePrefab; 
 
     private PlaceObject placeObject;
     private LineRenderer lineRenderer;
@@ -35,7 +29,6 @@ public class AoeTowerScript : MonoBehaviour
         if (lineRenderer == null)
             lineRenderer = gameObject.AddComponent<LineRenderer>();
 
-        // basic circle setup
         lineRenderer.loop = true;
         lineRenderer.useWorldSpace = false;
         lineRenderer.widthMultiplier = ringWidth;
@@ -59,7 +52,7 @@ public class AoeTowerScript : MonoBehaviour
         }
 
         fireTimer += Time.deltaTime;
-        float interval = fireRate > 0f ? 1f / fireRate : float.MaxValue;
+        float interval = fireRate;
 
         if (fireTimer >= interval)
         {
@@ -80,16 +73,28 @@ public class AoeTowerScript : MonoBehaviour
             Enemies en = hitCollider.GetComponent<Enemies>();
             if (en != null && en.health > 0)
             {
-                if (!hitAny) // First valid enemy found, trigger effects
+                if (!hitAny) 
                 {
-                    if (aoeParticleEffect != null)
+                    // Instantiate a new particle effect at the tower's position
+                    if (aoeParticlePrefab != null)
                     {
-                        aoeParticleEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-                        aoeParticleEffect.Play();
+                        GameObject effect = Instantiate(aoeParticlePrefab, transform.position, Quaternion.identity);
+                        Destroy(effect, 2f);
                     }
                     hitAny = true;
                 }
+
                 en.health -= damage;
+
+                if (en.health <= 0)
+                {
+                    if (MoneyManager.instance != null)
+                    {
+                        MoneyManager.instance.AddGold(50);
+                    }
+                    
+                    Destroy(hitCollider.gameObject);
+                }
             }
         }
 
@@ -109,7 +114,7 @@ public class AoeTowerScript : MonoBehaviour
             float x = Mathf.Cos(angle) * range;
             float z = Mathf.Sin(angle) * range;
 
-            lineRenderer.SetPosition(i, new Vector3(x, 2f, z));
+            lineRenderer.SetPosition(i, new Vector3(x, 0.1f, z));
         }
     }
 
