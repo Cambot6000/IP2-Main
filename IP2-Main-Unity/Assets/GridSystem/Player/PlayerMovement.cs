@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerControls controls;
     private Vector2 moveInput;
     //private vector2 directionInput;
+    [SerializeField] private Rigidbody rb;
 
     public static event Action<int> OnDoSomething;
     
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         controls = new PlayerControls();
         controls.Player.Move.performed += ctx =>
         {
@@ -47,14 +49,15 @@ public class PlayerMovement : MonoBehaviour
         controls.Disable();
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
         //lock movement
+        /*
         if (!canMove)
         {
             return; //if cant move return 
         }
-
+        */
 
         // Convert input to a movement vector on the XZ plane
         //Vector3 inputDir = new Vector3(moveInput.x, 0f, moveInput.y);
@@ -63,16 +66,20 @@ public class PlayerMovement : MonoBehaviour
         //Vector3 displacement = inputDir * speed * Time.deltaTime;
         //transform.position += displacement;
 
-        if (moveInput.sqrMagnitude > 0.01f)
+        if (!canMove || moveInput.sqrMagnitude <= 0.01f)
         {
-            Vector3 inputDir = new Vector3(moveInput.x, 0f, moveInput.y);
-            Vector3 displacement = inputDir * speed * Time.deltaTime;
-            transform.position += displacement;
+            return;
         }
 
-        float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
-        float clampedZ = Mathf.Clamp(transform.position.z, minZ, maxZ);
-        transform.position = new Vector3(clampedX, verticalLock, clampedZ);
+        Vector3 inputDir = new Vector3(moveInput.x, 0f, moveInput.y);
+        Vector3 displacement = inputDir * speed * Time.fixedDeltaTime;
+        Vector3 newPos = rb.position + displacement;
+
+        newPos.x = Mathf.Clamp(newPos.x, minX, maxX);
+        newPos.z = Mathf.Clamp(newPos.z, minZ, maxZ);
+        newPos.y = verticalLock;
+
+        rb.MovePosition(newPos);
         /*
         if (Mathf.Abs(transform.position.y - verticalLock) > 0.001f)
         {
