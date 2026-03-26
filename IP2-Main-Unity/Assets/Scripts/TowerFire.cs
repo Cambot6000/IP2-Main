@@ -165,6 +165,8 @@ public class TowerFire : MonoBehaviour
         }
     }
 
+    
+    
     // update circle in editor when changing values
     private void OnValidate()
     {
@@ -179,6 +181,10 @@ public class TowerFire : MonoBehaviour
         lineRenderer.startColor = ringColor;
         lineRenderer.endColor = ringColor;
 
-        DrawRing();
+        
     }
+    
+    
+    
+    
 }

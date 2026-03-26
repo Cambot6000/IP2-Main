@@ -22,6 +22,7 @@ public class PlayerUpgradeInteractor : MonoBehaviour
             currentTurret = turret;
             Debug.Log($"[Interactor] Enter turret {turret.name}");
             upgradeUI.ShowPrompt(true);
+            
         }
     }
 
