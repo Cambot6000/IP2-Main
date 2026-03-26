@@ -12,26 +12,29 @@ public class GameUI : MonoBehaviour
     public int health = 100;
     public EnemiesSpawner enemiesSpawner;
 
-    public Sprite[] egg; 
+    public Sprite[] egg;
 
     public Image waveImage;
     public CanvasGroup waveCanvasGroup;
-    
+
     public int waveNumber;
     public Sprite[] images;
-    public int currentWaveNumber= 0;
+    public int currentWaveNumber = 0;
     public float fadeSpeed;
     public float targetAlpha;
-   
+
+
+    public GameObject[] egg3D;
+
 
     void Start()
     {
         healthBar.maxValue = health;
-        healthBar.value= healthBar.maxValue;
-        
+        healthBar.value = healthBar.maxValue;
+        egg3D[1].SetActive(false);
+        egg3D[2].SetActive(false);
+        egg3D[0].SetActive(true);
     }
-
-
     void Update()
     {
         waveNumber = enemiesSpawner.waveNumber;
@@ -39,7 +42,7 @@ public class GameUI : MonoBehaviour
         {
             waveImage.sprite = images[2];
         }
-        if (waveNumber>= 3)
+        if (waveNumber >= 3)
         {
             waveImage.sprite = images[1];
         }
@@ -48,42 +51,49 @@ public class GameUI : MonoBehaviour
             FadeIn();
 
         }
-        if (Mathf.Abs(waveCanvasGroup.alpha - targetAlpha)< 0.01f)// if the diffrence is between the values is less than 0.01d then fades out
+        if (Mathf.Abs(waveCanvasGroup.alpha - targetAlpha) < 0.01f)// if the diffrence is between the values is less than 0.01d then fades out
         {
             FadeOut();
-        } 
+        }
 
 
         waveCanvasGroup.alpha = Mathf.Lerp(waveCanvasGroup.alpha, targetAlpha, fadeSpeed * Time.deltaTime);// smooths the fade in and out
-        waveText.text ="Wave "+ waveNumber.ToString();// sets text to wave and the number
+        waveText.text = "Wave " + waveNumber.ToString();// sets text to wave and the number
         healthBar.value = health;// sets health bar value for ui
-        // check value against max value * value 
-        // sets sprite to egg array image based on value
+                                 // check value against max value * value 
+                                 // sets sprite to egg array image based on value
         if (health <= healthBar.maxValue * 0.25f)
         {
             eggImage.sprite = egg[0];
-            FillBox.color = new Color32(174, 47, 49,255);
+            FillBox.color = new Color32(174, 47, 49, 255);
+            egg3D[1].SetActive(false);
+            egg3D[2].SetActive(true);
+            egg3D[0].SetActive(false);
         }
         else if (health <= healthBar.maxValue * 0.50f)
         {
             eggImage.sprite = egg[1];
             FillBox.color = new Color32(255, 153, 86, 255);
+            egg3D[1].SetActive(true);
+            egg3D[2].SetActive(false);
+            egg3D[0].SetActive(false);
         }
         else if (health <= healthBar.maxValue * 0.75f)
         {
-            
-                eggImage.sprite = egg[2];
-            FillBox.color = new Color32(255, 225, 121,255);
+
+            eggImage.sprite = egg[2];
+            FillBox.color = new Color32(255, 225, 121, 255);
 
 
         }
-        if(health <= 0)// ends game
+        if (health <= 0)// ends game
 
         {
             SceneManager.LoadScene("GameOver");
         }
-       
+
     }
+
 
 
     public void TakeDamage(int damage)// take damage minus it from Health
@@ -94,10 +104,10 @@ public class GameUI : MonoBehaviour
     public void FadeIn()// fade in 
     {
         targetAlpha = 1;
-        
+
     }
 
-   public void FadeOut()// fade out
+    public void FadeOut()// fade out
     {
         targetAlpha = 0;
         currentWaveNumber = waveNumber;
