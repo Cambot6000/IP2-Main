@@ -182,6 +182,8 @@ public class TowerFire : MonoBehaviour
         }
     }
 
+    
+    
     // update circle in editor when changing values
     private void OnValidate()
     {
@@ -196,7 +198,7 @@ public class TowerFire : MonoBehaviour
         lineRenderer.startColor = ringColor;
         lineRenderer.endColor = ringColor;
 
-        DrawRing();
+        
     }
 
     private void OnTriggerEnter(Collider other) //Checks to see if player enters range of dino and then starts to make the range ring appear
