@@ -126,7 +126,7 @@ public class Building : MonoBehaviour
                     ChangeLightBar(Color.magenta);
                 }
             }
-            else if (objectToPlace.turretType == TurretType.None)
+            else if (objectToPlace.turretType == TurretType.None || objectToPlace == null)
             {
                 if (dualSense != null)
                 {

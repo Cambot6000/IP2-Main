@@ -7953,7 +7953,7 @@ MonoBehaviour:
   minX: -10.55
   maxX: 9.9
   minZ: -5.2
-  maxZ: 11.3
+  maxZ: 13.2
   playerIcon: {fileID: 1559970784}
   timerDuration: 2.75
   currentTime: 0
