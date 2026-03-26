@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class AoeTowerScript : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class AoeTowerScript : MonoBehaviour
     private PlaceObject placeObject;
     private LineRenderer lineRenderer;
     private float fireTimer;
+
+    [Header("Ring VIsibility Stuff")]
+    public bool ringActive;
+    private Coroutine activeFade;
 
     private void Awake()
     {
@@ -135,5 +140,94 @@ public class AoeTowerScript : MonoBehaviour
         lineRenderer.endColor = ringColor;
 
         DrawRing();
+    }
+
+    private void OnTriggerEnter(Collider other) //Checks to see if player enters range of dino and then starts to make the range ring appear
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //print("Player touched dino");
+            ringActive = true;
+            if (activeFade != null) //If the wee player guy has already started a grow or shrink, end it and start the neweer one
+            {
+                StopCoroutine(activeFade);
+            }
+            activeFade = StartCoroutine(RingFade(1f, range));
+        }
+    }
+
+    private void OnTriggerExit(Collider other) //Checks to see if player exits range of dino and then starts to make the range ring disappear
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //print("player exited dino");
+            ringActive = false;
+            if (activeFade != null) //If the wee player guy has already started a grow or shrink, end it and start the neweer one
+            {
+                StopCoroutine(activeFade);
+            }
+            activeFade = StartCoroutine(RingFade(0f, range * 0.5f));
+        }
+    }
+
+    private IEnumerator RingFade(float targetTransparency, float targetRange) //Coroutine to make the ring fade in/out and grow/shrink
+    {
+        float duration = 0.5f; //How long both thingys last, like the fade in/out and the grow/shrink
+        float currentTime = 0f;
+
+        Color startLineColour = lineRenderer.startColor;
+        float startTransparency = startLineColour.a;
+
+        float startRange; //Starting range of the dino ring
+
+        if (lineRenderer.enabled)
+        {
+            startRange = lineRenderer.GetPosition(0).magnitude; //Checks how big the line is the now
+        }
+        else
+        {
+            startRange = range * 0.5f;
+        }
+
+        lineRenderer.enabled = true;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.unscaledDeltaTime; //This bit because of the speed up stuff
+            float timeVariable = currentTime / duration;
+            float otherTimeVariable = Mathf.SmoothStep(0, 1, timeVariable); //Smooth step makes the sort of animation, I guess, start slowly, gradually ramp up and then softly end at the end, if you understand what I'm trying to say
+            float newTransparency = Mathf.Lerp(startTransparency, targetTransparency, currentTime / duration); //Lerp gets the bit in the middle, I think
+
+            Color newColour = new Color(ringColor.r, ringColor.g, ringColor.b, newTransparency);
+            lineRenderer.startColor = newColour;
+            lineRenderer.endColor = newColour;
+
+            //^Sets the transparency of the line to the new one that is needed
+
+            float brandNewRingDisplayThingy = Mathf.Lerp(startRange, targetRange, otherTimeVariable);
+            DrawGrowingRing(brandNewRingDisplayThingy);
+
+            //^Makes the ring grow or shrink
+
+            yield return null;
+        }
+
+        if (targetTransparency <= 0f)
+        {
+            lineRenderer.enabled = false;
+        }
+    }
+
+    private void DrawGrowingRing(float radius) //Similar to the OG draw ring method that was made. Old one still works too, alongside this one, this one hoever only comes into play omce you build the wee guys
+    {
+        float step = 2f * Mathf.PI / ringSegments;
+        for (int i = 0; i <= ringSegments; i++)
+        {
+            float angle = i * step;
+            float x = Mathf.Cos(angle) * radius;
+            float z = Mathf.Sin(angle) * radius;
+            //Small Y offset like the OG draw ring bit that was made
+            lineRenderer.SetPosition(i, new Vector3(x, 0.1f, z));
+        }
     }
 }

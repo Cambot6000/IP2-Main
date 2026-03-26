@@ -39,6 +39,7 @@ public class Building : MonoBehaviour
 
     // currently active object being placed
     private PlaceObject objectToPlace;
+    public DualSenseGamepadHID dualSense;
 
     //////// Grid Building System ////////
     #region GridBuilding System;
@@ -61,14 +62,18 @@ public class Building : MonoBehaviour
         {
             controls.Disable();
         }
-        
+
+    private void Start()
+    {
+        dualSense = Gamepad.current as DualSenseGamepadHID;
+    }
     private void Update()
     {
-        var dualSense = Gamepad.current as DualSenseGamepadHID;
+        //var dualSense = Gamepad.current as DualSenseGamepadHID;
         if (dualSense != null)
         {
-            //Set the light bar to magenta to test
-            //dualSense.SetLightBarColor(Color.magenta);
+            //Set the light bar to blue to test
+            //dualSense.SetLightBarColor(Color.blue);
         }
 
         if (wheelOpen)
@@ -97,6 +102,38 @@ public class Building : MonoBehaviour
             Color tempColour = playerIcon.color;
             tempColour.a = newAlpha;
             playerIcon.color = tempColour;
+            if (objectToPlace.turretType == TurretType.Turret1)
+            {
+                if (dualSense != null)
+                {
+                    //Set the light bar to yellow like the base turret
+                    ChangeLightBar(Color.yellow);
+                }
+            }
+            else if (objectToPlace.turretType == TurretType.Turret2)
+            {
+                if (dualSense != null)
+                {
+                    //Set the light bar to red like the AOE turret. Might change the colour later though
+                    ChangeLightBar(Color.red);
+                }
+            }
+            else if (objectToPlace.turretType == TurretType.Turret3)
+            {
+                if (dualSense != null)
+                {
+                    //Set the light bar to magenta like the poison turret
+                    ChangeLightBar(Color.magenta);
+                }
+            }
+            else if (objectToPlace.turretType == TurretType.None)
+            {
+                if (dualSense != null)
+                {
+                    //Clears the light bar when no tower selected
+                    ChangeLightBar(Color.blue);
+                }
+            }
         }
 
         else if (playerIcon != null)
@@ -110,39 +147,6 @@ public class Building : MonoBehaviour
 
         // Keep preview object in front of the player, snapped to grid, change to maybe flash or be transparent
         objectToPlace.transform.position = PlacementWorldPos();
-        if (objectToPlace.turretType == TurretType.Turret1)
-        {
-            if (dualSense != null)
-            {
-                //Set the light bar to yellow like the base turret
-                dualSense.SetLightBarColor(Color.yellow);
-            }
-        }
-        else if (objectToPlace.turretType == TurretType.Turret2)
-        {
-            if (dualSense != null)
-            {
-                //Set the light bar to red like the AOE turret. Might change the colour later though
-                dualSense.SetLightBarColor(Color.red);
-            }
-        }
-        else if (objectToPlace.turretType == TurretType.Turret3)
-        {
-            if (dualSense != null)
-            {
-                //Set the light bar to magenta like the poison turret
-                dualSense.SetLightBarColor(Color.magenta);
-            }
-        }
-        else if(objectToPlace.turretType == TurretType.None)
-        {
-            if (dualSense != null)
-            {
-                //Clears the light bar when no tower selected
-                dualSense.SetLightBarColor(Color.white);
-            }
-        }
-
 
         //controler support
         // controler & keyboard support
@@ -162,15 +166,27 @@ public class Building : MonoBehaviour
             {
                 Destroy(objectToPlace.gameObject);
                 objectToPlace = null; // exit build mode (failed)
+                ChangeLightBar(Color.blue);
+                print("Changed to blue");
             }
         }
         else if (cancel)
         {
             Destroy(objectToPlace.gameObject);
             objectToPlace = null; // exit build mode
+            ChangeLightBar(Color.blue);
+            print("Changed to blue2");
         }
 
         }
+
+    private void ChangeLightBar(Color colourName)
+    {
+        if (dualSense != null)
+        {
+            dualSense.SetLightBarColor(colourName);
+        }
+    }
     
     // Position in front of the player, snapped to grid
     private Vector3 PlacementWorldPos()
