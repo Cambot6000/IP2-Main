@@ -4,6 +4,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps; //tile map package
+using UnityEngine.InputSystem.DualShock; //Used for playstation controller
 
 public class Building : MonoBehaviour
 {
@@ -63,6 +64,12 @@ public class Building : MonoBehaviour
         
     private void Update()
     {
+        var dualSense = Gamepad.current as DualSenseGamepadHID;
+        if (dualSense != null)
+        {
+            //Set the light bar to magenta to test
+            //dualSense.SetLightBarColor(Color.magenta);
+        }
 
         if (wheelOpen)
             return;
@@ -103,8 +110,40 @@ public class Building : MonoBehaviour
 
         // Keep preview object in front of the player, snapped to grid, change to maybe flash or be transparent
         objectToPlace.transform.position = PlacementWorldPos();
-        
-        
+        if (objectToPlace.turretType == TurretType.Turret1)
+        {
+            if (dualSense != null)
+            {
+                //Set the light bar to yellow like the base turret
+                dualSense.SetLightBarColor(Color.yellow);
+            }
+        }
+        else if (objectToPlace.turretType == TurretType.Turret2)
+        {
+            if (dualSense != null)
+            {
+                //Set the light bar to red like the AOE turret. Might change the colour later though
+                dualSense.SetLightBarColor(Color.red);
+            }
+        }
+        else if (objectToPlace.turretType == TurretType.Turret3)
+        {
+            if (dualSense != null)
+            {
+                //Set the light bar to magenta like the poison turret
+                dualSense.SetLightBarColor(Color.magenta);
+            }
+        }
+        else if(objectToPlace.turretType == TurretType.None)
+        {
+            if (dualSense != null)
+            {
+                //Clears the light bar when no tower selected
+                dualSense.SetLightBarColor(Color.white);
+            }
+        }
+
+
         //controler support
         // controler & keyboard support
         bool place  = controls.Player.Place.triggered; 

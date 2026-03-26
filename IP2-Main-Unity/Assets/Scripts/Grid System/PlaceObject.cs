@@ -11,6 +11,7 @@ public class PlaceObject : MonoBehaviour
     public Vector3Int size{get; private set;} //the size of the tower so we can check if its in a grid square
     private Vector3[] Vertices;
     public int towerCost= 250;
+    public Building.TurretType turretType;
     
     
     
