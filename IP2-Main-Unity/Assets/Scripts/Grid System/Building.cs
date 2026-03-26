@@ -69,6 +69,15 @@ public class Building : MonoBehaviour
     }
     private void Update()
     {
+
+        if (objectToPlace.turretType == TurretType.None || objectToPlace == null)
+        {
+            if (dualSense != null)
+            {
+                //Clears the light bar when no tower selected
+                ChangeLightBar(Color.blue);
+            }
+        }
         //var dualSense = Gamepad.current as DualSenseGamepadHID;
         if (dualSense != null)
         {
@@ -161,6 +170,7 @@ public class Building : MonoBehaviour
                 Vector3Int start = grid.WorldToCell(objectToPlace.getStartPos()); //returns the world pos of the object, WorldToCell converts it to grid cell coords
                 TakeArea(start, objectToPlace.size);//this checks how many cells wide the object/tower is then "paints" the cells so that we know the cell space is now ocupied 
                 objectToPlace = null; // exit build mode as we have placed an objec
+                ChangeLightBar(Color.blue);
             }
             else
             {

@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poisonTimes: 4
-  poisonDamage: 0
+  poisonDamage: 4
   poisonWait: 2
   pool: 0
   lifeSpan: 0
