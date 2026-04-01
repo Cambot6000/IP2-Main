@@ -4667,6 +4667,9 @@ MonoBehaviour:
   Tower2: {fileID: 1590894730}
   Tower3: {fileID: 117249048}
   Tower4: {fileID: 1466983138}
+  colourChangeSpeed: 5
+  currentColour: {r: 0.84276724, g: 0, b: 0.18614, a: 1}
+  targetColour: {r: 0, g: 0, b: 1, a: 1}
 --- !u!156049354 &1429140000
 Grid:
   m_ObjectHideFlags: 0
