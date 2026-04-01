@@ -8,6 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream:IP2-Main-Unity/Assets/Prefabs/PoisonTower.prefab
   - component: {fileID: 4465738482377626033}
   - component: {fileID: 5611550078559763886}
   - component: {fileID: 6429503907561200050}
@@ -15,6 +16,12 @@ GameObject:
   - component: {fileID: 3339022696109053862}
   - component: {fileID: 8653788395767263232}
   - component: {fileID: 7925754918231271107}
+=======
+  - component: {fileID: 1097092121660391701}
+  - component: {fileID: -8162088074497153293}
+  - component: {fileID: 5269697384344067867}
+  - component: {fileID: 87536935856363636}
+>>>>>>> Stashed changes:IP2-Main-Unity/Assets/Prefabs/PoisonTowerDos.prefab
   m_Layer: 0
   m_Name: PoisonTower
   m_TagString: Untagged
@@ -123,8 +130,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08a530c840b2c340a9b196a487ebb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:IP2-Main-Unity/Assets/Prefabs/PoisonTower.prefab
   towerCost: 200
 --- !u!114 &8653788395767263232
+=======
+  towerCost: 250
+  turretType: 1
+--- !u!114 &5269697384344067867
+>>>>>>> Stashed changes:IP2-Main-Unity/Assets/Prefabs/PoisonTowerDos.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,16 +159,26 @@ MonoBehaviour:
   projectilePrefab: {fileID: 452867103747816190, guid: 5a8f92e9ef8ecd943be3bafd641582cf, type: 3}
   projectileSpeed: 10
   projectileLifeTime: 5
+<<<<<<< Updated upstream:IP2-Main-Unity/Assets/Prefabs/PoisonTower.prefab
 <<<<<<< Updated upstream
   firePoint: {fileID: 0}
 =======
   firePoint: {fileID: 2285945643354810597}
 --- !u!65 &7925754918231271107
 BoxCollider:
+=======
+  firePoint: {fileID: 7433086274570747931}
+  tower: {fileID: 919132149155446097, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+  ringActive: 0
+--- !u!95 &87536935856363636
+Animator:
+  serializedVersion: 7
+>>>>>>> Stashed changes:IP2-Main-Unity/Assets/Prefabs/PoisonTowerDos.prefab
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:IP2-Main-Unity/Assets/Prefabs/PoisonTower.prefab
   m_GameObject: {fileID: 891594839903357889}
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -172,6 +195,24 @@ BoxCollider:
   m_Size: {x: 1.2635223, y: 0.5781549, z: 0.5779568}
   m_Center: {x: -0.33888704, y: -0.033851802, z: 0.007880256}
 --- !u!1001 &610416448044054188
+=======
+  m_GameObject: {fileID: 1331161078107804044}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3fd9e77936ce6b428c309ff7b90947f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &3374658473944051670
+>>>>>>> Stashed changes:IP2-Main-Unity/Assets/Prefabs/PoisonTowerDos.prefab
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -245,9 +286,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
   m_PrefabInstance: {fileID: 610416448044054188}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:IP2-Main-Unity/Assets/Prefabs/PoisonTower.prefab
 --- !u!4 &2285945643354810597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7511461062680814007, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
   m_PrefabInstance: {fileID: 610416448044054188}
   m_PrefabAsset: {fileID: 0}
 
+=======
+--- !u!4 &7433086274570747931 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5328482478806888397, guid: fee87d9e24f064f4b9616c346cc37426, type: 3}
+  m_PrefabInstance: {fileID: 3374658473944051670}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes:IP2-Main-Unity/Assets/Prefabs/PoisonTowerDos.prefab

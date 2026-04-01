@@ -26,12 +26,23 @@ public class TowerFire : MonoBehaviour
     private float fireTimer;
     private Enemies currentTarget;
 
+<<<<<<< Updated upstream
+=======
+    public GameObject tower;
+    private Animator animator;
+    [Header("Ring VIsibility Stuff")]
+    public bool ringActive;
+    private Coroutine activeFade;
+
+>>>>>>> Stashed changes
     private void Awake()
     {
+        
+        tower = gameObject;
         placeObject = GetComponent<PlaceObject>();
         lineRenderer = GetComponent<LineRenderer>();
-
-
+        animator = GetComponent<Animator>();
+       
         if (lineRenderer == null)
             lineRenderer = gameObject.AddComponent<LineRenderer>();
 
@@ -53,6 +64,7 @@ public class TowerFire : MonoBehaviour
 
     private void Update()
     {
+        
         // toggle range ring visibility
         if (placeObject != null)
             lineRenderer.enabled = showRingWhilePlacing || placeObject.Placed;
@@ -115,6 +127,9 @@ public class TowerFire : MonoBehaviour
         if (target == null)
             return;
 
+        animator.SetTrigger("Attack");
+       Vector3 targetPosition = new Vector3(target.transform.position.x, tower.transform.position.y,target.transform.position.z);
+        tower.gameObject.transform.LookAt(targetPosition);
         if (projectilePrefab != null) // If there is a prefab assigned, spawn it and do the projectile script
         {
             GameObject go = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);

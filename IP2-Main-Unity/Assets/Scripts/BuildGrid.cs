@@ -18,12 +18,13 @@ public class BuildGrid : MonoBehaviour
      [Header("EnemiesPath")]
 
     public List<Vector3> pathWaypoint = new List<Vector3>();
-    public List<(int x, int y)> path = new List<(int x, int y)> { (1, 0), (1, 1), (2, 1), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5) };
+    public List<(int x, int y)> path = new List<(int x, int y)> { (1, 0), (1, 1), (2, 1), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5) }; 
+   
 
     private void Start()
     {
         
-        Renderer prefabR = prefab.GetComponent<Renderer>();
+        Renderer prefabR = prefab.GetComponent<Renderer>();// size of prefab
         width = prefabR.bounds.size.x;
         height = prefabR.bounds.size.y;
 
@@ -35,14 +36,14 @@ public class BuildGrid : MonoBehaviour
             {
                 
 
-                Vector3 pos = new Vector3(transform.position.x + (width * x), transform.position.y, transform.position.z + (height * y));
-                GameObject gridBox = Instantiate(prefab, pos, Quaternion.identity);
+                Vector3 pos = new Vector3(transform.position.x + (width * x), transform.position.y, transform.position.z + (height * y));//set position of prefab
+                GameObject gridBox = Instantiate(prefab, pos, Quaternion.identity);// creates object
                 Renderer gridBoxR = gridBox.GetComponent<Renderer>();// temporary
                 if (path.Contains((x, y)))// finds path for enemies 
                 {
                   
                     gridBoxR.material.color = Color.red;// temporary 
-                    pathWaypoint.Add(gridBox.transform.position);
+                    pathWaypoint.Add(gridBox.transform.position);// adds position to list
 
                 }
                 else

@@ -16,9 +16,6 @@ public class EnemiesSpawner : MonoBehaviour
     public bool moreEnemies;
     public bool upgradedEnemies;
 
-
-
-
     [Header("Waves")]
     public int waveNumber;
     public float waveTimmerMax;
@@ -43,7 +40,7 @@ public class EnemiesSpawner : MonoBehaviour
         InWave = true;
         waveNumber = 1;
         EnemiesAmount();
-        for (int i = 0; i < pathWaypoint.Count; i++)
+        for (int i = 0; i < pathWaypoint.Count; i++)// sets postitions for astronaught path
         {
             pathWaypoint[i] = new Vector3(
                  pathWaypoint[i].x,
@@ -53,6 +50,7 @@ public class EnemiesSpawner : MonoBehaviour
         }
 
         chosenDifficulty = GameSettings.chosenDifficulty;
+
     }
 
     private void Update()
@@ -100,12 +98,20 @@ public class EnemiesSpawner : MonoBehaviour
         {
 
 
+<<<<<<< Updated upstream
                 waveNumber++;
                 InWave = true;
                 waveTimmer = 0;
                 waitTimer = 0;
 
 
+=======
+            waveNumber++;
+            InWave = true;
+            waveTimmer = 0f;
+            waitTimer = 0f;
+            enemySpawnTimer = 0f;
+>>>>>>> Stashed changes
         }
     }
 
