@@ -34,7 +34,7 @@ public class SettingManager : MonoBehaviour
         {
             GameSettings.PlacingJoyStick = false;
         }
-        else
+        else if(placingJoyStick.value == 1)
         {
             GameSettings.PlacingJoyStick = true;
         }
@@ -45,7 +45,7 @@ public class SettingManager : MonoBehaviour
         {
             GameSettings.MovingJoyStick = false;
         }
-        else
+        else if(movingJoyStick.value == 1)
         {
             GameSettings.MovingJoyStick = true;
         }
