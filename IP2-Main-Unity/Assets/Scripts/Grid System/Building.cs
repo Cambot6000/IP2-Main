@@ -121,6 +121,7 @@ public class Building : MonoBehaviour
             Color tempColour = playerIcon.color;
             tempColour.a = newAlpha;
             playerIcon.color = tempColour;
+            /*
             if (objectToPlace.turretType == TurretType.Turret1)
             {
                 if (dualSense != null)
@@ -153,7 +154,10 @@ public class Building : MonoBehaviour
                     //ChangeLightBar(Color.blue);
                 }
             }
+            OLD COLOUR CHANGING LIGHT BAR CODE NOT NEEDED ANYMORE
+            */
         }
+           
 
         else if (playerIcon != null)
         {
