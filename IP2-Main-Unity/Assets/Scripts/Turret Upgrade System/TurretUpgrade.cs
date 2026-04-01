@@ -19,13 +19,13 @@ public class TurretUpgrade : MonoBehaviour
   [Header("Upgrade Option 2")] 
   public string option2Label = "Increase Range";
   public int option2Cost = 120;
-  public float rangeIncrease = 1.5f; 
-  
-  private TowerFire towerFire;
+  public float rangeIncrease = 1.5f;
+
+    private TowerFire towerFire;
 
   void Awake()
   {
-    towerFire = GetComponent<TowerFire>(); 
+    //towerFire = GetComponent<TowerFire>();
   }
 
   public void ApplyOption1() //apply the first upgrade option to the tower
@@ -41,10 +41,22 @@ public class TurretUpgrade : MonoBehaviour
       Debug.Log("Not enough gold for upgrade 1"); //debug
       return;
     }
-    
-    //apply the upgrade
-    towerFire.damage += damageIncrease;
-    Debug.Log($"{turretName} damge upgraded to {towerFire.damage}");
+
+        //apply the upgrade
+        if (GetComponent<TowerFire>() != null) 
+        {
+            TowerFire newTowerFireVar = GetComponent<TowerFire>();
+            newTowerFireVar.damage += damageIncrease;
+            Debug.Log($"{turretName} damge upgraded to {newTowerFireVar.damage}");
+        }
+        else if (GetComponent<AoeTowerScript>() != null) 
+        { 
+            AoeTowerScript aoeTowerUpgradeVar = GetComponent<AoeTowerScript>();
+            aoeTowerUpgradeVar.damage += damageIncrease;
+            Debug.Log($"{turretName} damge upgraded to {aoeTowerUpgradeVar.damage}");
+        }
+    //towerFire.damage += damageIncrease;
+    //Debug.Log($"{turretName} damge upgraded to {towerFire.damage}");
 
   }
 
@@ -61,12 +73,24 @@ public class TurretUpgrade : MonoBehaviour
       Debug.Log("Not enough gold for upgrade 2"); //debug
       return;
     }
+
+        //apply the upgrade
+        if (GetComponent<TowerFire>() != null)
+        {
+            TowerFire newTowerFireVar = GetComponent<TowerFire>();
+            newTowerFireVar.range += rangeIncrease;
+            Debug.Log($"{turretName} range upgraded to {newTowerFireVar.range}");
+        }
+        else if (GetComponent<AoeTowerScript>() != null)
+        {
+            AoeTowerScript aoeTowerUpgradeVar = GetComponent<AoeTowerScript>();
+            aoeTowerUpgradeVar.range += rangeIncrease;
+            Debug.Log($"{turretName} range upgraded to {aoeTowerUpgradeVar.range}");
+        }
+        //towerFire.range += rangeIncrease;
+        towerFire.UpdateRangeRing(); //change size of the range ring
     
-    //apply the upgrade
-    towerFire.range += rangeIncrease;
-    towerFire.UpdateRangeRing(); //change size of the range ring
-    
-    Debug.Log($"{turretName} range upgraded to {towerFire.range}");
+    //Debug.Log($"{turretName} range upgraded to {towerFire.range}");
     
   }
 }

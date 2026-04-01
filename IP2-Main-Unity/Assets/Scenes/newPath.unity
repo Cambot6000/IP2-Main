@@ -440,6 +440,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AoeEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 8774748001020458744, guid: afbc7b16823ab1440bde028acd049ab7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6372,6 +6376,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1474342, y: 0.7189231, z: 1}
   m_Center: {x: 0.011247635, y: 0.270797, z: 0}
+--- !u!114 &1590894735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590894730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6302291fc3913e14fa2e402aa5e908ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretName: AOE Turret
+  option1Label: Increase Damage
+  option1Cost: 150
+  damageIncrease: 10
+  option2Label: Increase Range
+  option2Cost: 400
+  rangeIncrease: 1.05
 --- !u!1 &1605096543
 GameObject:
   m_ObjectHideFlags: 0
@@ -7569,6 +7592,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4015814561450557096, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1590894732}
+    - targetCorrespondingSourceObject: {fileID: 4015814561450557096, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1590894735}
   m_SourcePrefab: {fileID: 100100000, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
 --- !u!1 &1875959801
 GameObject:
