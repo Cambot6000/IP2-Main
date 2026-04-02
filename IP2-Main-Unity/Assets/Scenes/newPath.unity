@@ -8511,6 +8511,10 @@ PrefabInstance:
       propertyPath: ringColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3914405826604820254, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      propertyPath: superchargedParticlePrefab
+      value: 
+      objectReference: {fileID: 8774748001020458744, guid: 5999a8e5d57c9824bbccaab4821c7584, type: 3}
     - target: {fileID: 4015814561450557096, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: m_Name
       value: AoeTower
