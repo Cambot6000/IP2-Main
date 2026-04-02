@@ -139,7 +139,7 @@ public class TowerFire : MonoBehaviour
         if (target == null)
             return;
 
-        animator.SetTrigger("Attack");
+       // animator.SetTrigger("Attack");
        Vector3 targetPosition = new Vector3(target.transform.position.x, tower.transform.position.y,target.transform.position.z);
         tower.gameObject.transform.LookAt(targetPosition);
         if (projectilePrefab != null) // If there is a prefab assigned, spawn it and do the projectile script
