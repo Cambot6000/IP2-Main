@@ -551,6 +551,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.48043823, z: 1}
   m_Center: {x: 0, y: 0.25978088, z: 0}
+--- !u!114 &117249051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117249048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4a9b593052db84885d04cb114c971e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretName: Poison Tower
+  option1Label: Increase Poison Damage
+  option1Cost: 100
+  damageIncrease: 1
+  option2Label: Increase Poison Duration
+  option2Cost: 120
+  timesIncrease: 1
 --- !u!1001 &161791575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1124,6 +1143,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1331161078107804044, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 117249050}
+    - targetCorrespondingSourceObject: {fileID: 1331161078107804044, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 117249051}
   m_SourcePrefab: {fileID: 100100000, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
 --- !u!1 &343751028
 GameObject:
