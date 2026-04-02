@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 935320993239056117}
   - component: {fileID: 3914405826604820254}
   - component: {fileID: 8806084562721274853}
+  - component: {fileID: -5917376406691190850}
   m_Layer: 0
   m_Name: AoeTower
   m_TagString: Untagged
@@ -68,6 +69,7 @@ MonoBehaviour:
   ringColor: {r: 1, g: 0.9, b: 0.2, a: 0.6}
   showRingWhilePlacing: 1
   aoeParticlePrefab: {fileID: 8774748001020458744, guid: afbc7b16823ab1440bde028acd049ab7, type: 3}
+  ringActive: 0
 --- !u!114 &8806084562721274853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +83,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerCost: 250
+  turretType: 0
+--- !u!114 &-5917376406691190850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4015814561450557096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e65708867eff848b2ba0dae9fe0240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretName: Aoe Tower
+  option1Label: Supercharge
+  option1Cost: 250
+  damageBonus: 25
+  superchargedParticlePrefab: {fileID: 8774748001020458744, guid: 5999a8e5d57c9824bbccaab4821c7584, type: 3}
+  option2Label: Rapid Pulse
+  option2Cost: 200
+  fireRateReduction: 0.25
 --- !u!1001 &7491519182918760221
 PrefabInstance:
   m_ObjectHideFlags: 0
