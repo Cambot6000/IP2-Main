@@ -367,6 +367,8 @@ public class Building : MonoBehaviour
                 return Tower2;
             case TurretType.Turret3:
                 return Tower3;
+            case TurretType.Turret4:
+                return Tower4;
             //etc..
             default:
                 return null;
