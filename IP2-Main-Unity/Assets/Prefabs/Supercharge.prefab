@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7637825733791034040}
   - component: {fileID: 8942420085772162528}
   m_Layer: 0
-  m_Name: AoeEffect
+  m_Name: Supercharge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1424,15 +1424,15 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.15723258, g: 0.1270716, b: 0.1270716, a: 1}
-        key1: {r: 0.4716981, g: 0.23017265, b: 0.12014946, a: 0.8418301}
+        key0: {r: 0.06022296, g: 0.14268419, b: 0.91194963, a: 1}
+        key1: {r: 0.06289297, g: 0.06058854, b: 0.05953077, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0.6666667}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 7325
+        ctime0: 15035
         ctime1: 65535
         ctime2: 0
         ctime3: 0
@@ -1441,7 +1441,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 31097
+        atime1: 65535
         atime2: 65535
         atime3: 0
         atime4: 0
@@ -1451,7 +1451,7 @@ ParticleSystem:
         m_Mode: 0
         m_ColorSpace: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
