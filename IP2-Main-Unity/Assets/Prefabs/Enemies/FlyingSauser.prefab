@@ -91,10 +91,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.10863416
-  m_Height: 0.39170647
+  m_Radius: 0.09052948
+  m_Height: 0.27690968
   m_Direction: 1
-  m_Center: {x: 0.0075980187, y: 0.21534967, z: -0.0058056237}
+  m_Center: {x: 0.10334498, y: 0.04452839, z: -0.0058056237}
 --- !u!95 &4824399094072905649
 Animator:
   serializedVersion: 7
@@ -127,11 +127,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3df07df8f3626704292483d759770f4a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3df07df8f3626704292483d759770f4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.174
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3df07df8f3626704292483d759770f4a, type: 3}
       propertyPath: m_LocalPosition.z
