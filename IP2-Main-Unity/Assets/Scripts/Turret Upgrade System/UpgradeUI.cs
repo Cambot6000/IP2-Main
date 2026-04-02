@@ -21,6 +21,13 @@ public class UpgradeUI : MonoBehaviour
     public Button option2Button;
     public TextMeshProUGUI option2LabelText;
     public TextMeshProUGUI option2CostText;
+
+    [Header("Option 3 UI")]
+    public Button option3Button;
+    public TextMeshProUGUI option3LabelText;
+    public TextMeshProUGUI option3CostText;
+
+    
     
     [Header("Prompt")]
     public GameObject prompt; //upgrade prompt when player is above turret
@@ -74,12 +81,17 @@ public class UpgradeUI : MonoBehaviour
         option2LabelText.text = turret.option2Label;
         option2CostText.text = turret.option2Cost.ToString();
 
+        option3LabelText.text = turret.option3Label;
+        option3CostText.text = turret.option3Cost.ToString();
+
         // Wire buttons
         option1Button.onClick.RemoveAllListeners();
         option2Button.onClick.RemoveAllListeners();
+        option3Button.onClick.RemoveAllListeners();
 
         option1Button.onClick.AddListener(OnOption1);
         option2Button.onClick.AddListener(OnOption2);
+        option3Button.onClick.AddListener(OnOption3);
 
 
         if (EventSystem.current != null)
@@ -106,6 +118,7 @@ public class UpgradeUI : MonoBehaviour
     
         option1Button.onClick.RemoveAllListeners();
         option2Button.onClick.RemoveAllListeners();
+        option3Button.onClick.RemoveAllListeners();
     }
 
     void Update()
@@ -136,6 +149,15 @@ public class UpgradeUI : MonoBehaviour
         if (currentTurret == null) return;
         
         currentTurret.ApplyOption2();
+        Close();
+    }
+      private void OnOption3() //apply upgrade option 3
+    {
+        Debug.Log("[UpgradeUI] OnOption3 click");
+        
+        if (currentTurret == null) return;
+        
+        currentTurret.ApplyOption3();
         Close();
     }
     
