@@ -49,6 +49,10 @@ public class GameUI : MonoBehaviour
         if (currentWaveNumber != waveNumber) // only show when new wave begins
         {
             FadeIn();
+            if (waveNumber == 1)
+            {
+                enemiesSpawner.LandedRocket();
+            }
 
         }
         if (Mathf.Abs(waveCanvasGroup.alpha - targetAlpha) < 0.01f)// if the diffrence is between the values is less than 0.01d then fades out
@@ -61,10 +65,6 @@ public class GameUI : MonoBehaviour
         if(waveNumber != 0)
         {
             waveText.text = "Wave " + waveNumber.ToString();// sets text to wave and the number
-            if(waveNumber == 1)
-            {
-                enemiesSpawner.LandedRocket();
-            }
         }
         else if(waveNumber == 0) 
         {
