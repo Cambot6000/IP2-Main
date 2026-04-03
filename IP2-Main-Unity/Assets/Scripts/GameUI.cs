@@ -58,7 +58,19 @@ public class GameUI : MonoBehaviour
 
 
         waveCanvasGroup.alpha = Mathf.Lerp(waveCanvasGroup.alpha, targetAlpha, fadeSpeed * Time.deltaTime);// smooths the fade in and out
-        waveText.text = "Wave " + waveNumber.ToString();// sets text to wave and the number
+        if(waveNumber != 0)
+        {
+            waveText.text = "Wave " + waveNumber.ToString();// sets text to wave and the number
+            if(waveNumber == 1)
+            {
+                enemiesSpawner.LandedRocket();
+            }
+        }
+        else if(waveNumber == 0) 
+        {
+            waveText.text = "Prep Time";
+        }
+        
         healthBar.value = health;// sets health bar value for ui
                                  // check value against max value * value 
                                  // sets sprite to egg array image based on value

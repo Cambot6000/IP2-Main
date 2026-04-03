@@ -36,6 +36,12 @@ public class EnemiesSpawner : MonoBehaviour
     public List<Vector3> pathWaypoint = new List<Vector3>();
     public GameObject[] enemies;
 
+    [Header("Rocket Spawn Animation Stuff")]
+    public GameObject rocketWithStairs; //Rocket with the stairs model
+    public GameObject flyingRocket; //The rocket that actually flies down
+    [SerializeField] private float rocketSpeed; //Calculated using RocketScience() Method
+    public float groundLevel; //Put slightly higher than the actual ground so that the rocket doesn't clip through
+
     private void Start()
     {
         InWave = false;
@@ -43,6 +49,9 @@ public class EnemiesSpawner : MonoBehaviour
         waitTimer = 0;
         waveTimmer = 0;
         enemySpawnTimer = 0;
+
+        rocketWithStairs.SetActive(false);
+        flyingRocket.SetActive(true);
 
         EnemiesAmount();
         for (int i = 0; i < pathWaypoint.Count; i++)// sets postitions for astronaught path
@@ -56,6 +65,7 @@ public class EnemiesSpawner : MonoBehaviour
 
         chosenDifficulty = GameSettings.chosenDifficulty;
 
+        RocketScience();
     }
 
     private void Update()
@@ -68,6 +78,19 @@ public class EnemiesSpawner : MonoBehaviour
         else if (initialPause > 0) //This is maybe an insane way to do all this but it works so..
         {
             initialPause = initialPause - Time.deltaTime;
+
+            //ROCKET SPAWN ANIMATION STUFF - In this bit because no enemies spawn in yet so allows the rocket to land and then eventually spawns enemies
+
+            Vector3 targetRocketPos = new Vector3(flyingRocket.transform.position.x, groundLevel, flyingRocket.transform.position.z);
+
+            flyingRocket.transform.position = Vector3.MoveTowards(flyingRocket.transform.position, targetRocketPos, rocketSpeed * Time.deltaTime);
+            //Line above just moves the flying rocket towards the ground
+
+            if (flyingRocket.transform.position.y <= (groundLevel + 0.31f))
+            {
+                //LandedRocket();
+                //Used to call LandedRocket() in this script, however now gets called in GameUI script so that the wave banner covers the switch between models
+            }
         }
         else if (initialPause < 0) //Gives an initial pause before the first wave starts that only ever runs 1 time
         {
@@ -216,12 +239,20 @@ public class EnemiesSpawner : MonoBehaviour
             segwayAmount -= 2;
             flyingSauserAmount += 2;
         }
+    }
 
-
-
-
-
-
+    public void RocketScience()
+    {
+        //Not actually rocket science, just uses the Speed = Distance/Time formula to work out the
+        //speed needed for the rocket to actually land during the prep phase
+        float distanceToTravel = flyingRocket.transform.position.y - groundLevel; //Works out the distance
+        rocketSpeed = distanceToTravel / initialPause; //Speed = Distance/Time
+    }
+    public void LandedRocket()
+    {
+        //Swaps the model for the rocket
+        flyingRocket.SetActive(false);
+        rocketWithStairs.SetActive(true);
     }
 }
 
