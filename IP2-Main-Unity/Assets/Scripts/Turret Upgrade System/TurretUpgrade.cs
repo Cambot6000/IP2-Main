@@ -26,6 +26,7 @@ public class TurretUpgrade : MonoBehaviour
   public int option3Cost = 250;
   public GameObject UpgradePrefab;
   public int damageBonus = 25;
+    public bool hasThirdUpgrade;
 
     private TowerFire towerFire;
 

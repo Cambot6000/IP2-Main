@@ -584,6 +584,7 @@ MonoBehaviour:
   option3Cost: 250
   UpgradePrefab: {fileID: 0}
   damageBonus: 25
+  hasThirdUpgrade: 0
 --- !u!1001 &161791575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11290,6 +11291,7 @@ MonoBehaviour:
   option3Cost: 250
   UpgradePrefab: {fileID: 0}
   damageBonus: 25
+  hasThirdUpgrade: 0
 --- !u!1 &1498267109
 GameObject:
   m_ObjectHideFlags: 0
@@ -12276,6 +12278,7 @@ MonoBehaviour:
   option3Cost: 250
   UpgradePrefab: {fileID: 8774748001020458744, guid: 5999a8e5d57c9824bbccaab4821c7584, type: 3}
   damageBonus: 25
+  hasThirdUpgrade: 1
 --- !u!1 &1605096543
 GameObject:
   m_ObjectHideFlags: 0
@@ -13258,6 +13261,7 @@ MonoBehaviour:
   option3Cost: 250
   UpgradePrefab: {fileID: 0}
   damageBonus: 25
+  hasThirdUpgrade: 0
 --- !u!65 &1823924512
 BoxCollider:
   m_ObjectHideFlags: 0

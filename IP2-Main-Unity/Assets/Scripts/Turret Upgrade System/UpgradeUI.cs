@@ -68,7 +68,16 @@ public class UpgradeUI : MonoBehaviour
         
         if (panel != null)
             panel.SetActive(true);
-        
+        if (currentTurret != null)
+        {
+            if (!currentTurret.hasThirdUpgrade)
+            {
+                option3Button.gameObject.SetActive(false);
+                option3CostText.gameObject.SetActive(false);
+                option3LabelText.gameObject.SetActive(false);
+            }
+        }
+
         ShowPrompt(false);
         
         //fill text
@@ -155,7 +164,7 @@ public class UpgradeUI : MonoBehaviour
     {
         Debug.Log("[UpgradeUI] OnOption3 click");
         
-        if (currentTurret == null) return;
+        if (currentTurret == null || !currentTurret.hasThirdUpgrade) return;
         
         currentTurret.ApplyOption3();
         Close();
