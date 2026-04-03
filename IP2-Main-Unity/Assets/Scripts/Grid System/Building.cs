@@ -234,7 +234,7 @@ public class Building : MonoBehaviour
         }
         else if (objectToPlace.turretType == TurretType.Turret4)
         {
-            targetColour = Color.green; //placeholder colour to test
+            targetColour = new Color(172, 25, 32); //Slowing Tower
         }
     }
 

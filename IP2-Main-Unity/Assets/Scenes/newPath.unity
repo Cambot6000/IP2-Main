@@ -755,6 +755,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 891594839903357889, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1466983142}
+    - targetCorrespondingSourceObject: {fileID: 891594839903357889, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1466983145}
   m_SourcePrefab: {fileID: 100100000, guid: 2dca12234685ed84cbb743e2d1d29fd7, type: 3}
 --- !u!1 &195352361
 GameObject:
@@ -11385,6 +11388,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7785444, y: 0.6491265, z: 1}
   m_Center: {x: 0.11072779, y: 0.17543674, z: 0}
+--- !u!114 &1466983145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466983138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6302291fc3913e14fa2e402aa5e908ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretName: Slowing Turret
+  option1Label: Increase Damage
+  option1Cost: 100
+  damageIncrease: 10
+  option2Label: Increase Range
+  option2Cost: 120
+  rangeIncrease: 1.5
+  option3Label: Supercharge
+  option3Cost: 250
+  UpgradePrefab: {fileID: 0}
+  damageBonus: 25
 --- !u!1 &1498267109
 GameObject:
   m_ObjectHideFlags: 0
@@ -14607,6 +14633,10 @@ PrefabInstance:
     - target: {fileID: 1331161078107804044, guid: 8dbdf1444cd3b4b4a81dbfa888bc9239, type: 3}
       propertyPath: m_Name
       value: SniperTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331161078107804044, guid: 8dbdf1444cd3b4b4a81dbfa888bc9239, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5269697384344067867, guid: 8dbdf1444cd3b4b4a81dbfa888bc9239, type: 3}
       propertyPath: range
