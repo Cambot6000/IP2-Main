@@ -13339,6 +13339,7 @@ MonoBehaviour:
   - {fileID: 1514745269}
   - {fileID: 1448230999}
   takingDamage: 0
+  funnyVariableNameHere: {fileID: 1429139999}
 --- !u!4 &1829374734
 Transform:
   m_ObjectHideFlags: 0

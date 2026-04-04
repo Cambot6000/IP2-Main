@@ -263,7 +263,7 @@ public class Building : MonoBehaviour
         }
     }
 
-    private IEnumerator ControllerRumble(float lowFrequency, float highFrequency, float duration)
+    public IEnumerator ControllerRumble(float lowFrequency, float highFrequency, float duration)
     {
         if (dualSense != null)
         {

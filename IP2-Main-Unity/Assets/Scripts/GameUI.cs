@@ -37,7 +37,10 @@ public class GameUI : MonoBehaviour
         egg3D[1].SetActive(false);
         egg3D[2].SetActive(false);
         egg3D[0].SetActive(true);
-        funnyVariableNameHere = GetComponent<Building>();
+        if (funnyVariableNameHere == null)
+        {
+            funnyVariableNameHere = GetComponent<Building>();
+        }
     }
     void Update()
     {
@@ -56,6 +59,7 @@ public class GameUI : MonoBehaviour
             if (waveNumber == 1)
             {
                 enemiesSpawner.LandedRocket();
+                funnyVariableNameHere.StartCoroutine(funnyVariableNameHere.ControllerRumble(1.0f, 1.0f, 0.3f));
             }
 
         }
@@ -73,6 +77,7 @@ public class GameUI : MonoBehaviour
         else if(waveNumber == 0) 
         {
             waveText.text = "Prep Time";
+            funnyVariableNameHere.StartCoroutine(funnyVariableNameHere.ControllerRumble(0.4f, 0.2f, enemiesSpawner.rocketSpeed));
         }
         
         healthBar.value = health;// sets health bar value for ui

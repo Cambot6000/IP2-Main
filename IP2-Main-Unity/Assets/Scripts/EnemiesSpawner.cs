@@ -39,7 +39,7 @@ public class EnemiesSpawner : MonoBehaviour
     [Header("Rocket Spawn Animation Stuff")]
     public GameObject rocketWithStairs; //Rocket with the stairs model
     public GameObject flyingRocket; //The rocket that actually flies down
-    [SerializeField] private float rocketSpeed; //Calculated using RocketScience() Method
+    public float rocketSpeed; //Calculated using RocketScience() Method
     public float groundLevel; //Put slightly higher than the actual ground so that the rocket doesn't clip through
 
     private void Start()
