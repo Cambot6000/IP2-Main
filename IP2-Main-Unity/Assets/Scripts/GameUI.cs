@@ -28,7 +28,8 @@ public class GameUI : MonoBehaviour
     public GameObject[] egg3D;
 
     public bool takingDamage;
-    public Building funnyVariableNameHere;
+    public Building funnyVariableNameHere; //Gets reference to the Building script
+    public CameraShake evenFunnierVariableName; //Gets reference to the CameraShake script
 
     void Start()
     {
@@ -40,6 +41,11 @@ public class GameUI : MonoBehaviour
         if (funnyVariableNameHere == null)
         {
             funnyVariableNameHere = GetComponent<Building>();
+        }
+        
+        if(evenFunnierVariableName == null)
+        {
+            evenFunnierVariableName = GetComponent<CameraShake>();
         }
     }
     void Update()
@@ -59,7 +65,8 @@ public class GameUI : MonoBehaviour
             if (waveNumber == 1)
             {
                 enemiesSpawner.LandedRocket();
-                funnyVariableNameHere.StartCoroutine(funnyVariableNameHere.ControllerRumble(1.0f, 1.0f, 0.3f));
+                funnyVariableNameHere.StartCoroutine(funnyVariableNameHere.ControllerRumble(1.0f, 1.0f, 0.3f)); //Starts a controller rumble
+                evenFunnierVariableName.StartCoroutine(evenFunnierVariableName.Shakermaker(0.3f,0.4f)); //Starts a screen shake ^ both when the rocket lands
             }
 
         }
@@ -77,7 +84,8 @@ public class GameUI : MonoBehaviour
         else if(waveNumber == 0) 
         {
             waveText.text = "Prep Time";
-            funnyVariableNameHere.StartCoroutine(funnyVariableNameHere.ControllerRumble(0.4f, 0.2f, enemiesSpawner.rocketSpeed));
+            funnyVariableNameHere.StartCoroutine(funnyVariableNameHere.ControllerRumble(0.4f, 0.2f, enemiesSpawner.rocketSpeed)); //Starts rumble when rocket is coming down
+            evenFunnierVariableName.StartCoroutine(evenFunnierVariableName.Shakermaker(enemiesSpawner.rocketSpeed,0.1f)); //Screeen shakes when the rocket is coming down
         }
         
         healthBar.value = health;// sets health bar value for ui
@@ -110,7 +118,7 @@ public class GameUI : MonoBehaviour
         if (health <= 0)// ends game
 
         {
-            funnyVariableNameHere.EmergencyStop();
+            funnyVariableNameHere.EmergencyStop(); //Stops the controller from infinitely rumbling when you die
             SceneManager.LoadScene("GameOver");
         }
 
@@ -141,5 +149,6 @@ public class GameUI : MonoBehaviour
         takingDamage = true;
         yield return new WaitForSeconds(1f);
         takingDamage = false;
+        //Used to show the damage taken flash on a PS controller lightbar
     }
 }
