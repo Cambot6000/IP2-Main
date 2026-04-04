@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,6 +27,8 @@ public class GameUI : MonoBehaviour
 
     public GameObject[] egg3D;
 
+    public bool takingDamage;
+    public Building funnyVariableNameHere;
 
     void Start()
     {
@@ -34,6 +37,7 @@ public class GameUI : MonoBehaviour
         egg3D[1].SetActive(false);
         egg3D[2].SetActive(false);
         egg3D[0].SetActive(true);
+        funnyVariableNameHere = GetComponent<Building>();
     }
     void Update()
     {
@@ -101,6 +105,7 @@ public class GameUI : MonoBehaviour
         if (health <= 0)// ends game
 
         {
+            funnyVariableNameHere.EmergencyStop();
             SceneManager.LoadScene("GameOver");
         }
 
@@ -110,6 +115,7 @@ public class GameUI : MonoBehaviour
 
     public void TakeDamage(int damage)// take damage minus it from Health
     {
+        StartCoroutine(DamageWait());
         health -= damage;
     }
 
@@ -123,5 +129,12 @@ public class GameUI : MonoBehaviour
     {
         targetAlpha = 0;
         currentWaveNumber = waveNumber;
+    }
+
+    private IEnumerator DamageWait()
+    {
+        takingDamage = true;
+        yield return new WaitForSeconds(1f);
+        takingDamage = false;
     }
 }

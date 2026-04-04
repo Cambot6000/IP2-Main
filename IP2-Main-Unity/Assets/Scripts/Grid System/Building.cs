@@ -4,7 +4,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps; //tile map package
-using UnityEngine.InputSystem.DualShock; //Used for playstation controller
+using UnityEngine.InputSystem.DualShock;
+using System.Collections; //Used for playstation controller
 
 public class Building : MonoBehaviour
 {
@@ -45,6 +46,7 @@ public class Building : MonoBehaviour
     public float colourChangeSpeed = 5f;
     public Color currentColour = Color.blue;
     public Color targetColour = Color.blue;
+    public GameUI GameUIRef;
 
     //////// Grid Building System ////////
     #region GridBuilding System;
@@ -71,7 +73,12 @@ public class Building : MonoBehaviour
     private void Start()
     {
         dualSense = Gamepad.current as DualSenseGamepadHID;
+        if (GameUIRef == null)
+        {
+            GameUIRef = GetComponent<GameUI>();
+        }
     }
+            
     private void Update()
     {
         if(dualSense != null)
@@ -184,12 +191,14 @@ public class Building : MonoBehaviour
                 Vector3Int start = grid.WorldToCell(objectToPlace.getStartPos()); //returns the world pos of the object, WorldToCell converts it to grid cell coords
                 TakeArea(start, objectToPlace.size);//this checks how many cells wide the object/tower is then "paints" the cells so that we know the cell space is now ocupied 
                 objectToPlace = null; // exit build mode as we have placed an objec
+                StartCoroutine(ControllerRumble(0.1f, 0.5f, 0.1f));
                 //ChangeLightBar(Color.blue);
             }
             else
             {
                 Destroy(objectToPlace.gameObject);
                 objectToPlace = null; // exit build mode (failed)
+                StartCoroutine(ControllerRumble(0.5f, 0.1f, 0.2f));
                 //ChangeLightBar(Color.blue);
                 //print("Changed to blue");
             }
@@ -198,6 +207,7 @@ public class Building : MonoBehaviour
         {
             Destroy(objectToPlace.gameObject);
             objectToPlace = null; // exit build mode
+            StartCoroutine(ControllerRumble(0.5f, 0.1f, 0.2f));
             //ChangeLightBar(Color.blue);
             //print("Changed to blue2");
         }
@@ -216,9 +226,15 @@ public class Building : MonoBehaviour
 
     private void PickTargetColour()
     {
-        if(objectToPlace == null || objectToPlace.turretType == TurretType.None)
+        if((objectToPlace == null || objectToPlace.turretType == TurretType.None) && !GameUIRef.takingDamage)
         {
-            targetColour = Color.blue; //Default because normally a PS controller shows blue
+            //targetColour = Color.blue; //Default because normally a PS controller shows blue
+            targetColour = GameUIRef.FillBox.color; //Uses the health bar colour as the default light bar colour on the playstation controller
+        }
+        else if (GameUIRef.takingDamage)
+        {
+            StartCoroutine(ControllerRumble(0.8f, 0.4f, 0.5f));
+            targetColour = Color.red; //Goes red if you take damage
         }
         else if(objectToPlace.turretType == TurretType.Turret1)
         {
@@ -246,7 +262,37 @@ public class Building : MonoBehaviour
             dualSense.SetLightBarColor(currentColour);
         }
     }
-    
+
+    private IEnumerator ControllerRumble(float lowFrequency, float highFrequency, float duration)
+    {
+        if (dualSense != null)
+        {
+            dualSense.SetMotorSpeeds(lowFrequency, highFrequency);
+            yield return new WaitForSeconds(duration);
+            dualSense.SetMotorSpeeds(0, 0);
+        }
+        else if (dualSense == null)
+        {
+            var controller = Gamepad.current;
+            controller.SetMotorSpeeds(lowFrequency, highFrequency);
+            yield return new WaitForSeconds(duration);
+            dualSense.SetMotorSpeeds(0, 0);
+        }
+    }
+
+    public void EmergencyStop()
+    {
+        if(dualSense != null)
+        {
+            dualSense.SetMotorSpeeds(0, 0);
+        }
+        else if (dualSense == null)
+        {
+            var controller = Gamepad.current;
+            dualSense.SetMotorSpeeds(0, 0);
+        }
+    }
+
     // Position in front of the player, snapped to grid
     private Vector3 PlacementWorldPos()
     {
