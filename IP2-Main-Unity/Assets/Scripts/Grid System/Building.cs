@@ -242,7 +242,7 @@ public class Building : MonoBehaviour
         }
         else if (objectToPlace.turretType == TurretType.Turret2)
         {
-            targetColour = new Color(215,0,47); //AoE Tower
+            targetColour = new Color32(215,0,47,255); //AoE Tower
         }
         else if (objectToPlace.turretType == TurretType.Turret3)
         {
@@ -250,7 +250,7 @@ public class Building : MonoBehaviour
         }
         else if (objectToPlace.turretType == TurretType.Turret4)
         {
-            targetColour = new Color(172, 25, 32); //Slowing Tower
+            targetColour = new Color32(172, 25, 32,255); //Slowing Tower
         }
     }
 
