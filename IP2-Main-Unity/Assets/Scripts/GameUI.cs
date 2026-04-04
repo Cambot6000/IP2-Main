@@ -129,6 +129,7 @@ public class GameUI : MonoBehaviour
     public void TakeDamage(int damage)// take damage minus it from Health
     {
         StartCoroutine(DamageWait());
+        evenFunnierVariableName.StartCoroutine(evenFunnierVariableName.Shakermaker(0.2f, 0.3f));
         health -= damage;
     }
 
