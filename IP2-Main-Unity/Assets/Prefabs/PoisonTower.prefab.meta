@@ -1,7 +1,13 @@
 fileFormatVersion: 2
-guid: 77c847a9780cbc245a5201cfa2395ea8
+<<<<<<<< Updated upstream:IP2-Main-Unity/Assets/Prefabs/PoisonTower.prefab.meta
+guid: e6581b8d71640d0418964baa1c849eec
 PrefabImporter:
+========
+guid: cf7c25dcb4345a848b8518ff3630c782
+NativeFormatImporter:
+>>>>>>>> Stashed changes:IP2-Main-Unity/Assets/animator controllers/AOETowerAnimation.controller.meta
   externalObjects: {}
+  mainObjectFileID: 9100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

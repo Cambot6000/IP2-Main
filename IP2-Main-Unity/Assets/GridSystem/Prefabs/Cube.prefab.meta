@@ -1,6 +1,12 @@
 fileFormatVersion: 2
-guid: 031b91d58995b04458aee74fe4e4e052
+<<<<<<<< Updated upstream:IP2-Main-Unity/Assets/GridSystem/Prefabs/Cube.prefab.meta
+guid: 09c4c29c76a3d4843b6be22e1a398755
 PrefabImporter:
+========
+guid: 8e7de854bd260a74aac842ed8952410d
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> Stashed changes:IP2-Main-Unity/Assets/Art/Towers.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

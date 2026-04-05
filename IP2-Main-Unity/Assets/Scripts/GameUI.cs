@@ -9,13 +9,11 @@ public class GameUI : MonoBehaviour
     public TMP_Text waveText;
     public int health = 100;
     public EnemiesSpawner enemiesSpawner;
-<<<<<<< Updated upstream
 
-=======
     public Image waveImage;
     public CanvasGroup waveCanvasGroup;
     public Sprite[] egg; 
->>>>>>> Stashed changes
+
     public int waveNumber;
     public Sprite[] images;
     public int currentWaveNumber= 0;
@@ -52,12 +50,12 @@ public class GameUI : MonoBehaviour
             FadeOut();
         } 
 
-<<<<<<< Updated upstream
+
         waveText.text ="Wave "+ waveNumber.ToString();
         healthBar.value = health;
 
         if(health <= 0)
-=======
+
         waveCanvasGroup.alpha = Mathf.Lerp(waveCanvasGroup.alpha, targetAlpha, fadeSpeed * Time.deltaTime);// smooths the fade in and out
         waveText.text ="Wave "+ waveNumber.ToString();// sets text to wave and the number
         healthBar.value = health;// sets health bar value for ui

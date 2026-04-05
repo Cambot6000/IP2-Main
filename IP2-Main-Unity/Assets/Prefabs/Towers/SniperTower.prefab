@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 299690715933937863}
   - component: {fileID: -8162088074497153293}
   - component: {fileID: 5269697384344067867}
-  - component: {fileID: 810126787521668508}
   m_Layer: 0
   m_Name: SniperTower
   m_TagString: Untagged
@@ -33,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2132992311993292789}
+  - {fileID: 3656062436437342847}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &299690715933937863
@@ -87,18 +86,105 @@ MonoBehaviour:
   projectileLifeTime: 5
   firePoint: {fileID: 0}
   tower: {fileID: 0}
+  animator: {fileID: 5791741578147206852}
   ringActive: 0
---- !u!95 &810126787521668508
+--- !u!1001 &3834331397158493588
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1097092121660391701}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.153
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.233
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      propertyPath: m_Name
+      value: Sniper Turret Idle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5791741578147206852}
+  m_SourcePrefab: {fileID: 100100000, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+--- !u!4 &3656062436437342847 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+  m_PrefabInstance: {fileID: 3834331397158493588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4176844317099253957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aec81b612f5a81c4a95a65c55f21b91f, type: 3}
+  m_PrefabInstance: {fileID: 3834331397158493588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5791741578147206852
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1331161078107804044}
+  m_GameObject: {fileID: 4176844317099253957}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a3fd9e77936ce6b428c309ff7b90947f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 975c3b46ee97a4c48926d7d30c8fdb88, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -110,6 +196,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+<<<<<<< Updated upstream
 --- !u!1001 &1878933746527416350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -248,3 +335,5 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ebc7afac9c4dec44a3c064b14e8985c, type: 3}
   m_PrefabInstance: {fileID: 1878933746527416350}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes

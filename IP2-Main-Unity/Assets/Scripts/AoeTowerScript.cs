@@ -82,9 +82,19 @@ public class AoeTowerScript : MonoBehaviour
          aoeParticleEffect.Play();
        }
 
+<<<<<<< Updated upstream
        Enemies[] all = FindObjectsOfType<Enemies>();
        float sqrRange = range * range;
         foreach (var en in all)
+=======
+    private bool TryFireAoe()
+    {
+
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
+        bool hitAny = false;
+
+        foreach (var hitCollider in hitColliders)
+>>>>>>> Stashed changes
         {
          if (en == null || en.health <= 0)
          continue;
