@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 8a8568641a279d34a94b00319a52dc97
+<<<<<<< Updated upstream:IP2-Main-Unity/Assets/Art/Ankylosaur.mb.meta
+guid: 4e738bfd5f04def4e84bd1c552c0c629
+=======
+guid: 4682ebf49ae0cc14380dd01fb801d780
+>>>>>>> Stashed changes:IP2-Main-Unity/Assets/Art/3D/Towers/Ankylosaur Idle Bake.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []

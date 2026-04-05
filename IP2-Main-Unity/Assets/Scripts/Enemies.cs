@@ -54,14 +54,7 @@ public class Enemies : MonoBehaviour
         counter = 0;
 
 
-        for (int i = 0; i < pathWaypoint.Count; i++)
-        {
-            pathWaypoint[i] = new Vector3(
-                 pathWaypoint[i].x,
-                 transform.position.y,
-                 pathWaypoint[i].z
-                );
-        }
+       
     }
 
 
