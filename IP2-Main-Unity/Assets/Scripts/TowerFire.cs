@@ -125,8 +125,12 @@ public class TowerFire : MonoBehaviour
         if (target == null)
             return;
 
+<<<<<<< Updated upstream
 
         animator.SetTrigger("Attack");
+=======
+       animator.SetTrigger("Attack");
+>>>>>>> Stashed changes
        Vector3 targetPosition = new Vector3(target.transform.position.x, tower.transform.position.y,target.transform.position.z);
         tower.gameObject.transform.LookAt(targetPosition);
         animator.SetTrigger("Attack");
