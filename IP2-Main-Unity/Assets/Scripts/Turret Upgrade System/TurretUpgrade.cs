@@ -95,7 +95,7 @@ public class TurretUpgrade : MonoBehaviour
             Debug.Log($"{turretName} range upgraded to {aoeTowerUpgradeVar.range}");
         }
         //towerFire.range += rangeIncrease;
-        towerFire.UpdateRangeRing(); //change size of the range ring
+        //towerFire.UpdateRangeRing(); //change size of the range ring
     
     //Debug.Log($"{turretName} range upgraded to {towerFire.range}");
     
