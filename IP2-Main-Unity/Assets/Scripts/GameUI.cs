@@ -84,8 +84,8 @@ public class GameUI : MonoBehaviour
         else if(waveNumber == 0) 
         {
             waveText.text = "Prep Time";
-            funnyVariableNameHere.StartCoroutine(funnyVariableNameHere.ControllerRumble(0.4f, 0.2f, enemiesSpawner.rocketSpeed)); //Starts rumble when rocket is coming down
-            evenFunnierVariableName.StartCoroutine(evenFunnierVariableName.Shakermaker(enemiesSpawner.rocketSpeed,0.1f)); //Screeen shakes when the rocket is coming down
+            funnyVariableNameHere.StartCoroutine(funnyVariableNameHere.ControllerRumble(0.4f, 0.2f, enemiesSpawner.initialPause)); //Starts rumble when rocket is coming down
+            evenFunnierVariableName.StartCoroutine(evenFunnierVariableName.Shakermaker(enemiesSpawner.initialPause,0.1f)); //Screeen shakes when the rocket is coming down
         }
         
         healthBar.value = health;// sets health bar value for ui
