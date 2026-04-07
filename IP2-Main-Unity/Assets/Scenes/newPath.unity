@@ -3003,7 +3003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5269697384344067867, guid: fd4de41e448cc9e4c88a18f083f722b9, type: 3}
       propertyPath: range
-      value: 4.5
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8559,7 +8559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8653788395767263232, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
       propertyPath: range
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8653788395767263232, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
       propertyPath: ringColor.b
@@ -8734,7 +8734,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8765,7 +8765,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -84.8846, w: 0}
+  m_margin: {x: 0, y: 0, z: -128.0157, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8795,7 +8795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -85.12586, y: 89.70253}
+  m_AnchoredPosition: {x: -99.8, y: 89.70253}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1951906539
