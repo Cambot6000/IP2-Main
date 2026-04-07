@@ -48,4 +48,16 @@ public class MoneyManager : MonoBehaviour
             goldText.text = "Gold: " + currentGold.ToString();
         }
     }
+
+    public bool CanAfford(int costOfTower)
+    {
+        if (currentGold >= costOfTower)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

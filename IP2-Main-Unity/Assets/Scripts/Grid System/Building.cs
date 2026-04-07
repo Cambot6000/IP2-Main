@@ -335,6 +335,12 @@ public class Building : MonoBehaviour
 
     private bool CanBePlaced(PlaceObject placeObject)
     {
+        if (!MoneyManager.instance.CanAfford(placeObject.towerCost))
+        {
+            Debug.Log("You cannae afford this big man");
+            return false;
+        }
+
         BoundsInt area = new BoundsInt();
         area.position = gridSize.WorldToCell(objectToPlace.getStartPos());
         area.size = placeObject.size;
