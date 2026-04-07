@@ -7943,6 +7943,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8653788395767263232, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
+      propertyPath: ringColor.b
+      value: 0.23376678
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653788395767263232, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
+      propertyPath: ringColor.g
+      value: 0.2067757
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653788395767263232, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
+      propertyPath: ringColor.r
+      value: 0.7735849
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8354,6 +8366,18 @@ PrefabInstance:
     - target: {fileID: -5917376406691190850, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914405826604820254, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      propertyPath: ringColor.b
+      value: 0.18431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914405826604820254, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      propertyPath: ringColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914405826604820254, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      propertyPath: ringColor.r
+      value: 0.84313726
       objectReference: {fileID: 0}
     - target: {fileID: 4015814561450557096, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: m_Name
