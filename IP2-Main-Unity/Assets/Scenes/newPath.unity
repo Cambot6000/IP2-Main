@@ -637,7 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6302291fc3913e14fa2e402aa5e908ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretName: Poison Tower
+  turretName: Spicomellus
   option1Label: Increase Damage
   option1Cost: 100
   damageIncrease: 5
@@ -7016,7 +7016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6302291fc3913e14fa2e402aa5e908ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretName: Basic Turret
+  turretName: Parasaurolophus
   option1Label: Increase Damage
   option1Cost: 100
   damageIncrease: 10
@@ -7033,6 +7033,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 891594839903357889, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
   m_PrefabInstance: {fileID: 1889358680}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1722077179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722077178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6302291fc3913e14fa2e402aa5e908ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretName: Brachiosaur
+  option1Label: Increase Damage
+  option1Cost: 180
+  damageIncrease: 5
+  option2Label: Increase Range
+  option2Cost: 160
+  rangeIncrease: 1.1
+  option3Label: Supercharge
+  option3Cost: 250
+  UpgradePrefab: {fileID: 0}
+  damageBonus: 25
+  hasThirdUpgrade: 0
 --- !u!1 &1729941371
 GameObject:
   m_ObjectHideFlags: 0
@@ -8121,7 +8145,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 891594839903357889, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1722077179}
   m_SourcePrefab: {fileID: 100100000, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
 --- !u!1001 &1936733063
 PrefabInstance:
