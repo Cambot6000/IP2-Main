@@ -19,4 +19,4 @@ public class ButtonHelper : MonoBehaviour
 
         TransitionManager.Instance.QuitGame();
     }
-}
+
