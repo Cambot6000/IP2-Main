@@ -6,7 +6,7 @@ public class ButtonHelper : MonoBehaviour
 
     public void LoadScene()
     {
-      TransitionManager.Instance.LoadScene(sceneToLoad);
+        TransitionManager.Instance.LoadScene(sceneToLoad);
     }
 
     public void QuitGame()
@@ -19,4 +19,5 @@ public class ButtonHelper : MonoBehaviour
 
         TransitionManager.Instance.QuitGame();
     }
+}
 
