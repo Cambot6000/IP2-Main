@@ -3008,6 +3008,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1331161078107804044, guid: fd4de41e448cc9e4c88a18f083f722b9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1706959903}
+    - targetCorrespondingSourceObject: {fileID: 1331161078107804044, guid: fd4de41e448cc9e4c88a18f083f722b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1706959907}
   m_SourcePrefab: {fileID: 100100000, guid: fd4de41e448cc9e4c88a18f083f722b9, type: 3}
 --- !u!4 &571534390 stripped
 Transform:
@@ -6920,8 +6923,8 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultControlScheme: Gamepad
+  m_DefaultActionMap: df70fa95-8a34-4494-b137-73ab6b9c7d37
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1702451386
@@ -7028,6 +7031,27 @@ MonoBehaviour:
   UpgradePrefab: {fileID: 0}
   damageBonus: 25
   hasThirdUpgrade: 0
+--- !u!65 &1706959907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706959899}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7358799, y: 0.45896816, z: 1}
+  m_Center: {x: 0.011622429, y: 0.27051592, z: 0}
 --- !u!1 &1722077178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 891594839903357889, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
