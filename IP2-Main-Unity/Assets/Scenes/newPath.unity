@@ -3001,6 +3001,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SniperTower
       objectReference: {fileID: 0}
+    - target: {fileID: 1331161078107804044, guid: fd4de41e448cc9e4c88a18f083f722b9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5269697384344067867, guid: fd4de41e448cc9e4c88a18f083f722b9, type: 3}
       propertyPath: range
       value: 3.5
@@ -8488,6 +8492,10 @@ PrefabInstance:
     - target: {fileID: 891594839903357889, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
       propertyPath: m_Name
       value: SlowingTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 891594839903357889, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3339022696109053862, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
       propertyPath: turretType
