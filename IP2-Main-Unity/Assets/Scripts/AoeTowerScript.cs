@@ -17,6 +17,7 @@ public class AoeTowerScript : MonoBehaviour
 
     [Header("Aoe Settings")]
     public GameObject aoeParticlePrefab; 
+    public GameObject superchargedParticlePrefab;
 
     private PlaceObject placeObject;
     private LineRenderer lineRenderer;

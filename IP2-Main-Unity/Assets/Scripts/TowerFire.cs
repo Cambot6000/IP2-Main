@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using System.Collections;
 
 
 public class TowerFire : MonoBehaviour
@@ -29,7 +28,7 @@ public class TowerFire : MonoBehaviour
 
 
     public GameObject tower;
-    private Animator animator;
+    public Animator animator;
     [Header("Ring VIsibility Stuff")]
     public bool ringActive;
     private Coroutine activeFade;
@@ -41,7 +40,7 @@ public class TowerFire : MonoBehaviour
         tower = gameObject;
         placeObject = GetComponent<PlaceObject>();
         lineRenderer = GetComponent<LineRenderer>();
-        animator = GetComponent<Animator>();
+        
        
         if (lineRenderer == null)
             lineRenderer = gameObject.AddComponent<LineRenderer>();
@@ -55,7 +54,6 @@ public class TowerFire : MonoBehaviour
         lineRenderer.endColor = ringColor;
         lineRenderer.positionCount = ringSegments + 1;
 
-        ringActive = true;
         DrawRing();
 
         // if no explicit fire point, use this transform
@@ -65,23 +63,11 @@ public class TowerFire : MonoBehaviour
 
     private void Update()
     {
-        
         // toggle range ring visibility
-        //if (placeObject != null)
-        //lineRenderer.enabled = showRingWhilePlacing || placeObject.Placed;
-        bool canShow = (showRingWhilePlacing || (placeObject != null && placeObject.Placed));
+        if (placeObject != null)
+            lineRenderer.enabled = showRingWhilePlacing || placeObject.Placed;
 
-        if (!canShow)
-        {
-            lineRenderer.enabled = false;
-        }
-
-        if (placeObject != null && !placeObject.Placed)
-        {
-            return;
-        }
-
-        // donï¿½t do anything until the tower is actually placed
+        // don’t do anything until the tower is actually placed
         if (placeObject != null && !placeObject.Placed)
             return;
 
@@ -139,14 +125,16 @@ public class TowerFire : MonoBehaviour
         if (target == null)
             return;
 
-        animator.SetTrigger("Attack");
+
+       animator.SetTrigger("Attack");
        Vector3 targetPosition = new Vector3(target.transform.position.x, tower.transform.position.y,target.transform.position.z);
         tower.gameObject.transform.LookAt(targetPosition);
+        animator.SetTrigger("Attack");
         if (projectilePrefab != null) // If there is a prefab assigned, spawn it and do the projectile script
         {
             GameObject go = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
             Projectile proj = go.GetComponent<Projectile>();
-
+            
             if (proj != null)
             {
                 proj.target = target;
@@ -168,18 +156,12 @@ public class TowerFire : MonoBehaviour
         target.health -= damage; // Same again, just incase something is broken, deal direct damage
     }
 
-    public void UpdateRangeRing() //added by callum
-    {
-        //so i can change the range ring atributes from diffrent scripts
-        DrawRing();
-    }
-
     private void DrawRing()
     {
         if (lineRenderer == null)
             return;
-        lineRenderer.enabled = true;
-            float step = 2f * Mathf.PI / ringSegments;
+
+        float step = 2f * Mathf.PI / ringSegments;
 
         for (int i = 0; i <= ringSegments; i++)
         {
@@ -187,13 +169,11 @@ public class TowerFire : MonoBehaviour
             float x = Mathf.Cos(angle) * range;
             float z = Mathf.Sin(angle) * range;
 
-            // tiny Y offset so it doesnï¿½t tweak out
-            lineRenderer.SetPosition(i, new Vector3(x, 0.1f, z));
+            // tiny Y offset so it doesn’t tweak out
+            lineRenderer.SetPosition(i, new Vector3(x, 0.05f, z));
         }
     }
 
-    
-    
     // update circle in editor when changing values
     private void OnValidate()
     {
@@ -208,95 +188,6 @@ public class TowerFire : MonoBehaviour
         lineRenderer.startColor = ringColor;
         lineRenderer.endColor = ringColor;
 
-        
-    }
-
-    private void OnTriggerEnter(Collider other) //Checks to see if player enters range of dino and then starts to make the range ring appear
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            //print("Player touched dino");
-            ringActive = true;
-            if(activeFade != null) //If the wee player guy has already started a grow or shrink, end it and start the neweer one
-            {
-                StopCoroutine(activeFade);
-            }
-            activeFade = StartCoroutine(RingFade(1f, range));
-        }
-    }
-
-    private void OnTriggerExit(Collider other) //Checks to see if player exits range of dino and then starts to make the range ring disappear
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            //print("player exited dino");
-            ringActive = false;
-            if(activeFade != null) //If the wee player guy has already started a grow or shrink, end it and start the neweer one
-            {
-                StopCoroutine(activeFade);
-            }
-            activeFade = StartCoroutine(RingFade(0f, range * 0.5f));
-        }
-    }
-
-    private IEnumerator RingFade(float targetTransparency, float targetRange) //Coroutine to make the ring fade in/out and grow/shrink
-    {
-        float duration = 0.5f; //How long both thingys last, like the fade in/out and the grow/shrink
-        float currentTime = 0f;
-
-        Color startLineColour = lineRenderer.startColor;
-        float startTransparency = startLineColour.a;
-
-        float startRange; //Starting range of the dino ring
-
-        if (lineRenderer.enabled)
-        {
-            startRange = lineRenderer.GetPosition(0).magnitude; //Checks how big the line is the now
-        }
-        else
-        {
-            startRange = range * 0.5f;
-        }
-
-        lineRenderer.enabled = true;
-
-        while (currentTime < duration)
-        {
-            currentTime += Time.unscaledDeltaTime; //This bit because of the speed up stuff
-            float timeVariable = currentTime / duration;
-            float otherTimeVariable = Mathf.SmoothStep(0, 1, timeVariable); //Smooth step makes the sort of animation, I guess, start slowly, gradually ramp up and then softly end at the end, if you understand what I'm trying to say
-            float newTransparency = Mathf.Lerp(startTransparency, targetTransparency, currentTime / duration); //Lerp gets the bit in the middle, I think
-
-            Color newColour = new Color(ringColor.r, ringColor.g, ringColor.b, newTransparency);
-            lineRenderer.startColor = newColour;
-            lineRenderer.endColor = newColour;
-
-            //^Sets the transparency of the line to the new one that is needed
-
-            float brandNewRingDisplayThingy = Mathf.Lerp(startRange, targetRange, otherTimeVariable);
-            DrawGrowingRing(brandNewRingDisplayThingy);
-
-            //^Makes the ring grow or shrink
-
-            yield return null;
-        }
-
-        if (targetTransparency <= 0f)
-        {
-            lineRenderer.enabled = false;
-        }
-    }
-
-    private void DrawGrowingRing(float radius) //Similar to the OG draw ring method that was made. Old one still works too, alongside this one, this one hoever only comes into play omce you build the wee guys
-    {
-        float step = 2f * Mathf.PI / ringSegments;
-        for (int i = 0; i <= ringSegments; i++)
-        {
-            float angle = i * step;
-            float x = Mathf.Cos(angle) * radius;
-            float z = Mathf.Sin(angle) * radius;
-            //Small Y offset like the OG draw ring bit that was made
-            lineRenderer.SetPosition(i, new Vector3(x, 0.1f, z));
-        }
+        DrawRing();
     }
 }
