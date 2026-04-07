@@ -8070,6 +8070,10 @@ PrefabInstance:
       propertyPath: turretType
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3636985213649519484, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4465738482377626033, guid: 03bbb6aa3c9d39240b7c6911a8366cce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8716,7 +8720,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
