@@ -625,6 +625,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.48043823, z: 1}
   m_Center: {x: 0, y: 0.25978088, z: 0}
+--- !u!114 &117249053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117249048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6302291fc3913e14fa2e402aa5e908ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretName: Poison Tower
+  option1Label: Increase Damage
+  option1Cost: 100
+  damageIncrease: 5
+  option2Label: Increase Range
+  option2Cost: 140
+  rangeIncrease: 1.2
+  option3Label: Supercharge
+  option3Cost: 250
+  UpgradePrefab: {fileID: 0}
+  damageBonus: 25
+  hasThirdUpgrade: 0
 --- !u!1001 &161791575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1039,7 +1063,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8162088074497153293, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
       propertyPath: towerCost
-      value: 350
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: -8162088074497153293, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
       propertyPath: turretType
@@ -1103,7 +1127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5269697384344067867, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
       propertyPath: damage
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5269697384344067867, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
       propertyPath: fireRate
@@ -1116,6 +1140,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1331161078107804044, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 117249050}
+    - targetCorrespondingSourceObject: {fileID: 1331161078107804044, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 117249053}
   m_SourcePrefab: {fileID: 100100000, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
 --- !u!1 &343751028
 GameObject:
@@ -8340,6 +8367,10 @@ PrefabInstance:
     - target: {fileID: 5531361154527303824, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806084562721274853, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      propertyPath: towerCost
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 8806084562721274853, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: turretType
