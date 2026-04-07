@@ -8277,6 +8277,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 677731049}
     m_Modifications:
+    - target: {fileID: -5917376406691190850, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4015814561450557096, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: m_Name
       value: AoeTower
@@ -8344,13 +8348,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4015814561450557096, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1970343843}
   m_SourcePrefab: {fileID: 100100000, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
 --- !u!4 &1970343838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5531361154527303824, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
   m_PrefabInstance: {fileID: 1970343837}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1970343843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582444754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6302291fc3913e14fa2e402aa5e908ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretName: Ankylosaurus
+  option1Label: Increase Damage
+  option1Cost: 100
+  damageIncrease: 5
+  option2Label: Increase Range
+  option2Cost: 180
+  rangeIncrease: 1.05
+  option3Label: Supercharge
+  option3Cost: 250
+  UpgradePrefab: {fileID: 8774748001020458744, guid: 5999a8e5d57c9824bbccaab4821c7584, type: 3}
+  damageBonus: 25
+  hasThirdUpgrade: 1
 --- !u!1 &2045402611
 GameObject:
   m_ObjectHideFlags: 0
