@@ -9100,7 +9100,8 @@ PrefabInstance:
       propertyPath: turretType
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8129134323785521190, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
