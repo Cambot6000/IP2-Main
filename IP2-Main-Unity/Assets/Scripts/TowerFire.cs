@@ -130,7 +130,7 @@ public class TowerFire : MonoBehaviour
        animator.SetTrigger("Attack");
        Vector3 targetPosition = new Vector3(target.transform.position.x, tower.transform.position.y,target.transform.position.z);
         tower.gameObject.transform.LookAt(targetPosition);
-        animator.SetTrigger("Attack");
+        
         if (projectilePrefab != null) // If there is a prefab assigned, spawn it and do the projectile script
         {
             GameObject go = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);

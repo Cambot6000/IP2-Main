@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3914405826604820254}
   - component: {fileID: 8806084562721274853}
   - component: {fileID: -5917376406691190850}
+  - component: {fileID: 2889564548792635489}
   m_Layer: 0
   m_Name: AoeTower
   m_TagString: Untagged
@@ -30,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5168176094292223335}
   m_Father: {fileID: 0}
@@ -105,6 +106,27 @@ MonoBehaviour:
   option2Label: Rapid Pulse
   option2Cost: 200
   fireRateReduction: 0.25
+--- !u!65 &2889564548792635489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4015814561450557096}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &199205153258966653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4e738bfd5f04def4e84bd1c552c0c629, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4e738bfd5f04def4e84bd1c552c0c629, type: 3}
       propertyPath: m_LocalRotation.x
@@ -135,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4e738bfd5f04def4e84bd1c552c0c629, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4e738bfd5f04def4e84bd1c552c0c629, type: 3}
       propertyPath: m_LocalRotation.z
@@ -147,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4e738bfd5f04def4e84bd1c552c0c629, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4e738bfd5f04def4e84bd1c552c0c629, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

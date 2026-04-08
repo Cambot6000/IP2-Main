@@ -1,6 +1,9 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using static UnityEngine.GraphicsBuffer;
+using System.IO;
+using System.Collections.Generic;
 
 public class AoeTowerScript : MonoBehaviour
 {
@@ -27,11 +30,33 @@ public class AoeTowerScript : MonoBehaviour
     public bool ringActive;
     private Coroutine activeFade;
 
+    public EnemiesSpawner spawner;
+    public Animator animator;
+    public List<Vector3> pathWaypoint = new List<Vector3>();
+    public GameObject tower;
+    public Vector3 target;
     private void Awake()
     {
         placeObject = GetComponent<PlaceObject>();
         lineRenderer = GetComponent<LineRenderer>();
+        spawner = FindAnyObjectByType<EnemiesSpawner>();
+        pathWaypoint = spawner.pathWaypoint;
+        
+           
+            float minDist = float.MaxValue;
 
+            for (int i = 0; i < pathWaypoint.Count; i++)
+            {
+                float dist = (tower.transform.position - pathWaypoint[i]).sqrMagnitude;
+
+                if (dist < minDist)
+                {
+                    minDist = dist;
+                   target= pathWaypoint[i];  
+                }
+            }
+
+            tower.gameObject.transform.LookAt(target);
         if (lineRenderer == null)
             lineRenderer = gameObject.AddComponent<LineRenderer>();
 
@@ -73,7 +98,8 @@ public class AoeTowerScript : MonoBehaviour
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
         bool hitAny = false;
-
+        animator.SetTrigger("Attack");
+        
         foreach (var hitCollider in hitColliders)
         {
             Enemies en = hitCollider.GetComponent<Enemies>();
