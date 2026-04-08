@@ -10,6 +10,7 @@ public class ButtonHelper : MonoBehaviour
         if (playRocketSound)
         {
             AudioManager.Instance.PlayRocketLaunch(); 
+            AudioManager.Instance.StopMusic();
         }
         TransitionManager.Instance.LoadScene(sceneToLoad);
     }

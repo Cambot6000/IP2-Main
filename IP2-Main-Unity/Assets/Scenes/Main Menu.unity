@@ -417,6 +417,8 @@ MonoBehaviour:
   sfxSource: {fileID: 507821358}
   baseDamagedSound: {fileID: 8300000, guid: c831e462f053aff409fa74ae735cf71e, type: 3}
   rocketLaunchSound: {fileID: 8300000, guid: 401a9b94688beef49876b735d110c714, type: 3}
+  sniperSound: {fileID: 8300000, guid: c327e4145871f0247884d385abf18d8a, type: 3}
+  poisonSound: {fileID: 8300000, guid: be9b4d38c0c278f4285b2a5380bdf762, type: 3}
   musicVolume: 1
   sfxVolume: 1
 --- !u!4 &507821357

@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource sfxSource;        //for sound effects
     public AudioClip baseDamagedSound;
     public AudioClip rocketLaunchSound; 
+    public AudioClip sniperSound;
+    public AudioClip poisonSound;
 
     [Range(0f, 1f)] public float musicVolume = 1f;
     [Range(0f, 1f)] public float sfxVolume = 1f;
@@ -46,6 +48,17 @@ public class AudioManager : MonoBehaviour
     {
      PlaySFX(rocketLaunchSound);
     }
+     
+    public void PlaySniperSound()
+    {
+     PlaySFX(sniperSound);
+    }
+    
+    public void PlayPoisonSound()
+    {
+     PlaySFX(poisonSound);
+    }
+    
     
     public void SetMusicVolume(float volume)
     {
