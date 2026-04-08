@@ -104,8 +104,8 @@ public class AoeTowerScript : MonoBehaviour
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
         bool hitAny = false;
-        
-        
+
+        animator.SetTrigger("Attack");
         foreach (var hitCollider in hitColliders)
         {
             Enemies en = hitCollider.GetComponent<Enemies>();
