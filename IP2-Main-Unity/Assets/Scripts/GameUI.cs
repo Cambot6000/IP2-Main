@@ -115,7 +115,7 @@ public class GameUI : MonoBehaviour
 
 
         }
-        if (health <= 0)// ends game
+        if (healthBar.value <= 0)// ends game
 
         {
             funnyVariableNameHere.EmergencyStop(); //Stops the controller from infinitely rumbling when you die
