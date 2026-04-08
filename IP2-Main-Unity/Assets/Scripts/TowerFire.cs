@@ -68,7 +68,7 @@ public class TowerFire : MonoBehaviour
         if (placeObject != null)
             lineRenderer.enabled = showRingWhilePlacing || placeObject.Placed;
 
-        // don’t do anything until the tower is actually placed
+        // donï¿½t do anything until the tower is actually placed
         if (placeObject != null && !placeObject.Placed)
             return;
 
@@ -128,6 +128,7 @@ public class TowerFire : MonoBehaviour
 
 
        animator.SetTrigger("Attack");
+       AudioManager.Instance.PlaySniperSound();
        Vector3 targetPosition = new Vector3(target.transform.position.x, tower.transform.position.y,target.transform.position.z);
         tower.gameObject.transform.LookAt(targetPosition);
         
@@ -176,7 +177,7 @@ public class TowerFire : MonoBehaviour
             float x = Mathf.Cos(angle) * range;
             float z = Mathf.Sin(angle) * range;
 
-            // tiny Y offset so it doesn’t tweak out
+            // tiny Y offset so it doesnï¿½t tweak out
             lineRenderer.SetPosition(i, new Vector3(x, 0.05f, z));
         }
     }
