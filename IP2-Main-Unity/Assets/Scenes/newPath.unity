@@ -898,7 +898,7 @@ MonoBehaviour:
   moreEnemies: 1
   upgradedEnemies: 0
   waveNumber: 0
-  maxWaves: 3
+  maxWaves: 10
   waveTimmerMax: 21
   enemySpawnTimerMax: 2.9
   waitTimerMax: 20
@@ -7607,6 +7607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: MainMenu
+  playRocketSound: 0
 --- !u!1 &1767503658
 GameObject:
   m_ObjectHideFlags: 0
