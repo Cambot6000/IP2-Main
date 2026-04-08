@@ -3673,7 +3673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 251.7, y: -223.5}
+  m_AnchoredPosition: {x: 312, y: 128}
   m_SizeDelta: {x: 220, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &664909298
@@ -6338,10 +6338,14 @@ PrefabInstance:
       propertyPath: itemDesciptionText
       value: 
       objectReference: {fileID: 664909298}
+    - target: {fileID: 1723471015010249378, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae5b6a48e21a5d84dbf40105dabafc6c, type: 3}
     - target: {fileID: 1833439534058902356, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 025ec48e7179e475cad42b51ee580787, type: 3}
+      objectReference: {fileID: 21300000, guid: eb713c4ffd5ebef4386f4ed5bd8d9d71, type: 3}
     - target: {fileID: 1857643614628253983, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.5254902
@@ -6416,6 +6420,10 @@ PrefabInstance:
       propertyPath: itemName
       value: Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 2396859776014433093, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
+      propertyPath: itemCostText
+      value: 
+      objectReference: {fileID: 1600975171}
     - target: {fileID: 2396859776014433093, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: itemDesciption
       value: Close Turret Wheel
@@ -6599,15 +6607,23 @@ PrefabInstance:
     - target: {fileID: 4015566885506574054, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: icon
       value: 
-      objectReference: {fileID: 21300000, guid: ae5b6a48e21a5d84dbf40105dabafc6c, type: 3}
+      objectReference: {fileID: 21300000, guid: d8f28a437811d5245844e7a8a2b009d0, type: 3}
     - target: {fileID: 4015566885506574054, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: noImage
       value: 
       objectReference: {fileID: 21300000, guid: ae5b6a48e21a5d84dbf40105dabafc6c, type: 3}
     - target: {fileID: 4015566885506574054, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
-      propertyPath: itemName
-      value: 
+      propertyPath: itemCost
+      value: 150 Gold
       objectReference: {fileID: 0}
+    - target: {fileID: 4015566885506574054, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
+      propertyPath: itemName
+      value: Bronto
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015566885506574054, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
+      propertyPath: itemCostText
+      value: 
+      objectReference: {fileID: 1600975171}
     - target: {fileID: 4015566885506574054, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: itemDesciption
       value: 
@@ -7014,11 +7030,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9024985937392839710, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 323.8
+      value: 387
       objectReference: {fileID: 0}
     - target: {fileID: 9024985937392839710, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -298.3
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -7160,7 +7176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 210.3, y: -126.4}
+  m_AnchoredPosition: {x: 271.8, y: 225.9}
   m_SizeDelta: {x: 220, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1600975171
@@ -7676,7 +7692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6302291fc3913e14fa2e402aa5e908ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretName: Brachiosaur
+  turretName: Brontosaur
   option1Label: Increase Damage
   option1Cost: 180
   damageIncrease: 5
