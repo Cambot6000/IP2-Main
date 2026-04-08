@@ -73,9 +73,9 @@ MonoBehaviour:
   superchargedParticlePrefab: {fileID: 0}
   ringActive: 0
   spawner: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 8343471574385400664}
   pathWaypoint: []
-  tower: {fileID: 0}
+  tower: {fileID: 4015814561450557096}
   target: {x: 0, y: 0, z: 0}
 --- !u!114 &8806084562721274853
 MonoBehaviour:

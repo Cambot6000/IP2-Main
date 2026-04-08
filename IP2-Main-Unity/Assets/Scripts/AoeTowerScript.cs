@@ -55,8 +55,8 @@ public class AoeTowerScript : MonoBehaviour
                    target= pathWaypoint[i];  
                 }
             }
-
-            tower.gameObject.transform.LookAt(target);
+        Vector3 targetPosition = new Vector3(target.x, tower.transform.position.y, target.z);
+        tower.gameObject.transform.LookAt(targetPosition);
         if (lineRenderer == null)
             lineRenderer = gameObject.AddComponent<LineRenderer>();
 
