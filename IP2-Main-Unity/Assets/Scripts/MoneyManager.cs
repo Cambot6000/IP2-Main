@@ -45,7 +45,7 @@ public class MoneyManager : MonoBehaviour
     {
         if (goldText != null)
         {
-            goldText.text = "Gold: " + currentGold.ToString();
+            goldText.text = currentGold.ToString();
         }
     }
 
