@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: newPath
+  playRocketSound: 1
 --- !u!1 &792772460
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: newPath
+  playRocketSound: 1
 --- !u!1 &1146413623
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: newPath
+  playRocketSound: 1
 --- !u!1 &1876833207
 GameObject:
   m_ObjectHideFlags: 0

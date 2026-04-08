@@ -131,6 +131,7 @@ public class GameUI : MonoBehaviour
         StartCoroutine(DamageWait());
         evenFunnierVariableName.StartCoroutine(evenFunnierVariableName.Shakermaker(0.2f, 0.3f));
         health -= damage;
+        AudioManager.Instance.PlayBaseDamaged();
     }
 
     public void FadeIn()// fade in 
