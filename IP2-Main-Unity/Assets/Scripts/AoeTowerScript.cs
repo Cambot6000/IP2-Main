@@ -35,6 +35,8 @@ public class AoeTowerScript : MonoBehaviour
     public List<Vector3> pathWaypoint = new List<Vector3>();
     public GameObject tower;
     public Vector3 target;
+
+    private float interval;
     private void Awake()
     {
         placeObject = GetComponent<PlaceObject>();
@@ -73,24 +75,28 @@ public class AoeTowerScript : MonoBehaviour
 
     private void Update()
     {
+        
         if (placeObject != null) 
             lineRenderer.enabled = showRingWhilePlacing || placeObject.Placed;
 
         if (placeObject != null && !placeObject.Placed) 
         {
-            fireTimer = 0f; 
+             
             return;
         }
-
+        
         fireTimer += Time.deltaTime;
-        float interval = fireRate;
-
+        interval = fireRate;
+        Debug.Log(fireTimer);
         if (fireTimer >= interval)
         {
+            Debug.Log("gfgfg");
             if (TryFireAoe())
             {
+                Debug.Log("SASASA");
                 fireTimer = 0f;
             }
+            
         }
     }
 
@@ -98,7 +104,7 @@ public class AoeTowerScript : MonoBehaviour
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
         bool hitAny = false;
-        animator.SetTrigger("Attack");
+        
         
         foreach (var hitCollider in hitColliders)
         {
