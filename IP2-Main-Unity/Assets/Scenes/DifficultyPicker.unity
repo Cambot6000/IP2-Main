@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c35988d8ac2354783ebb8b2f5ad1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeSpeed: 0.2
+  fadeSpeed: 0.8
 --- !u!4 &325809769
 Transform:
   m_ObjectHideFlags: 0
@@ -437,6 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: newPath
   playRocketSound: 1
+  isLoadingNewScene: 0
 --- !u!114 &518767651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,6 +732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: newPath
   playRocketSound: 1
+  isLoadingNewScene: 0
 --- !u!114 &1044784860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,6 +908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: newPath
   playRocketSound: 1
+  isLoadingNewScene: 0
 --- !u!114 &1276461094
 MonoBehaviour:
   m_ObjectHideFlags: 0
