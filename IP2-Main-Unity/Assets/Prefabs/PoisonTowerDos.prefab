@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08a530c840b2c340a9b196a487ebb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerCost: 250
+  towerCost: 350
   turretType: 0
 --- !u!114 &5269697384344067867
 MonoBehaviour:
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 2
-  fireRate: 0.4
+  fireRate: 0.3
   damage: 10
   ringSegments: 64
   ringWidth: 0.05

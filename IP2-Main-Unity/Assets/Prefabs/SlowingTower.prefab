@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5c0b899d5e0c045b3ea06987b343f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerCost: 150
+  towerCost: 200
 --- !u!114 &3339022696109053862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08a530c840b2c340a9b196a487ebb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerCost: 150
+  towerCost: 200
   turretType: 0
 --- !u!114 &8653788395767263232
 MonoBehaviour:
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 2
   fireRate: 0.5
-  damage: 5
+  damage: 0
   ringSegments: 64
   ringWidth: 0.05
   ringColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0.6}
