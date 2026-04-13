@@ -6697,7 +6697,7 @@ PrefabInstance:
       objectReference: {fileID: 1600975171}
     - target: {fileID: 4015566885506574054, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: itemDesciption
-      value: 
+      value: Fires projectiles to slow down the advancing astronauts!
       objectReference: {fileID: 0}
     - target: {fileID: 4015566885506574054, guid: 5aca1ba750ed20f45b93dc4fbdf7d429, type: 3}
       propertyPath: itemDesciptionText
