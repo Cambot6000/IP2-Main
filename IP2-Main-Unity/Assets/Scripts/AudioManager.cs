@@ -5,6 +5,10 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance { get; private set; }
     public AudioSource musicSource;      //for background music
     public AudioSource sfxSource;        //for sound effects
+    public AudioClip baseDamagedSound;
+    public AudioClip rocketLaunchSound; 
+    public AudioClip sniperSound;
+    public AudioClip poisonSound;
 
     [Range(0f, 1f)] public float musicVolume = 1f;
     [Range(0f, 1f)] public float sfxVolume = 1f;
@@ -39,6 +43,22 @@ public class AudioManager : MonoBehaviour
     {
        sfxSource.PlayOneShot(clip, volumeMultiplier * sfxVolume);
     }
+
+    public void PlayRocketLaunch()
+    {
+     PlaySFX(rocketLaunchSound);
+    }
+     
+    public void PlaySniperSound()
+    {
+     PlaySFX(sniperSound);
+    }
+    
+    public void PlayPoisonSound()
+    {
+     PlaySFX(poisonSound);
+    }
+    
     
     public void SetMusicVolume(float volume)
     {
@@ -49,6 +69,11 @@ public class AudioManager : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         sfxVolume = Mathf.Clamp01(volume);
+    }
+
+        public void PlayBaseDamaged()
+    {
+        PlaySFX(baseDamagedSound);
     }
 
   

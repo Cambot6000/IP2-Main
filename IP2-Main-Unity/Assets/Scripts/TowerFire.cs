@@ -29,7 +29,7 @@ public class TowerFire : MonoBehaviour
 
 
     public GameObject tower;
-    private Animator animator;
+    public Animator animator;
     [Header("Ring VIsibility Stuff")]
     public bool ringActive;
     private Coroutine activeFade;
@@ -41,7 +41,7 @@ public class TowerFire : MonoBehaviour
         tower = gameObject;
         placeObject = GetComponent<PlaceObject>();
         lineRenderer = GetComponent<LineRenderer>();
-        animator = GetComponent<Animator>();
+        
        
         if (lineRenderer == null)
             lineRenderer = gameObject.AddComponent<LineRenderer>();
@@ -55,7 +55,6 @@ public class TowerFire : MonoBehaviour
         lineRenderer.endColor = ringColor;
         lineRenderer.positionCount = ringSegments + 1;
 
-        ringActive = true;
         DrawRing();
 
         // if no explicit fire point, use this transform
@@ -65,21 +64,9 @@ public class TowerFire : MonoBehaviour
 
     private void Update()
     {
-        
         // toggle range ring visibility
-        //if (placeObject != null)
-        //lineRenderer.enabled = showRingWhilePlacing || placeObject.Placed;
-        bool canShow = (showRingWhilePlacing || (placeObject != null && placeObject.Placed));
-
-        if (!canShow)
-        {
-            lineRenderer.enabled = false;
-        }
-
-        if (placeObject != null && !placeObject.Placed)
-        {
-            return;
-        }
+        if (placeObject != null)
+            lineRenderer.enabled = showRingWhilePlacing || placeObject.Placed;
 
         // don�t do anything until the tower is actually placed
         if (placeObject != null && !placeObject.Placed)
@@ -139,14 +126,17 @@ public class TowerFire : MonoBehaviour
         if (target == null)
             return;
 
-        animator.SetTrigger("Attack");
+
+       animator.SetTrigger("Attack");
+       AudioManager.Instance.PlaySniperSound();
        Vector3 targetPosition = new Vector3(target.transform.position.x, tower.transform.position.y,target.transform.position.z);
         tower.gameObject.transform.LookAt(targetPosition);
+        
         if (projectilePrefab != null) // If there is a prefab assigned, spawn it and do the projectile script
         {
             GameObject go = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
             Projectile proj = go.GetComponent<Projectile>();
-
+            
             if (proj != null)
             {
                 proj.target = target;
@@ -178,8 +168,8 @@ public class TowerFire : MonoBehaviour
     {
         if (lineRenderer == null)
             return;
-        lineRenderer.enabled = true;
-            float step = 2f * Mathf.PI / ringSegments;
+
+        float step = 2f * Mathf.PI / ringSegments;
 
         for (int i = 0; i <= ringSegments; i++)
         {
@@ -188,12 +178,10 @@ public class TowerFire : MonoBehaviour
             float z = Mathf.Sin(angle) * range;
 
             // tiny Y offset so it doesn�t tweak out
-            lineRenderer.SetPosition(i, new Vector3(x, 0.1f, z));
+            lineRenderer.SetPosition(i, new Vector3(x, 0.05f, z));
         }
     }
 
-    
-    
     // update circle in editor when changing values
     private void OnValidate()
     {
@@ -208,7 +196,7 @@ public class TowerFire : MonoBehaviour
         lineRenderer.startColor = ringColor;
         lineRenderer.endColor = ringColor;
 
-        
+        DrawRing();
     }
 
     private void OnTriggerEnter(Collider other) //Checks to see if player enters range of dino and then starts to make the range ring appear
@@ -217,7 +205,7 @@ public class TowerFire : MonoBehaviour
         {
             //print("Player touched dino");
             ringActive = true;
-            if(activeFade != null) //If the wee player guy has already started a grow or shrink, end it and start the neweer one
+            if (activeFade != null) //If the wee player guy has already started a grow or shrink, end it and start the neweer one
             {
                 StopCoroutine(activeFade);
             }
@@ -231,7 +219,7 @@ public class TowerFire : MonoBehaviour
         {
             //print("player exited dino");
             ringActive = false;
-            if(activeFade != null) //If the wee player guy has already started a grow or shrink, end it and start the neweer one
+            if (activeFade != null) //If the wee player guy has already started a grow or shrink, end it and start the neweer one
             {
                 StopCoroutine(activeFade);
             }

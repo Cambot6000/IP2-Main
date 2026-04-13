@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -54,14 +55,7 @@ public class Enemies : MonoBehaviour
         counter = 0;
 
 
-        for (int i = 0; i < pathWaypoint.Count; i++)
-        {
-            pathWaypoint[i] = new Vector3(
-                 pathWaypoint[i].x,
-                 transform.position.y,
-                 pathWaypoint[i].z
-                );
-        }
+       
     }
 
 
@@ -132,7 +126,11 @@ public class Enemies : MonoBehaviour
 
     public void ChangeWaypoint()
     {
-        target = pathWaypoint[waypointNumber];
+        if (waypointNumber < pathWaypoint.Count - 1) 
+        {
+            target = pathWaypoint[waypointNumber];
+        }
+       
         //print($"{pathWaypoint[waypointNumber]}");
     }
 

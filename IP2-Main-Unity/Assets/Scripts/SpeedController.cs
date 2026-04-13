@@ -13,6 +13,7 @@ public class SpeedController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        currentSpeed = 1f;
         SetImageTransparency(speedButtons[0], 1f);
         SetImageTransparency(speedButtons[1], 0f);
         //speedButtons[0].enabled = true;
@@ -27,10 +28,10 @@ public class SpeedController : MonoBehaviour
 
     public void OnInteract(InputValue value)
     {
-        //Debug.Log("Keep up");
+        Debug.Log("Keep up");
         if (value.isPressed)
         {
-            //Debug.Log("speed me up");
+            Debug.Log("speed me up");
             if (buttonIndex == 0 && currentSpeed < targetSpeed) 
             {
                 //speedButtons[buttonIndex].enabled = false;
