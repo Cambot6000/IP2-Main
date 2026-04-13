@@ -24,7 +24,6 @@ public class ControllerMenuMovement : MonoBehaviour
     //If you hit X or A you can do this bit, or Enter too
     public void OnSubmit(InputValue value)
     {
-        print("Hit the button");
         if (value.isPressed)
         {
             if (UIElements[currentIndex] is Button buttonVar)

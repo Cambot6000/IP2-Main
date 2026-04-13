@@ -1,4 +1,3 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,9 +26,6 @@ public class GameUI : MonoBehaviour
 
     public GameObject[] egg3D;
 
-    public bool takingDamage;
-    public Building funnyVariableNameHere; //Gets reference to the Building script
-    public CameraShake evenFunnierVariableName; //Gets reference to the CameraShake script
 
     void Start()
     {
@@ -38,15 +34,6 @@ public class GameUI : MonoBehaviour
         egg3D[1].SetActive(false);
         egg3D[2].SetActive(false);
         egg3D[0].SetActive(true);
-        if (funnyVariableNameHere == null)
-        {
-            funnyVariableNameHere = GetComponent<Building>();
-        }
-        
-        if(evenFunnierVariableName == null)
-        {
-            evenFunnierVariableName = GetComponent<CameraShake>();
-        }
     }
     void Update()
     {
@@ -62,12 +49,6 @@ public class GameUI : MonoBehaviour
         if (currentWaveNumber != waveNumber) // only show when new wave begins
         {
             FadeIn();
-            if (waveNumber == 1)
-            {
-                enemiesSpawner.LandedRocket();
-                funnyVariableNameHere.StartCoroutine(funnyVariableNameHere.ControllerRumble(1.0f, 1.0f, 0.3f)); //Starts a controller rumble
-                evenFunnierVariableName.StartCoroutine(evenFunnierVariableName.Shakermaker(0.3f,0.4f)); //Starts a screen shake ^ both when the rocket lands
-            }
 
         }
         if (Mathf.Abs(waveCanvasGroup.alpha - targetAlpha) < 0.01f)// if the diffrence is between the values is less than 0.01d then fades out
@@ -77,17 +58,7 @@ public class GameUI : MonoBehaviour
 
 
         waveCanvasGroup.alpha = Mathf.Lerp(waveCanvasGroup.alpha, targetAlpha, fadeSpeed * Time.deltaTime);// smooths the fade in and out
-        if(waveNumber != 0)
-        {
-            waveText.text = "Wave " + waveNumber.ToString();// sets text to wave and the number
-        }
-        else if(waveNumber == 0) 
-        {
-            waveText.text = "Prep Time";
-            funnyVariableNameHere.StartCoroutine(funnyVariableNameHere.ControllerRumble(0.4f, 0.2f, enemiesSpawner.initialPause)); //Starts rumble when rocket is coming down
-            evenFunnierVariableName.StartCoroutine(evenFunnierVariableName.Shakermaker(enemiesSpawner.initialPause,0.1f)); //Screeen shakes when the rocket is coming down
-        }
-        
+        waveText.text = "Wave " + waveNumber.ToString();// sets text to wave and the number
         healthBar.value = health;// sets health bar value for ui
                                  // check value against max value * value 
                                  // sets sprite to egg array image based on value
@@ -115,10 +86,9 @@ public class GameUI : MonoBehaviour
 
 
         }
-        if (healthBar.value <= 0)// ends game
+        if (health <= 0)// ends game
 
         {
-            funnyVariableNameHere.EmergencyStop(); //Stops the controller from infinitely rumbling when you die
             SceneManager.LoadScene("GameOver");
         }
 
@@ -128,10 +98,7 @@ public class GameUI : MonoBehaviour
 
     public void TakeDamage(int damage)// take damage minus it from Health
     {
-        StartCoroutine(DamageWait());
-        evenFunnierVariableName.StartCoroutine(evenFunnierVariableName.Shakermaker(0.2f, 0.3f));
         health -= damage;
-        AudioManager.Instance.PlayBaseDamaged();
     }
 
     public void FadeIn()// fade in 
@@ -144,13 +111,5 @@ public class GameUI : MonoBehaviour
     {
         targetAlpha = 0;
         currentWaveNumber = waveNumber;
-    }
-
-    private IEnumerator DamageWait()
-    {
-        takingDamage = true;
-        yield return new WaitForSeconds(1f);
-        takingDamage = false;
-        //Used to show the damage taken flash on a PS controller lightbar
     }
 }

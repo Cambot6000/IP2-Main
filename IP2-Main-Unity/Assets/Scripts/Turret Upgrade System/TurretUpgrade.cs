@@ -21,13 +21,6 @@ public class TurretUpgrade : MonoBehaviour
   public int option2Cost = 120;
   public float rangeIncrease = 1.5f;
 
-  [Header("Upgrade Option 3")] 
-  public string option3Label = "Supercharge";
-  public int option3Cost = 250;
-  public GameObject UpgradePrefab;
-  public int damageBonus = 25;
-    public bool hasThirdUpgrade;
-
     private TowerFire towerFire;
 
   void Awake()
@@ -95,42 +88,9 @@ public class TurretUpgrade : MonoBehaviour
             Debug.Log($"{turretName} range upgraded to {aoeTowerUpgradeVar.range}");
         }
         //towerFire.range += rangeIncrease;
-        //towerFire.UpdateRangeRing(); //change size of the range ring
+        towerFire.UpdateRangeRing(); //change size of the range ring
     
     //Debug.Log($"{turretName} range upgraded to {towerFire.range}");
     
-  }
-
-   public void ApplyOption3() //similar as above
-  {
-    if (MoneyManager.instance == null)
-    {
-      Debug.LogWarning("No MoneyManager instance found"); //debug and for safty 
-      return;
-    }
-
-    if (!MoneyManager.instance.SpendGold(option3Cost)) //if there is NOT enough money for upgrade  
-    {
-      Debug.Log("Not enough gold for upgrade 3"); //debug
-      return;
-    }
-     if (GetComponent<TowerFire>() != null)
-        {
-            TowerFire newTowerFireVar = GetComponent<TowerFire>();
-            newTowerFireVar.range += rangeIncrease;
-            Debug.Log($"{turretName} range upgraded to {newTowerFireVar.range}");
-        }
-        else if (GetComponent<AoeTowerScript>() != null)
-      {
-        AoeTowerScript aoeTowerUpgradeVar = GetComponent<AoeTowerScript>();
-        aoeTowerUpgradeVar.damage += damageBonus;
-        Debug.Log($"{turretName} range upgraded to {aoeTowerUpgradeVar.range}");
-        if (aoeTowerUpgradeVar.superchargedParticlePrefab != null)
-    {
-      aoeTowerUpgradeVar.superchargedParticlePrefab = UpgradePrefab;
-    }
-
-      }
-
   }
 }

@@ -31,15 +31,9 @@ public class PauseMenuScript : MonoBehaviour
         Toggle();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void Quit()
-    {
-
-        SceneManager.LoadScene("Main Menu");
-    }
-
-    public void Settings()
-    {
-
-        SceneManager.LoadScene("Settings Menu");
+        public void Quit()
+        {
+        
+        Application.Quit();
     }
 }

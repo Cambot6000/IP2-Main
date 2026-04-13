@@ -15,8 +15,7 @@ public class TurretWheelController : MonoBehaviour
     [Header("Ui Settings")]
     public Image selectedItem;
     public Sprite noImage;
-    public Sprite AnkyInfoPic;
-
+    
     public static int turretID;
     public GameObject wheelRoot;
     private bool isOpen;
@@ -66,7 +65,6 @@ public class TurretWheelController : MonoBehaviour
                     selectedItem.sprite = noImage;
                     break;
                 case 1:
-                    selectedItem.sprite = AnkyInfoPic;
                     Debug.Log("Turret 1 selected");
                     break;
                 case 2:
