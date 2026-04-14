@@ -30,6 +30,7 @@ public class AoeTowerScript : MonoBehaviour
     public bool ringActive;
     private Coroutine activeFade;
 
+    public AudioClip rockSound;
     public EnemiesSpawner spawner;
     public Animator animator;
     public List<Vector3> pathWaypoint = new List<Vector3>();
@@ -105,7 +106,8 @@ public class AoeTowerScript : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
         bool hitAny = false;
 
-        animator.SetTrigger("Attack");
+        
+
         foreach (var hitCollider in hitColliders)
         {
             Enemies en = hitCollider.GetComponent<Enemies>();
@@ -116,10 +118,14 @@ public class AoeTowerScript : MonoBehaviour
                     // Instantiate a new particle effect at the tower's position
                     if (aoeParticlePrefab != null)
                     {
+                        animator.SetTrigger("Attack");
+                        AudioManager.Instance.PlaySFX(rockSound, 0.4f);
                         GameObject effect = Instantiate(aoeParticlePrefab, transform.position, Quaternion.identity);
                         Destroy(effect, 2f);
+
                     }
                     hitAny = true;
+
                 }
 
                 en.health -= damage;

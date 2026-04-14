@@ -22,6 +22,7 @@ public class TowerFire : MonoBehaviour
     public float projectileLifeTime = 5f;
     public Transform firePoint; // Just fires from the turret but if we need to change it (from dino mouth for instance) this can be done with this
 
+    public AudioClip shootSound;
     private PlaceObject placeObject;
     private LineRenderer lineRenderer;
     private float fireTimer;
@@ -128,7 +129,7 @@ public class TowerFire : MonoBehaviour
 
 
        animator.SetTrigger("Attack");
-       AudioManager.Instance.PlaySniperSound();
+       AudioManager.Instance.PlaySFX(shootSound);
        Vector3 targetPosition = new Vector3(target.transform.position.x, tower.transform.position.y,target.transform.position.z);
         tower.gameObject.transform.LookAt(targetPosition);
         

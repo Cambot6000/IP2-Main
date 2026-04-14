@@ -55,21 +55,7 @@ public class PlaceObject : MonoBehaviour
     public virtual void Place()
     {
         
-        Placed = true;
-        if (MoneyManager.instance != null)
-        {
-            bool success = MoneyManager.instance.SpendGold(towerCost);
-
-            if(!success)
-            {
-                Destroy(gameObject);
-                Debug.LogWarning("not enough gold, tower cant be placed");
-            }
-        }
-        
-   
-        
-        
+        Placed = true;   
     }
     
     
