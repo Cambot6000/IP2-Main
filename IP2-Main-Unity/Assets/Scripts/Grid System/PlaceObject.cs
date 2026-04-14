@@ -48,7 +48,7 @@ public class PlaceObject : MonoBehaviour
     {
         GetPositions();
         CalculateSize();
-        Debug.Log($"PlaceObject size in cells = {size}"); //debug
+        //Debug.Log($"PlaceObject size in cells = {size}"); //debug
 
     }
 

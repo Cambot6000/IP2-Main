@@ -20,7 +20,7 @@ public class PlayerUpgradeInteractor : MonoBehaviour
         if (turret != null)
         {
             currentTurret = turret;
-            Debug.Log($"[Interactor] Enter turret {turret.name}");
+            //Debug.Log($"[Interactor] Enter turret {turret.name}");
             upgradeUI.ShowPrompt(true);
             
         }
@@ -31,7 +31,7 @@ public class PlayerUpgradeInteractor : MonoBehaviour
         TurretUpgrade turret = other.GetComponentInParent<TurretUpgrade>();
         if (turret != null && turret == currentTurret)
         {
-            Debug.Log($"[Interactor] Exit turret {turret.name}");
+            //Debug.Log($"[Interactor] Exit turret {turret.name}");
             currentTurret = null;
             upgradeUI.ShowPrompt(false);
             upgradeUI.Close();
@@ -45,7 +45,7 @@ public class PlayerUpgradeInteractor : MonoBehaviour
 
         if (Input.GetKeyDown(interactKey) || Input.GetButtonDown(interactButton))
         {
-            Debug.Log("[Interactor] Open UI");      
+            //Debug.Log("[Interactor] Open UI");      
             upgradeUI.Open(currentTurret);
         }
     }

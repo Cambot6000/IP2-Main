@@ -18,10 +18,13 @@ public class Building : MonoBehaviour
     public GridLayout gridSize;             // reference to the grid layout
     private Grid grid;                      // cached grid component
     public bool wheelOpen;
-
+    
+    
+    
     // main tile map
-    public Tilemap MainTilemap;             // tracks which cells are occupied
-    public TileBase greenTile;              // tile used to mark taken cells
+    public Tilemap BuildableTilemap;             // tracks which cells are occupied
+    public Tilemap OccupiedTilemap; //where toweres have been placed
+    public TileBase occupiedTile;             // tile used to mark taken cells
 
     [Header("Player Icon Stuff")]
     public SpriteRenderer playerIcon;
@@ -56,6 +59,7 @@ public class Building : MonoBehaviour
         current = this;
             grid = gridSize.gameObject.GetComponent<Grid>();
         controls = new PlayerControls(); //setup building controls
+        
     }
     
     
@@ -77,6 +81,8 @@ public class Building : MonoBehaviour
         {
             GameUIRef = GetComponent<GameUI>();
         }
+        
+        
     }
             
     private void Update()
@@ -188,8 +194,8 @@ public class Building : MonoBehaviour
             if (CanBePlaced(objectToPlace)) //call canbeplaced if it comes back true run:
             {
                 objectToPlace.Place();//calls the place method for the object/tower currently being placed as places the onject
-                Vector3Int start = grid.WorldToCell(objectToPlace.getStartPos()); //returns the world pos of the object, WorldToCell converts it to grid cell coords
-                TakeArea(start, objectToPlace.size);//this checks how many cells wide the object/tower is then "paints" the cells so that we know the cell space is now ocupied 
+                Vector3Int cell = grid.WorldToCell(objectToPlace.transform.position); //returns the world pos of the object, WorldToCell converts it to grid cell coords
+                TakeArea(cell, objectToPlace.size);//this checks how many cells wide the object/tower is then "paints" the cells so that we know the cell space is now ocupied 
                 objectToPlace = null; // exit build mode as we have placed an objec
                 StartCoroutine(ControllerRumble(0.1f, 0.5f, 0.1f));
                 //ChangeLightBar(Color.blue);
@@ -337,23 +343,36 @@ public class Building : MonoBehaviour
     {
         if (!MoneyManager.instance.CanAfford(placeObject.towerCost))
         {
-            Debug.Log("You cannae afford this big man");
+            Debug.Log("CanBePlaced: not enough money");
             return false;
         }
 
         BoundsInt area = new BoundsInt();
-        area.position = gridSize.WorldToCell(objectToPlace.getStartPos());
+        Vector3Int cell = gridSize.WorldToCell(objectToPlace.transform.position);
+        area.position = cell;
         area.size = placeObject.size;
-
-        TileBase[] baseArray = GetTilesBlock(area, MainTilemap); //check
-
-        // If any tile in area is already greenTile, cannot place
-        foreach (var tile in baseArray)
+        
+        TileBase[] blockedArray = GetTilesBlock(area, BuildableTilemap);
+        foreach (var tile in blockedArray)
         {
-            if (tile == greenTile)
+            if (tile != null)
+            {
+                Debug.Log("CanBePlaced: failed blocked check (blocked tile under tower).");
                 return false;
+            }
         }
 
+        TileBase[] occupiedArray = GetTilesBlock(area, OccupiedTilemap);
+        foreach (var tile in occupiedArray)
+        {
+            if (tile != null)
+            {
+                Debug.Log("CanBePlaced: failed occupied check (cell already occupied).");
+                return false;
+            }
+        }
+
+        Debug.Log("CanBePlaced: placement allowed.");
         return true;
     }
 
@@ -363,9 +382,9 @@ public class Building : MonoBehaviour
         int maxX = start.x + size.x - 1;
         int maxY = start.y + size.y - 1; //this is the only way i could make the "cube" fit extactly in the cell if anyone wants to try messing with the scaling feel free!
 
-        MainTilemap.BoxFill(
+         OccupiedTilemap.BoxFill(
             start,
-            greenTile,
+            occupiedTile,
             start.x,
             start.y,
             maxX,

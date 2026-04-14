@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
             moveInput = ctx.ReadValue<Vector2>();
             //directionInput = ctx.ReadValue<Vector2>();
             
-            Debug.Log("Move performed: " + moveInput);
+            //Debug.Log("Move performed: " + moveInput);
         };
         controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
 

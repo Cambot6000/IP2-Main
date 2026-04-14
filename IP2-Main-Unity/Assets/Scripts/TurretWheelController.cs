@@ -31,7 +31,7 @@ public class TurretWheelController : MonoBehaviour
     private void Start()    
     {
         SetOpen(false);
-        Debug.Log("! Debug -> Game started, debug wheel set to CLOSED");    
+        //Debug.Log("! Debug -> Game started, debug wheel set to CLOSED");    
     }
 
     void Update()
@@ -41,7 +41,7 @@ public class TurretWheelController : MonoBehaviour
         // keyboard support
         if (Keyboard.current != null && Keyboard.current.tabKey.wasPressedThisFrame)
         {
-            Debug.Log("! Debug -> Tab has been pressed");
+            //Debug.Log("! Debug -> Tab has been pressed");
             SetOpen(!isOpen);
         }
 
@@ -67,19 +67,19 @@ public class TurretWheelController : MonoBehaviour
                     break;
                 case 1:
                     selectedItem.sprite = AnkyInfoPic;
-                    Debug.Log("Turret 1 selected");
+                    //Debug.Log("Turret 1 selected");
                     break;
                 case 2:
-                    Debug.Log("Turret 2 selected");
+                   // Debug.Log("Turret 2 selected");
                     break;
                 case 3:
-                    Debug.Log("Turret 3 selected");
+                    //Debug.Log("Turret 3 selected");
                     break;
                 case 4:
-                    Debug.Log("Turret 4 selected");
+                   // Debug.Log("Turret 4 selected");
                     break;
                 case 5:
-                    Debug.Log("Turret 5 selected");
+                    //ebug.Log("Turret 5 selected");
                     break;
             }
 
