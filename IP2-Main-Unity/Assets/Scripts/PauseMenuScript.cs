@@ -13,9 +13,19 @@ public class PauseMenuScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) || Gamepad.current.startButton.wasPressedThisFrame) //Uses the settings button on ps controller
+        if(Gamepad.current != null)
         {
-            Toggle();
+            if (Input.GetKeyDown(KeyCode.P) || Gamepad.current.startButton.wasPressedThisFrame) //Uses the settings button on ps controller
+            {
+                Toggle();
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Toggle();
+            }
         }
     }
 
