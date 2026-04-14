@@ -2427,6 +2427,10 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 5269697384344067867, guid: b32aa33fd98f53e48b995006b70b87a5, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: be9b4d38c0c278f4285b2a5380bdf762, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4816,6 +4820,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 677731049}
     m_Modifications:
     - target: {fileID: -8162088074497153293, guid: fd4de41e448cc9e4c88a18f083f722b9, type: 3}
+      propertyPath: towerCost
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: -8162088074497153293, guid: fd4de41e448cc9e4c88a18f083f722b9, type: 3}
       propertyPath: turretType
       value: 1
       objectReference: {fileID: 0}
@@ -4871,6 +4879,10 @@ PrefabInstance:
       propertyPath: range
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5269697384344067867, guid: fd4de41e448cc9e4c88a18f083f722b9, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c327e4145871f0247884d385abf18d8a, type: 3}
     m_RemovedComponents:
     - {fileID: 299690715933937863, guid: fd4de41e448cc9e4c88a18f083f722b9, type: 3}
     m_RemovedGameObjects: []
@@ -9790,6 +9802,7 @@ MonoBehaviour:
   rocketLaunchSound: {fileID: 8300000, guid: 401a9b94688beef49876b735d110c714, type: 3}
   sniperSound: {fileID: 8300000, guid: c327e4145871f0247884d385abf18d8a, type: 3}
   poisonSound: {fileID: 8300000, guid: be9b4d38c0c278f4285b2a5380bdf762, type: 3}
+  rockSound: {fileID: 0}
   musicVolume: 1
   sfxVolume: 1
 --- !u!4 &1360110995
@@ -15764,6 +15777,10 @@ PrefabInstance:
       propertyPath: fireRate
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3914405826604820254, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      propertyPath: rockSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1073a788a9741ed4b897734eb08bd32d, type: 3}
     - target: {fileID: 3914405826604820254, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: ringColor.b
       value: 0.18431373
