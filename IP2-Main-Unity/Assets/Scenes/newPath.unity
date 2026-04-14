@@ -1357,6 +1357,7 @@ MonoBehaviour:
   speedBeforePause: 0
   resumeButton: {fileID: 0}
   settingsUI: {fileID: 363058705}
+  wzrd: 0
 --- !u!1 &142344611
 GameObject:
   m_ObjectHideFlags: 0
@@ -6359,6 +6360,7 @@ MonoBehaviour:
   speedBeforePause: 0
   resumeButton: {fileID: 0}
   settingsUI: {fileID: 363058705}
+  wzrd: 0
 --- !u!1 &724126345
 GameObject:
   m_ObjectHideFlags: 0
@@ -6616,6 +6618,7 @@ MonoBehaviour:
   speedBeforePause: 0
   resumeButton: {fileID: 0}
   settingsUI: {fileID: 0}
+  wzrd: 0
 --- !u!1 &751479826
 GameObject:
   m_ObjectHideFlags: 0
@@ -8390,6 +8393,7 @@ MonoBehaviour:
   speedBeforePause: 0
   resumeButton: {fileID: 0}
   settingsUI: {fileID: 0}
+  wzrd: 0
 --- !u!1 &1165675487
 GameObject:
   m_ObjectHideFlags: 0
@@ -9928,6 +9932,7 @@ MonoBehaviour:
   speedBeforePause: 0
   resumeButton: {fileID: 0}
   settingsUI: {fileID: 0}
+  wzrd: 0
 --- !u!4 &1400764946
 Transform:
   m_ObjectHideFlags: 0
@@ -12612,9 +12617,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 357954002}
-  speedBeforePause: 0
+  speedBeforePause: 1
   resumeButton: {fileID: 732896642}
   settingsUI: {fileID: 363058705}
+  wzrd: 1
 --- !u!114 &1677407238
 MonoBehaviour:
   m_ObjectHideFlags: 0
