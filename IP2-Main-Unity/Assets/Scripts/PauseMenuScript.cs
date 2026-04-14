@@ -8,25 +8,29 @@ public class PauseMenuScript : MonoBehaviour
 {
    
     public GameObject ui;
-    public float speedBeforePause;
+    public float speedBeforePause = 1f;
     public GameObject resumeButton;
     //public GameObject[] otherUIStuff; old code because I could't work out why controller wouldn't work on the pause menu
 
     public GameObject settingsUI;
+    public bool wzrd;
 
     void Update()
     {
+        
         if(Gamepad.current != null)
         {
-            if (Input.GetKeyDown(KeyCode.P) || Gamepad.current.startButton.wasPressedThisFrame) //Uses the settings button on ps controller
+            if ((Input.GetKeyDown(KeyCode.P) || Gamepad.current.startButton.wasPressedThisFrame) && wzrd) //Uses the settings button on ps controller
             {
+                wzrd = false;
                 Toggle();
             }
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P) && wzrd)
             {
+                wzrd = false;
                 Toggle();
             }
         }
@@ -34,6 +38,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void Toggle()
     {
+        wzrd = true;
         ui.SetActive(!ui.activeSelf);
 
         if (ui.activeSelf)
@@ -42,7 +47,11 @@ public class PauseMenuScript : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked; probably not needed anymore
             Cursor.visible = false;
             */
-            speedBeforePause = Time.timeScale; //Used in case you're using the speed up thinghy
+            if(Time.timeScale > 0)
+            {
+                speedBeforePause = Time.timeScale; //Used in case you're using the speed up thinghy
+            }
+            
             Time.timeScale = 0f;
             EventSystem.current.SetSelectedGameObject(null);
             /*
