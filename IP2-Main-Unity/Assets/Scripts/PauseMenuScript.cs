@@ -91,18 +91,18 @@ public class PauseMenuScript : MonoBehaviour
    
     public void OpenSettings()
     {
-<<<<<<< Updated upstream
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Settings Menu");
+
+        settingsUI.SetActive(true);
+        ui.SetActive(false);
     }
-    private IEnumerator PleaseWork() //Delays the selection of the resume button until the end of the frame so that it actually gets picked now
+    private IEnumerator PleaseWork() 
     {
         EventSystem.current.SetSelectedGameObject(null);
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 }
-=======
+
         ui.SetActive(false);
         settingsUI.SetActive(true);
     }
@@ -114,4 +114,4 @@ public class PauseMenuScript : MonoBehaviour
     }
     }
 
->>>>>>> Stashed changes
+
