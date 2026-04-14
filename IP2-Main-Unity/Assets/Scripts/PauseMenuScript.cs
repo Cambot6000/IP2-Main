@@ -27,6 +27,8 @@ public class PauseMenuScript : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
+   
+
     public void Retry()
     {
         Toggle();
