@@ -193,11 +193,15 @@ public class Building : MonoBehaviour
         {
             if (CanBePlaced(objectToPlace)) //call canbeplaced if it comes back true run:
             {
+                if (MoneyManager.instance.SpendGold(objectToPlace.towerCost))
+                {
                 objectToPlace.Place();//calls the place method for the object/tower currently being placed as places the onject
                 Vector3Int cell = grid.WorldToCell(objectToPlace.transform.position); //returns the world pos of the object, WorldToCell converts it to grid cell coords
                 TakeArea(cell, objectToPlace.size);//this checks how many cells wide the object/tower is then "paints" the cells so that we know the cell space is now ocupied 
                 objectToPlace = null; // exit build mode as we have placed an objec
                 StartCoroutine(ControllerRumble(0.1f, 0.5f, 0.1f));
+                }
+                
                 //ChangeLightBar(Color.blue);
             }
             else

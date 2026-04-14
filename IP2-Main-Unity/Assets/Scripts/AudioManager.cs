@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip rocketLaunchSound; 
     public AudioClip sniperSound;
     public AudioClip poisonSound;
+    public AudioClip rockSound;
 
     [Range(0f, 1f)] public float musicVolume = 1f;
     [Range(0f, 1f)] public float sfxVolume = 1f;

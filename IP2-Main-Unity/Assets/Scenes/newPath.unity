@@ -15752,6 +15752,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 935320993239056117, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
+      propertyPath: towerCost
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2889564548792635489, guid: 7182225db3203984ba222766b9f12e7c, type: 3}
       propertyPath: m_IsTrigger
       value: 1
