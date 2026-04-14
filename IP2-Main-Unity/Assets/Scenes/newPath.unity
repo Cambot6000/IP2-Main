@@ -4604,7 +4604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e53980778b8914fb098245829549ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 0}
+  ui: {fileID: 357954002}
   speedBeforePause: 0
   resumeButton: {fileID: 0}
 --- !u!1 &751479826
