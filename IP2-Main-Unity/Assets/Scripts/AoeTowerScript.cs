@@ -119,7 +119,7 @@ public class AoeTowerScript : MonoBehaviour
                     if (aoeParticlePrefab != null)
                     {
                         animator.SetTrigger("Attack");
-                        AudioManager.Instance.PlaySFX(rockSound, 0.4f);
+                        AudioManager.Instance.PlaySFX(rockSound, 0.2f);
                         GameObject effect = Instantiate(aoeParticlePrefab, transform.position, Quaternion.identity);
                         Destroy(effect, 2f);
 
