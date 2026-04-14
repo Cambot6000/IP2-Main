@@ -6,10 +6,16 @@ using System.Collections;
 
 public class PauseMenuScript : MonoBehaviour
 {
+   
     public GameObject ui;
+<<<<<<< Updated upstream
     public float speedBeforePause;
     public GameObject resumeButton;
     //public GameObject[] otherUIStuff; old code because I could't work out why controller wouldn't work on the pause menu
+=======
+    public GameObject settingsUI;
+
+>>>>>>> Stashed changes
 
     void Update()
     {
@@ -82,8 +88,10 @@ public class PauseMenuScript : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
-    public void Settings()
+   
+    public void OpenSettings()
     {
+<<<<<<< Updated upstream
         Time.timeScale = 1f;
         SceneManager.LoadScene("Settings Menu");
     }
@@ -94,3 +102,16 @@ public class PauseMenuScript : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 }
+=======
+        ui.SetActive(false);
+        settingsUI.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        settingsUI.SetActive(false);
+        ui.SetActive(true);
+    }
+    }
+
+>>>>>>> Stashed changes

@@ -8,6 +8,7 @@ public class SettingManager : MonoBehaviour
     public Slider soundFXSlider;
     public TMP_Dropdown placingJoyStick;
     public TMP_Dropdown movingJoyStick;
+    public GameObject uiSettings;
 
     public void Start()
     {
