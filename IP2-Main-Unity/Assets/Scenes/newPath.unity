@@ -1353,14 +1353,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e53980778b8914fb098245829549ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
   ui: {fileID: 0}
   speedBeforePause: 0
   resumeButton: {fileID: 0}
-=======
-  ui: {fileID: 357954002}
-  settingsUI: {fileID: 363058705}
->>>>>>> Stashed changes
+  settingsUI: {fileID: 0}
 --- !u!1 &142344611
 GameObject:
   m_ObjectHideFlags: 0
@@ -6348,6 +6344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 0}
+  speedBeforePause: 0
+  resumeButton: {fileID: 0}
   settingsUI: {fileID: 0}
 --- !u!1 &724126345
 GameObject:
@@ -6603,12 +6601,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 357954002}
-<<<<<<< Updated upstream
   speedBeforePause: 0
   resumeButton: {fileID: 0}
-=======
   settingsUI: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!1 &751479826
 GameObject:
   m_ObjectHideFlags: 0
@@ -8380,10 +8375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 0}
-<<<<<<< Updated upstream
   speedBeforePause: 0
   resumeButton: {fileID: 0}
-=======
   settingsUI: {fileID: 0}
 --- !u!1 &1165675487
 GameObject:
@@ -8521,7 +8514,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: -0.5}
   m_SizeDelta: {x: -30, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
->>>>>>> Stashed changes
 --- !u!1 &1166369819
 GameObject:
   m_ObjectHideFlags: 0
@@ -9920,12 +9912,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 357954002}
-<<<<<<< Updated upstream
   speedBeforePause: 0
   resumeButton: {fileID: 0}
-=======
   settingsUI: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!4 &1400764946
 Transform:
   m_ObjectHideFlags: 0
@@ -12610,10 +12599,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 357954002}
-<<<<<<< Updated upstream
   speedBeforePause: 0
   resumeButton: {fileID: 732896642}
-=======
   settingsUI: {fileID: 0}
 --- !u!114 &1677407238
 MonoBehaviour:
@@ -12668,7 +12655,6 @@ RectTransform:
   m_AnchoredPosition: {x: -4.9411, y: 1.5}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
->>>>>>> Stashed changes
 --- !u!1 &1702451386
 GameObject:
   m_ObjectHideFlags: 0
