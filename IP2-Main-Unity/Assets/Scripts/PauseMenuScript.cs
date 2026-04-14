@@ -13,19 +13,21 @@ public class PauseMenuScript : MonoBehaviour
     //public GameObject[] otherUIStuff; old code because I could't work out why controller wouldn't work on the pause menu
 
     public GameObject settingsUI;
+    public bool wzrd;
 
     void Update()
     {
+        wzrd = false;
         if(Gamepad.current != null)
         {
-            if (Input.GetKeyDown(KeyCode.P) || Gamepad.current.startButton.wasPressedThisFrame) //Uses the settings button on ps controller
+            if ((Input.GetKeyDown(KeyCode.P) || Gamepad.current.startButton.wasPressedThisFrame) && !wzrd) //Uses the settings button on ps controller
             {
                 Toggle();
             }
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P) && !wzrd)
             {
                 Toggle();
             }
@@ -34,6 +36,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void Toggle()
     {
+        wzrd = true;
         ui.SetActive(!ui.activeSelf);
 
         if (ui.activeSelf)
